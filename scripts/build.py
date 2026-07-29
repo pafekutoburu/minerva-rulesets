@@ -33,7 +33,29 @@ MANIFEST = os.path.join(REPO, "manifest.json")
 INDEXED_SOURCES = os.path.join(REPO, "indexed", "sources.json")
 
 APNIC_URL = "https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest"
+STUN_CANDIDATES_URL = \
+    "https://raw.githubusercontent.com/pradt2/always-online-stun/master/candidates.txt"
 BASE_URL = "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/"
+
+# 🔴 **层级是数据,不是目录。**
+# 直觉上该把镜像内容放进 `mirrored/`,让路径自己说明层级、不可能标错。但**不行**:
+# 这些 URL 会被写进使用者的配置,路径一变,所有引用它的人当场断掉 ——
+# 那正是我们在老仓上要花力气避免的迁移债。**URL 稳定优先于目录自解释。**
+# 于是层级放在这张表里:不在表上的 `sets/` 文件都是 authored。
+#
+# `sets/network/stun.list` 为什么是 mirrored 而不是 authored:
+#   它的内容 100% 来自 pradt2/always-online-stun 的候选池(MIT,明许再分发),
+#   我们只做了「剥端口、去裸 IP、排序」这种机械变换 —— **没有任何属于我们的判断**。
+#   标成 authored 就是假背书,和本项目刚撤掉的那三条假蓝勾是同一个错误。
+#   等我们有了自己的收录判据(自己验活、自己从厂商文档补、自己剔死条目),它才配升 authored。
+MIRRORED_SETS = {
+    "sets/network/stun.list": {
+        "repository": "pradt2/always-online-stun",
+        "homepage": "https://github.com/pradt2/always-online-stun",
+        "license": "MIT",
+        "listURL": STUN_CANDIDATES_URL,
+    },
+}
 
 NOW = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
@@ -153,7 +175,38 @@ def build_sets():
         "sets/region/cn-asn.list", "中国大陆自治系统号(ASN)", src,
         [f"IP-ASN,{a},no-resolve" for a in sorted(set(asn))],
     )
+    counts["sets/network/stun.list"] = build_stun()
     return counts
+
+
+def build_stun():
+    """
+    公开 STUN 服务器的主机名。**内容来自 pradt2/always-online-stun**(MIT),见 MIRRORED_SETS 注释。
+
+    上游是 `host:port` 一行一条,Surge 的 `DOMAIN-SET` 吃不了带端口的行,
+    所以这里剥掉端口、去掉裸 IP(`DOMAIN,` 只认域名)、去重排序,产出 `RULE-SET` 格式。
+    """
+    req = urllib.request.Request(
+        STUN_CANDIDATES_URL, headers={"User-Agent": "minerva-rulesets-builder"})
+    with urllib.request.urlopen(req, timeout=90) as resp:
+        text = resp.read().decode("utf-8", errors="replace")
+
+    hosts = set()
+    for raw in text.splitlines():
+        s = raw.strip()
+        if not s or s.startswith("#"):
+            continue
+        host = s.rsplit(":", 1)[0].strip().strip("[]").lower()
+        # 裸 IP 进不了 `DOMAIN,` —— 那是域名规则。丢掉,不硬塞。
+        if not host or all(c in "0123456789." for c in host) or ":" in host:
+            continue
+        hosts.add(host)
+
+    return write_list(
+        "sets/network/stun.list", "公开 STUN 服务器域名",
+        "pradt2/always-online-stun candidates.txt(MIT)—— 剥端口去重,内容为上游所有",
+        [f"DOMAIN,{h}" for h in sorted(hosts)],
+    )
 
 
 # ---------------------------------------------------------------- 索引层
@@ -334,7 +387,7 @@ def build_manifest(generated_counts, indexed_entries):
                 "category": rel.split("/")[1] if len(rel.split("/")) > 2 else "",
                 "tags": [],
                 "ruleCount": generated_counts.get(rel) or rule_count(full),
-                "layer": "authored",
+                "layer": "mirrored" if rel in MIRRORED_SETS else "authored",
                 # 自建层一律产出完整规则行(`IP-CIDR,…` / `DOMAIN-SUFFIX,…`)⇒ 恒为 RULE-SET。
                 # 仍然如实写出来,好让消费方**一律读这个字段**,不必按层去猜。
                 "directive": "RULE-SET",
@@ -347,6 +400,9 @@ def build_manifest(generated_counts, indexed_entries):
             stamp = times.get(rel)
             if stamp:
                 entry["updatedAt"] = stamp
+            # 🔴 标了 mirrored 就必须说清内容是谁的 —— 只标层级不标出处等于没标。
+            if rel in MIRRORED_SETS:
+                entry["upstream"] = MIRRORED_SETS[rel]
             entries.append(entry)
 
     entries.sort(key=lambda e: e["path"])

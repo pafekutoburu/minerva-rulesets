@@ -31,11 +31,15 @@ sets/Proxy/Netflix.list      ❌  它说的是「Netflix 该走代理」——�
 
 | 层 | 内容在哪 | 我们能担保什么 |
 |---|---|---|
-| **自建(authored)** | **在本仓** `sets/` | 从一手来源生成,来源与生成脚本都公开可查 |
+| **自建(authored)** | **在本仓** | 从一手来源生成,来源与生成脚本都公开可查 |
+| **镜像(mirrored)** | **在本仓** | **内容是别人的**,我们在其许可范围内托管了一份并如实署名 |
 | **索引(indexed)** | **不在本仓**,指向上游 | **我们选了它,但没有审核它的内容。** 许可证与出处逐条标注 |
 
 索引层**只记录地址,不复制任何内容**。这既是尊重上游的许可证,也意味着你拿到的永远是上游的最新版本。
-逐条署名见 [`SOURCES.md`](SOURCES.md)。
+
+镜像层只有在**上游许可证明许再分发、而它的原始格式 Surge 又消费不了**时才会出现——目前只有一条
+(STUN 服务器域名)。它**不会**被伪装成自建:`manifest.json` 里 `layer` 与 `upstream` 两个字段
+都会如实说明。逐条署名见 [`SOURCES.md`](SOURCES.md)。
 
 ---
 
@@ -75,6 +79,15 @@ DOMAIN-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ic
 
 > **别把它们说大:** Surge 内建的 `GEOIP,CN` 已经覆盖了大部分「境内直连」的需求。
 > 这三份的价值在于**来源可查、可以只取 ASN 这一种粒度**,不是替代 `GEOIP,CN`。
+
+### 镜像层
+
+| 清单 | 内容 | 出处 |
+|---|---|---|
+| `sets/network/stun.list` | 公开 STUN 服务器域名(621 条) | [pradt2/always-online-stun](https://github.com/pradt2/always-online-stun),MIT |
+
+> STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用到它。
+> 拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。
 
 ### 索引层
 
