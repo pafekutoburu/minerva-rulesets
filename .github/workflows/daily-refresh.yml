@@ -1,0 +1,74 @@
+# 每日重建 sets/ 与 manifest.json。
+#
+# ⚠️ 这份文件的前身在另一个仓里**从未成功运行过一次**(实测:40 次运行记录全部是 push 事件、
+#    全部失败、全部 0 秒;schedule 一次都没点着)。根因是那一版的 YAML **根本解析不了**:
+#
+#      run: |
+#        python3 -c "
+#      import urllib.request, os      ← 第 0 列!比块标量的缩进还浅
+#
+#    YAML 的 `|` 块标量以第一行非空内容确定缩进,遇到更浅的行就**终止块标量** ——
+#    于是 `import urllib.request, os` 掉到映射层变成语法垃圾,整份文件解析失败。
+#    GitHub 对解析不了的 workflow 会记一条 0 秒的 startup_failure 并挂在触发它的 push 上,
+#    **而 cron 永远不会触发一个解析不了的文件**。这就是「每天自动刷新」成为一句假话的全过程。
+#
+#    👉 改这个文件之后,**先本地跑一遍 `python3 -c "import yaml,sys;yaml.safe_load(open(...))"`**
+#       再推。从逻辑找起会绕远路 —— 当初就是这么绕的。
+#
+#    第二处历史修补:`permissions: contents: write` 不能少,否则最后那步 push 会被拒。
+
+name: Daily Refresh
+
+on:
+  schedule:
+    # 每日 02:00 UTC(= 北京时间 10:00)。
+    # 🔴 README 里写的时间必须和这里一致 —— 前身那句「每天凌晨 3 点」在文件里从来没有对应物。
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # build.py 要读 git 历史算每个文件的最后改动时间(manifest 的 updatedAt)。
+          # 浅克隆拿不到历史 ⇒ 时间戳会集体缺失 ⇒ 使用者那边所有清单都显示成「不知道多久没更新」。
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build sets/ and manifest.json
+        run: python3 scripts/build.py
+
+      - name: Verify no policy name leaked into any path
+        # 🔴 第一原则的机器判据:清单只回答「这些是什么」,不回答「它该走哪」。
+        #    `sets/media/netflix.list` ✅ / `sets/Proxy/Netflix.list` ❌
+        #    —— 后者把「Netflix 走代理」这个**一个人的决定**焊进了资产,对另一个国家的用户不成立。
+        #    把这条纪律从 README 里的一句话变成一条会让 CI 变红的判据。
+        run: |
+          bad=$(find sets -type f -name '*.list' \
+                | grep -Ei '/(proxy|direct|reject|代理|直连)/' || true)
+          if [ -n "$bad" ]; then
+            echo "::error::路径里出现了策略名,违反第一原则:"
+            echo "$bad"
+            exit 1
+          fi
+          echo "路径中无策略名 ✓"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add sets/ manifest.json
+          if git diff --staged --quiet; then
+            echo "无变化,不提交。"
+          else
+            git commit -m "auto: rebuild sets/ and manifest.json ($(date -u +%Y-%m-%d))"
+            git push
+          fi

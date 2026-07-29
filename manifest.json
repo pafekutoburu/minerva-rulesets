@@ -1,0 +1,239 @@
+{
+ "schemaVersion": 1,
+ "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
+ "generatedAt": "2026-07-29T17:07:21Z",
+ "entries": [
+  {
+   "path": "sets/region/cn-asn.list",
+   "displayName": "中国大陆自治系统号(ASN)",
+   "category": "region",
+   "tags": [],
+   "ruleCount": 6398,
+   "layer": "authored",
+   "directive": "RULE-SET"
+  },
+  {
+   "path": "sets/region/cn-ipv4.list",
+   "displayName": "中国大陆 IPv4 地址段",
+   "category": "region",
+   "tags": [],
+   "ruleCount": 8788,
+   "layer": "authored",
+   "directive": "RULE-SET"
+  },
+  {
+   "path": "sets/region/cn-ipv6.list",
+   "displayName": "中国大陆 IPv6 地址段",
+   "category": "region",
+   "tags": [],
+   "ruleCount": 2040,
+   "layer": "authored",
+   "directive": "RULE-SET"
+  },
+  {
+   "path": "https://anti-ad.net/surge.txt",
+   "displayName": "anti-AD 广告与追踪域名",
+   "category": "adblock",
+   "tags": [
+    "basis:community",
+    "scope:global"
+   ],
+   "layer": "indexed",
+   "directive": "RULE-SET",
+   "summary": "覆盖面很大的中文区广告与追踪域名清单,一直在维护。规模最大,也最容易误伤——遇到某个网站功能异常,先想到它。",
+   "upstream": {
+    "repository": "privacy-protection-tools/anti-AD",
+    "homepage": "https://github.com/privacy-protection-tools/anti-AD",
+    "license": "MIT",
+    "listURL": "https://anti-ad.net/surge.txt"
+   },
+   "ruleCount": 101711,
+   "updatedAt": "2026-07-28T19:59:35Z"
+  },
+  {
+   "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
+   "displayName": "秋风广告规则",
+   "category": "adblock",
+   "tags": [
+    "basis:community",
+    "scope:cn"
+   ],
+   "layer": "indexed",
+   "directive": "RULE-SET",
+   "summary": "专攻国内 App 内嵌广告与开屏广告的域名,体量小、误伤少,适合和大清单叠着用。",
+   "upstream": {
+    "repository": "TG-Twilight/AWAvenue-Ads-Rule",
+    "homepage": "https://github.com/TG-Twilight/AWAvenue-Ads-Rule",
+    "license": "GPL-3.0",
+    "listURL": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
+   },
+   "ruleCount": 903
+  },
+  {
+   "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt",
+   "displayName": "广告与追踪域名(Loyalsoldier)",
+   "category": "adblock",
+   "tags": [
+    "basis:community",
+    "scope:global"
+   ],
+   "layer": "indexed",
+   "directive": "DOMAIN-SET",
+   "summary": "另一份大型广告/追踪域名清单,由多个上游合并去重而成。和 anti-AD 二选一即可,同时开着是重复劳动。",
+   "upstream": {
+    "repository": "Loyalsoldier/surge-rules",
+    "homepage": "https://github.com/Loyalsoldier/surge-rules",
+    "license": "GPL-3.0",
+    "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
+   },
+   "ruleCount": 170024
+  },
+  {
+   "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
+   "displayName": "Apple 服务域名",
+   "category": "apple",
+   "tags": [
+    "basis:community"
+   ],
+   "layer": "indexed",
+   "directive": "DOMAIN-SET",
+   "summary": "Apple 各项服务用到的域名(不含 iCloud,那是单独一份)。",
+   "upstream": {
+    "repository": "Loyalsoldier/surge-rules",
+    "homepage": "https://github.com/Loyalsoldier/surge-rules",
+    "license": "GPL-3.0",
+    "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt"
+   },
+   "ruleCount": 164
+  },
+  {
+   "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/icloud.txt",
+   "displayName": "iCloud 域名",
+   "category": "apple",
+   "tags": [
+    "basis:community"
+   ],
+   "layer": "indexed",
+   "directive": "DOMAIN-SET",
+   "summary": "iCloud 同步、照片、钥匙串等服务的域名。和 Apple 其余服务分开,是因为很多人只想单独安排它。",
+   "upstream": {
+    "repository": "Loyalsoldier/surge-rules",
+    "homepage": "https://github.com/Loyalsoldier/surge-rules",
+    "license": "GPL-3.0",
+    "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/icloud.txt"
+   },
+   "ruleCount": 53
+  },
+  {
+   "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/google.txt",
+   "displayName": "Google 服务域名",
+   "category": "google",
+   "tags": [
+    "basis:community"
+   ],
+   "layer": "indexed",
+   "directive": "DOMAIN-SET",
+   "summary": "Google 搜索、账号、云服务等用到的域名。",
+   "upstream": {
+    "repository": "Loyalsoldier/surge-rules",
+    "homepage": "https://github.com/Loyalsoldier/surge-rules",
+    "license": "GPL-3.0",
+    "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/google.txt"
+   },
+   "ruleCount": 112
+  },
+  {
+   "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/telegramcidr.txt",
+   "displayName": "Telegram 服务器 IP 段",
+   "category": "social",
+   "tags": [
+    "basis:registry"
+   ],
+   "layer": "indexed",
+   "directive": "RULE-SET",
+   "summary": "Telegram 官方公布的服务器 IP 段。它按 IP 匹配,所以对那些不走域名、直接连 IP 的连接也有效。",
+   "upstream": {
+    "repository": "Loyalsoldier/surge-rules",
+    "homepage": "https://github.com/Loyalsoldier/surge-rules",
+    "license": "GPL-3.0",
+    "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/telegramcidr.txt"
+   },
+   "ruleCount": 12
+  },
+  {
+   "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt",
+   "displayName": "在中国大陆无法直接访问的域名",
+   "category": "region",
+   "tags": [
+    "basis:community",
+    "scope:cn"
+   ],
+   "layer": "indexed",
+   "directive": "DOMAIN-SET",
+   "summary": "社区长期维护的、在中国大陆网络下访问不通的域名清单。它描述的是网络现状,不是谁的偏好——现状会变,所以这类清单需要持续更新才有价值。",
+   "upstream": {
+    "repository": "Loyalsoldier/surge-rules",
+    "homepage": "https://github.com/Loyalsoldier/surge-rules",
+    "license": "GPL-3.0",
+    "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
+   },
+   "ruleCount": 4369
+  },
+  {
+   "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
+   "displayName": "GreatFire 收录的受限域名",
+   "category": "region",
+   "tags": [
+    "basis:community",
+    "scope:cn"
+   ],
+   "layer": "indexed",
+   "directive": "DOMAIN-SET",
+   "summary": "由 GreatFire 项目观测收录的一小批受限域名,体量很小,通常和上一份配合使用。",
+   "upstream": {
+    "repository": "Loyalsoldier/surge-rules",
+    "homepage": "https://github.com/Loyalsoldier/surge-rules",
+    "license": "GPL-3.0",
+    "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt"
+   },
+   "ruleCount": 10
+  },
+  {
+   "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt",
+   "displayName": "非中国大陆顶级域名",
+   "category": "region",
+   "tags": [
+    "basis:registry",
+    "scope:global"
+   ],
+   "layer": "indexed",
+   "directive": "DOMAIN-SET",
+   "summary": "一批明显不属于中国大陆的顶级域(.gov、.edu 之类)。它是个粗粒度的兜底判断,不精确,但成本极低。",
+   "upstream": {
+    "repository": "Loyalsoldier/surge-rules",
+    "homepage": "https://github.com/Loyalsoldier/surge-rules",
+    "license": "GPL-3.0",
+    "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt"
+   },
+   "ruleCount": 829
+  },
+  {
+   "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt",
+   "displayName": "局域网设备与私有服务域名",
+   "category": "network",
+   "tags": [
+    "basis:community"
+   ],
+   "layer": "indexed",
+   "directive": "DOMAIN-SET",
+   "summary": "路由器管理页、打印机、NAS 等局域网设备常用的域名。这类流量出不了你家网络,通常没有必要绕一圈。",
+   "upstream": {
+    "repository": "Loyalsoldier/surge-rules",
+    "homepage": "https://github.com/Loyalsoldier/surge-rules",
+    "license": "GPL-3.0",
+    "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt"
+   },
+   "ruleCount": 130
+  }
+ ]
+}
