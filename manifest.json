@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-07-29T17:20:15Z",
+ "generatedAt": "2026-07-29T17:20:46Z",
  "entries": [
   {
    "path": "sets/network/stun.list",
@@ -11,6 +11,7 @@
    "ruleCount": 621,
    "layer": "mirrored",
    "directive": "RULE-SET",
+   "updatedAt": "2026-07-29T10:20:34-07:00",
    "upstream": {
     "repository": "pradt2/always-online-stun",
     "homepage": "https://github.com/pradt2/always-online-stun",
