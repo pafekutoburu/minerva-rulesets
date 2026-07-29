@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-07-29T17:07:21Z",
+ "generatedAt": "2026-07-29T17:08:26Z",
  "entries": [
   {
    "path": "sets/region/cn-asn.list",
@@ -10,7 +10,8 @@
    "tags": [],
    "ruleCount": 6398,
    "layer": "authored",
-   "directive": "RULE-SET"
+   "directive": "RULE-SET",
+   "updatedAt": "2026-07-29T10:07:48-07:00"
   },
   {
    "path": "sets/region/cn-ipv4.list",
@@ -19,7 +20,8 @@
    "tags": [],
    "ruleCount": 8788,
    "layer": "authored",
-   "directive": "RULE-SET"
+   "directive": "RULE-SET",
+   "updatedAt": "2026-07-29T10:07:48-07:00"
   },
   {
    "path": "sets/region/cn-ipv6.list",
@@ -28,7 +30,8 @@
    "tags": [],
    "ruleCount": 2040,
    "layer": "authored",
-   "directive": "RULE-SET"
+   "directive": "RULE-SET",
+   "updatedAt": "2026-07-29T10:07:48-07:00"
   },
   {
    "path": "https://anti-ad.net/surge.txt",
