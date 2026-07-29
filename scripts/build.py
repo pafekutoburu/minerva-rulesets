@@ -57,6 +57,23 @@ MIRRORED_SETS = {
     },
 }
 
+# 每份清单的**人话说明** —— 目录是给人读的,`cn-asn` 这种文件名不算说明。
+# 索引层的说明写在 `indexed/sources.json` 里,这张表只管 `sets/`。
+# ⚠️ 说的是「这是什么」,**不是「它该走哪」** —— 那是使用者自己的决定(见 README 第一原则)。
+SET_SUMMARIES = {
+    "sets/region/cn-ipv4.list":
+        "分配给中国大陆组织的 IPv4 网段,来自 APNIC 每日发布的注册数据。"
+        "⚠️ Surge 内建的 GEOIP,CN 已经覆盖了大部分同类需求,这份的价值在于来源可查。",
+    "sets/region/cn-ipv6.list":
+        "分配给中国大陆组织的 IPv6 网段,来自 APNIC 每日发布的注册数据。",
+    "sets/region/cn-asn.list":
+        "分配给中国大陆组织的自治系统号(ASN)。ASN 是「一整家网络运营商」的编号,"
+        "比按 IP 段判断更粗但更稳,来自 APNIC 每日发布的注册数据。",
+    "sets/network/stun.list":
+        "公开 STUN 服务器的域名。STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用它。"
+        "拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。",
+}
+
 NOW = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 # Surge 能直接消费的规则前缀。索引层的格式闸门用它 —— 见 `check_indexed`。
@@ -388,6 +405,7 @@ def build_manifest(generated_counts, indexed_entries):
                 "tags": [],
                 "ruleCount": generated_counts.get(rel) or rule_count(full),
                 "layer": "mirrored" if rel in MIRRORED_SETS else "authored",
+                "summary": SET_SUMMARIES.get(rel, ""),
                 # 自建层一律产出完整规则行(`IP-CIDR,…` / `DOMAIN-SUFFIX,…`)⇒ 恒为 RULE-SET。
                 # 仍然如实写出来,好让消费方**一律读这个字段**,不必按层去猜。
                 "directive": "RULE-SET",
@@ -407,6 +425,18 @@ def build_manifest(generated_counts, indexed_entries):
 
     entries.sort(key=lambda e: e["path"])
     entries.extend(indexed_entries)
+
+    # 🔴 机器判据:**每一条都必须有人话说明。** 目录是给人读的 ——
+    #    没有说明的条目在使用者那边就是一个文件名,他无从判断该不该用。
+    #    新加清单时忘了写说明,CI 直接红,不许悄悄发出去。
+    missing = [e["path"] for e in entries if not e.get("summary")]
+    if missing:
+        print(
+            "::error::下列条目缺人话说明(sets/ 写进 SET_SUMMARIES,索引层写进 "
+            "indexed/sources.json 的 summary):\n  " + "\n  ".join(missing),
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
 
     manifest = {
         "schemaVersion": 1,
