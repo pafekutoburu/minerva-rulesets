@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-08-05T04:52:48Z",
+ "generatedAt": "2026-08-06T04:53:12Z",
  "entries": [
   {
    "path": "sets/network/stun.list",
@@ -25,7 +25,7 @@
    "displayName": "中国大陆自治系统号(ASN)",
    "category": "region",
    "tags": [],
-   "ruleCount": 6398,
+   "ruleCount": 6397,
    "layer": "authored",
    "summary": "分配给中国大陆组织的自治系统号(ASN)。ASN 是「一整家网络运营商」的编号,比按 IP 段判断更粗但更稳,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
@@ -36,7 +36,7 @@
    "displayName": "中国大陆 IPv4 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 8788,
+   "ruleCount": 8789,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv4 网段,来自 APNIC 每日发布的注册数据。⚠️ Surge 内建的 GEOIP,CN 已经覆盖了大部分同类需求,这份的价值在于来源可查。",
    "directive": "RULE-SET",
@@ -109,7 +109,7 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 171867
+   "ruleCount": 172173
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
