@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-08-07T04:17:21Z",
+ "generatedAt": "2026-08-07T07:06:42Z",
  "entries": [
   {
    "path": "sets/network/stun.list",
@@ -71,7 +71,8 @@
     "listURL": "https://anti-ad.net/surge.txt"
    },
    "ruleCount": 102747,
-   "updatedAt": "2026-08-04T20:08:04Z"
+   "updatedAt": "2026-08-04T20:08:04Z",
+   "contentHash": "4b631df41cdcedfa1f6a433dbdf3d40a99176c10377d5bd549ccebba3f341060"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -90,7 +91,8 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
    },
-   "ruleCount": 903
+   "ruleCount": 903,
+   "contentHash": "632a406529c2528550a8bb19c959ee3b62ae6a604ef12b02b3a40fc11ed211fa"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt",
@@ -109,7 +111,8 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 172500
+   "ruleCount": 172500,
+   "contentHash": "408d55c7ca85b344f06627f7555e8a954da255fce377fe69460085d7bf7d87a0"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -127,7 +130,8 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt"
    },
-   "ruleCount": 164
+   "ruleCount": 164,
+   "contentHash": "219dae28216a5023a2c338e51efc3627db6b6aa59a98ee0796846062ddcee16d"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/icloud.txt",
@@ -145,7 +149,8 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/icloud.txt"
    },
-   "ruleCount": 53
+   "ruleCount": 53,
+   "contentHash": "5269dec21f9685f7e556af8492bcbe95910ee56d1af8c60f9d7e2c62ae9b0000"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/google.txt",
@@ -163,7 +168,8 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/google.txt"
    },
-   "ruleCount": 112
+   "ruleCount": 112,
+   "contentHash": "6756b5cfdd08f8eec74c2865ace6d1fc91163c3d6c3d5cdee3a4b944d68cbc00"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/telegramcidr.txt",
@@ -181,7 +187,8 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/telegramcidr.txt"
    },
-   "ruleCount": 12
+   "ruleCount": 12,
+   "contentHash": "0d7d5252552d4dfd75c5b76bab4bfdb3313c1946611e22039d06008c7ef3c678"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt",
@@ -200,7 +207,8 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
    },
-   "ruleCount": 4368
+   "ruleCount": 4368,
+   "contentHash": "0523b6b628a9f5c8baf473e522c7fc33b657d5bdaa52285ea4f3a35501e55474"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
@@ -219,7 +227,8 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt"
    },
-   "ruleCount": 10
+   "ruleCount": 10,
+   "contentHash": "2472d169a5ec58d228544e10c79772985e992a780dac80ff08babe69caa708d4"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt",
@@ -238,7 +247,8 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt"
    },
-   "ruleCount": 829
+   "ruleCount": 829,
+   "contentHash": "f6a1f6efd78794e60f8f81d4aa0758e1a05ffdc6e7a309712a1d7274de674664"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt",
@@ -256,7 +266,8 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt"
    },
-   "ruleCount": 130
+   "ruleCount": 130,
+   "contentHash": "757dd98454fbf8a576a2b5f7a497d4dacffd70fa43ac2b742e663db3788c02f0"
   }
  ]
 }

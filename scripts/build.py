@@ -7,8 +7,19 @@ minerva-rulesets 生成器。
   manifest.json    ← app 与其他使用者消费的目录,覆盖自建层 + 索引层。
 
 **索引层(indexed)只写地址,不托管内容。** 它的条目来自 `indexed/sources.json`(手工策展),
-本脚本会去拉一次上游**只为了数条数、看格式、读 Last-Modified**,拉回来的内容随即丢弃、
+本脚本会去拉一次上游**只为了数条数、看格式、算内容指纹**,拉回来的内容随即丢弃、
 一个字节都不落进本仓。这样既能给使用者一个真实的条数,又不产生任何再分发行为。
+
+🔴 **索引层的「新鲜度」是自己记出来的,不是问上游要的**(2026-08-07 立此规矩):
+`raw.githubusercontent.com` **根本不发 `Last-Modified`**,而生态里绝大多数清单都托管在那儿 ——
+只靠这个头,11 条索引里 10 条永远没有时间。两条看着更聪明的路都实测排除了:
+  · **查 GitHub API 的文件提交时间** —— `Loyalsoldier/surge-rules` 的 release 是**每日 force-push
+    重建的孤儿分支**,任何文件的提交历史都只有 1 条、日期恒为今天 ⇒ 9 条会永远显示「刚更新」。
+  · **解析上游文件头里的自称时间** —— 逐源格式不同(Loyalsoldier 压根没有表头),
+    逐源正则太脆,而且只多救得到一条。
+所以改用**内容指纹**:每轮存一份 sha256,**指纹没变就沿用上次的时间**,变了才动。
+这和自建层 `write_list` 那条「内容没变不重写」是同一条纪律的两种写法 ——
+「跑过一次」不等于「内容变过」,而使用者想知道的永远是后者。
 
 硬约束:
   1. **只读网络与仓内文件**,绝不读任何本机路径。
@@ -18,6 +29,7 @@ minerva-rulesets 生成器。
   3. 只用标准库,CI 上不需要 pip install。
 """
 
+import hashlib
 import ipaddress
 import json
 import os
@@ -142,6 +154,9 @@ def parse_apnic(text):
 
 def write_list(rel_path, title, source_note, lines):
     """
+    返回 `(条数, 这一轮有没有重写)`。**后者 manifest 要用** ——
+    git log 看不到还没提交的改动,不告诉它就会把「今天变的」记成「上次变的」。
+
     🔴 **表头里绝不写 Policy。** 见模块头注释第 2 条。
 
     🔴 **内容没变就不重写。** 表头里有生成时间,无脑重写会让每天的定时任务都产生一条
@@ -159,7 +174,7 @@ def write_list(rel_path, title, source_note, lines):
                         if s and not s.startswith("#")]
         if existing == lines:
             print(f"  {rel_path}: {len(lines)} 条(内容未变,保持原文件)")
-            return len(lines)
+            return len(lines), False
 
     body = "\n".join(lines)
     header = (
@@ -172,33 +187,41 @@ def write_list(rel_path, title, source_note, lines):
     with open(path, "w", encoding="utf-8") as f:
         f.write(header + body + "\n")
     print(f"  {rel_path}: {len(lines)} 条")
-    return len(lines)
+    return len(lines), True
 
 
 def build_sets():
+    """返回 `(每份清单的条数, 这一轮被重写过的清单)`。后者见 `write_list` 的注释。"""
     print("[1/3] 从 APNIC 生成自建清单…")
     v4, v6, asn = parse_apnic(fetch_apnic())
     src = "APNIC delegated-apnic-latest(注册机构一手数据)"
-    counts = {}
-    counts["sets/region/cn-ipv4.list"] = write_list(
+    counts, rewritten = {}, set()
+
+    def record(rel, result):
+        counts[rel], changed = result
+        if changed:
+            rewritten.add(rel)
+
+    record("sets/region/cn-ipv4.list", write_list(
         "sets/region/cn-ipv4.list", "中国大陆 IPv4 地址段", src,
         [f"IP-CIDR,{n},no-resolve" for n in sorted(v4, key=lambda n: int(n.network_address))],
-    )
-    counts["sets/region/cn-ipv6.list"] = write_list(
+    ))
+    record("sets/region/cn-ipv6.list", write_list(
         "sets/region/cn-ipv6.list", "中国大陆 IPv6 地址段", src,
         [f"IP-CIDR6,{n},no-resolve" for n in sorted(v6, key=lambda n: int(n.network_address))],
-    )
-    counts["sets/region/cn-asn.list"] = write_list(
+    ))
+    record("sets/region/cn-asn.list", write_list(
         "sets/region/cn-asn.list", "中国大陆自治系统号(ASN)", src,
         [f"IP-ASN,{a},no-resolve" for a in sorted(set(asn))],
-    )
-    counts["sets/network/stun.list"] = build_stun()
-    return counts
+    ))
+    record("sets/network/stun.list", build_stun())
+    return counts, rewritten
 
 
 def build_stun():
     """
     公开 STUN 服务器的主机名。**内容来自 pradt2/always-online-stun**(MIT),见 MIRRORED_SETS 注释。
+    返回值同 `write_list` —— `(条数, 这一轮有没有重写)`。
 
     上游是 `host:port` 一行一条,Surge 的 `DOMAIN-SET` 吃不了带端口的行,
     所以这里剥掉端口、去掉裸 IP(`DOMAIN,` 只认域名)、去重排序,产出 `RULE-SET` 格式。
@@ -224,6 +247,39 @@ def build_stun():
         "pradt2/always-online-stun candidates.txt(MIT)—— 剥端口去重,内容为上游所有",
         [f"DOMAIN,{h}" for h in sorted(hosts)],
     )
+
+
+# ------------------------------------------------- 上一版 manifest(索引层新鲜度的对照)
+
+def previous_manifest():
+    """
+    上一次已提交的 manifest。**索引层的新鲜度全靠它做对照** —— 没有它就只能问上游要时间,
+    而上游多半给不出(见模块头注释)。读不到就当没有,照常继续:第一次跑、或者文件坏了,
+    结果是「这一轮所有索引条目都算第一次见到」,**只会退回「不知道」,不会编出一个时间**。
+    """
+    if not os.path.exists(MANIFEST):
+        return {}
+    try:
+        with open(MANIFEST, encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def entries_by_path(manifest):
+    """按 `path` 索引 —— 索引层的 `path` 就是它的 `listURL`,是稳定键。
+    策展表里换了地址 = 换了一条,历史对不上是**对的**,不该硬认。"""
+    return {e["path"]: e for e in manifest.get("entries", []) if e.get("path")}
+
+
+def parse_stamp(value):
+    """把 manifest 里的时间串读回来比大小。读不懂就当没有 —— 不猜。"""
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except ValueError:
+        return None
 
 
 # ---------------------------------------------------------------- 索引层
@@ -273,7 +329,10 @@ def first_rule_line(text):
 
 def check_indexed(entry):
     """
-    去上游拉一次,**只为了数条数、验格式、读 Last-Modified**;内容随即丢弃,不落盘。
+    去上游拉一次,**只为了数条数、验格式、算指纹、读 Last-Modified**;内容随即丢弃,不落盘。
+
+    返回 `(条数, 上游自称的时间, 内容指纹)`;拉不到时三个全是 `None` ——
+    **「这一轮没测到」和「测到了是空的」必须能分辨**,见下。
 
     🔴 两类失败必须分开处理,合并就会说谎:
       · **拉不到**(网络/404)⇒ 警告,**不写 ruleCount**。绝不写 0 ——
@@ -285,11 +344,12 @@ def check_indexed(entry):
     req = urllib.request.Request(url, headers={"User-Agent": "minerva-rulesets-builder"})
     try:
         with urllib.request.urlopen(req, timeout=90) as resp:
-            text = resp.read().decode("utf-8", errors="replace")
+            raw = resp.read()
+            text = raw.decode("utf-8", errors="replace")
             last_modified = resp.headers.get("Last-Modified")
     except (urllib.error.URLError, TimeoutError, OSError) as exc:
         print(f"  ⚠️ {entry['id']}: 拉不到({exc})—— 不写 ruleCount,绝不写 0", file=sys.stderr)
-        return None, None
+        return None, None, None
 
     head = first_rule_line(text)
     directive = entry.get("directive", "RULE-SET")
@@ -320,7 +380,9 @@ def check_indexed(entry):
                 timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
         except (TypeError, ValueError):
             stamp = None  # 上游给了个读不懂的时间 ⇒ 不写,别编。
-    return rule_count_text(text), stamp
+    # 指纹拿**原始字节**算 —— 解码时的 `errors="replace"` 会把坏字节折成同一个替换符,
+    # 拿解码后的文本算,两份不同的内容可能得到同一个指纹。
+    return rule_count_text(text), stamp, hashlib.sha256(raw).hexdigest()
 
 
 def load_indexed():
@@ -331,11 +393,47 @@ def load_indexed():
         return json.load(f).get("entries", [])
 
 
-def build_indexed():
+def freshness_of(entry_id, digest, upstream_stamp, previous):
+    """
+    这一条**内容上次真的变了**是什么时候 —— 返回 `(时间, 要存下来的指纹, 日志用的一句话)`。
+
+    🔴 **判定顺序即判据**,四种情形的后果完全不同,合并任意两种都会说谎:
+
+      1. **这一轮没拉到** ⇒ 原样保留上次的指纹与时间。
+         抹掉指纹会让下一轮把它当「第一次见到」——**一次网络抖动就清空这条的新鲜度历史**,
+         而且下一轮还会顺手把「刚开始看」说成「刚更新」。什么都没测到时,什么都别动。
+      2. **指纹和上次一样** ⇒ **沿用上次的时间,一动不动**(上次是「没有」就继续「没有」)。
+         哪怕上游的 `Last-Modified` 往前跳了也不跟 —— 那是「它重新生成了一份一模一样的」,
+         不是「内容变了」。**这一条就是整个功能的地基**:少了它,日更型上游会永远显示「刚更新」。
+      3. **指纹变了**(且我们有历史指纹)⇒ 内容确实动了。优先用上游自称的 `Last-Modified`
+         (它比我们的观察更精确),但**倒退或指向未来的自称一律不信**,退回本次运行时间 ——
+         我们至少确切知道「这一刻它和上次不一样了」,误差不超过一个运行间隔。
+      4. **第一次见到**(没有历史指纹,含本次迁移)⇒ 上游给了时间就用,**没给就不写**。
+         🔴 **绝不拿「现在」顶替**:「我们刚开始看它」和「它刚更新过」是两回事。
+         这条会自愈 —— 内容一变就落到情形 3,等到的是真话。
+    """
+    prev = previous.get(entry_id) or {}
+    prev_hash, prev_stamp = prev.get("contentHash"), prev.get("updatedAt")
+
+    if digest is None:                                   # 1. 没测到
+        return prev_stamp, prev_hash, "这轮没拉到,沿用上次"
+    if prev_hash == digest:                              # 2. 内容没变
+        return prev_stamp, digest, "内容未变"
+    if prev_hash:                                        # 3. 内容变了
+        now, claimed, floor = parse_stamp(NOW), parse_stamp(upstream_stamp), parse_stamp(prev_stamp)
+        credible = claimed is not None and claimed <= now and (floor is None or claimed > floor)
+        return (upstream_stamp if credible else NOW), digest, \
+            "内容有变动(上游自称)" if credible else "内容有变动(本轮观察到)"
+    return upstream_stamp, digest, \
+        "第一次见到" + ("" if upstream_stamp else ",上游没给时间 ⇒ 暂不写")  # 4.
+
+
+def build_indexed(previous):
     print("[2/3] 校验索引层上游…")
     out = []
     for entry in load_indexed():
-        count, stamp = check_indexed(entry)
+        count, upstream_stamp, digest = check_indexed(entry)
+        stamp, digest, note = freshness_of(entry["listURL"], digest, upstream_stamp, previous)
         item = {
             "path": entry["listURL"],          # 索引层不在本仓,path 就是它的真实地址
             "displayName": entry["displayName"],
@@ -352,7 +450,13 @@ def build_indexed():
             item["ruleCount"] = count
         if stamp:
             item["updatedAt"] = stamp
-        print(f"  {entry['id']}: {count if count is not None else '拉不到'} 条")
+        # 指纹是**管线自己的记忆**,app 不消费它(解码器只取已知键,多这个字段无影响)。
+        # 存在 manifest 里而不另开状态文件:manifest 本来就是已提交的状态,
+        # 再开一份就会有两份真相,而且它俩迟早对不上。
+        if digest:
+            item["contentHash"] = digest
+        print(f"  {entry['id']}: {count if count is not None else '拉不到'} 条"
+              f" · {note} · {stamp or '时间未知'}")
         out.append(item)
     return out
 
@@ -383,7 +487,35 @@ def git_last_commit_times():
     return times
 
 
-def build_manifest(generated_counts, indexed_entries):
+def assert_unchanged_content_keeps_its_time(old_entries, entries):
+    """
+    🔴 机器判据:**内容指纹没变,更新时间就不许动。**
+
+    这是「新鲜度」整个功能的地基。一旦哪轮改动让没变过的清单跟着刷新时间,每份清单都会
+    永远显示「刚更新」,这一列当场作废 —— **本项目已经栽过一次**(上一版管线内容没变也提交,
+    CI 第一次跑绿当天就被抓出来)。判据写在这儿,是为了不再依赖谁记得住注释。
+
+    ⚠️ 它只管「没变的不许动」这一个方向。内容真变了时间该怎么定,是 `freshness_of` 的事。
+    """
+    lied = []
+    for e in entries:
+        prev = old_entries.get(e["path"], {})
+        if not prev.get("contentHash") or prev["contentHash"] != e.get("contentHash"):
+            continue                       # 没有历史 / 内容真变了 —— 时间该动就动
+        if prev.get("updatedAt") != e.get("updatedAt"):
+            lied.append((e["path"], prev.get("updatedAt"), e.get("updatedAt")))
+    if not lied:
+        return
+    print(
+        "::error::下列条目的内容指纹没变,更新时间却动了 —— 这会把「它半年没动过」"
+        "说成「刚更新」:\n  " + "\n  ".join(
+            f"{p}: {before!r} → {after!r}" for p, before, after in lied),
+        file=sys.stderr,
+    )
+    raise SystemExit(1)
+
+
+def build_manifest(generated_counts, indexed_entries, old, rewritten):
     print("[3/3] 生成 manifest.json…")
     times = git_last_commit_times()
     entries = []
@@ -415,7 +547,13 @@ def build_manifest(generated_counts, indexed_entries):
             #    而使用者想知道的是后者。配合 write_list 的「内容没变不重写」,
             #    git 时间才真正等于「这份内容上次变化的时间」。
             # ⚠️ 拿不到就**不写这个字段**(全新文件尚未提交),绝不用「现在」顶替。
-            stamp = times.get(rel)
+            #
+            # ⚠️ **本轮刚重写的文件是唯一的例外**:git log 看到的是**上一次**提交,
+            #    而这次的改动还没提交 ⇒ 会把「今天变的」记成「上次变的」,慢一整轮才回填
+            #    (实测:cn-asn.list 在 08-06 那轮被重写,那轮的 manifest 却记着 07-29)。
+            #    方向虽然保守(只会说得更旧),但它就是不准。`write_list` 已经知道自己有没有
+            #    重写,直接用它 —— 这不是「拿现在顶替」:我们**确切知道**内容这一刻变了。
+            stamp = NOW if rel in rewritten else times.get(rel)
             if stamp:
                 entry["updatedAt"] = stamp
             # 🔴 标了 mirrored 就必须说清内容是谁的 —— 只标层级不标出处等于没标。
@@ -438,6 +576,8 @@ def build_manifest(generated_counts, indexed_entries):
         )
         raise SystemExit(1)
 
+    assert_unchanged_content_keeps_its_time(entries_by_path(old), entries)
+
     manifest = {
         "schemaVersion": 1,
         "baseURL": BASE_URL,
@@ -447,16 +587,10 @@ def build_manifest(generated_counts, indexed_entries):
 
     # 🔴 只有 generatedAt 变了就不重写 —— 与 write_list 同一条纪律。
     #    否则每天都会产生一条纯时间戳提交,把仓库历史变成噪音。
-    if os.path.exists(MANIFEST):
-        try:
-            with open(MANIFEST, encoding="utf-8") as f:
-                old = json.load(f)
-            if {k: v for k, v in old.items() if k != "generatedAt"} == \
-               {k: v for k, v in manifest.items() if k != "generatedAt"}:
-                print(f"  条目 {len(entries)}(内容未变,保持原文件)")
-                return
-        except (json.JSONDecodeError, OSError):
-            pass  # 读不懂就当没有,照常重写。
+    if old and {k: v for k, v in old.items() if k != "generatedAt"} == \
+       {k: v for k, v in manifest.items() if k != "generatedAt"}:
+        print(f"  条目 {len(entries)}(内容未变,保持原文件)")
+        return
 
     with open(MANIFEST, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=1, sort_keys=False)
@@ -470,9 +604,12 @@ def build_manifest(generated_counts, indexed_entries):
 
 
 def main():
-    counts = build_sets()
-    indexed_entries = build_indexed()
-    build_manifest(counts, indexed_entries)
+    # 🔴 **在任何写入之前**读一次上一版 manifest:索引层的新鲜度全靠它做「内容变没变」的对照,
+    #    而 build_sets 会改 sets/ 下的文件。只读一次,两个地方共用。
+    old = previous_manifest()
+    counts, rewritten = build_sets()
+    indexed_entries = build_indexed(entries_by_path(old))
+    build_manifest(counts, indexed_entries, old, rewritten)
     print("完成。")
 
 
