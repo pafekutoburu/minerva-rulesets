@@ -47,6 +47,21 @@ INDEXED_SOURCES = os.path.join(REPO, "indexed", "sources.json")
 APNIC_URL = "https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest"
 STUN_CANDIDATES_URL = \
     "https://raw.githubusercontent.com/pradt2/always-online-stun/master/candidates.txt"
+
+# 微软**官方文档化**的端点服务。`clientrequestid` 是微软要求的调用方标识,
+# 这里是一个**写死的常量 GUID** —— 不是本机生成、不携带任何本机信息。
+O365_URL = ("https://endpoints.office.com/endpoints/worldwide"
+            "?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7")
+
+# GitHub 官方端点清单(一手)。
+GITHUB_META_URL = "https://api.github.com/meta"
+
+# 🔴 GitHub `meta` 里只取这几个键,**这是一次取舍,理由必须写进 summary**:
+#   `actions` 一个键就 7297 条 —— 那是 **Azure 的地址段**,不是 GitHub 自己的服务端点,
+#   照单全收会把清单撑爆而且答非所问。`codespaces`(191)/`copilot`(17) 同理:
+#   都是别人家的云,只是 GitHub 在上面跑东西。
+# ⚠️ 这是「这些地址**是什么**」的判断,不是「它**该走哪**」—— 不违第一原则。
+GITHUB_META_KEYS = ("web", "api", "git", "packages", "pages")
 BASE_URL = "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/"
 
 # 🔴 **层级是数据,不是目录。**
@@ -84,6 +99,24 @@ SET_SUMMARIES = {
     "sets/network/stun.list":
         "公开 STUN 服务器的域名。STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用它。"
         "拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。",
+    "sets/microsoft/microsoft-365.list":
+        "Microsoft 365(Outlook、Teams、OneDrive、Office 网页版等)用到的服务域名,"
+        "取自微软官方发布的端点清单,每天自动跟随。"
+        "⚠️ 这份只有域名;微软同时公布的 IP 段暂未收录。"
+        "另有两个域名模式(通配符在中间)Surge 表达不了,已排除。",
+    "sets/dev/github.list":
+        "GitHub 自家服务(网页、API、git 传输、Packages、Pages)的 IP 段,取自 GitHub 官方接口,每天自动跟随。"
+        "⚠️ 只有 IP 段没有域名 —— 官方没发布域名清单,我们不替它编。"
+        "⚠️ 不含 Actions/Codespaces/Copilot:那几项跑在 Azure 上,官方给的是 Azure 的地址段(七千多条),"
+        "不是 GitHub 自己的服务端点。",
+    "sets/ai/openai.list":
+        "OpenAI(ChatGPT 网页版与 API)用到的服务域名,照 OpenAI 官方网络文档整理。"
+        "🔴 手工维护,不自动跟随上游变更 —— 官方那份是网页文档、机器读不了。"
+        "看「新鲜度」就知道它多久没对照过了。",
+    "sets/ai/anthropic.list":
+        "Anthropic(Claude 网页版与 API)用到的服务域名与官方公布的固定 IP 段,照 Anthropic 官方文档整理。"
+        "🔴 手工维护,不自动跟随上游变更。官方明确写了这些 IP「不会无通知变更」,"
+        "但域名部分仍需人工对照,看「新鲜度」判断新旧。",
 }
 
 NOW = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
@@ -192,7 +225,7 @@ def write_list(rel_path, title, source_note, lines):
 
 def build_sets():
     """返回 `(每份清单的条数, 这一轮被重写过的清单)`。后者见 `write_list` 的注释。"""
-    print("[1/3] 从 APNIC 生成自建清单…")
+    print("[1/3] 从一手来源生成自建清单…")
     v4, v6, asn = parse_apnic(fetch_apnic())
     src = "APNIC delegated-apnic-latest(注册机构一手数据)"
     counts, rewritten = {}, set()
@@ -215,6 +248,10 @@ def build_sets():
         [f"IP-ASN,{a},no-resolve" for a in sorted(set(asn))],
     ))
     record("sets/network/stun.list", build_stun())
+    record("sets/microsoft/microsoft-365.list", build_microsoft365())
+    record("sets/dev/github.list", build_github())
+    # ⚠️ `sets/ai/` 下那两份是**手工维护**的,不在这里生成 —— 它们由人对着厂商官方文档整理,
+    #    管线只负责在 manifest 里如实记录它们的条数与最后改动时间。见 SET_SUMMARIES。
     return counts, rewritten
 
 
@@ -247,6 +284,87 @@ def build_stun():
         "pradt2/always-online-stun candidates.txt(MIT)—— 剥端口去重,内容为上游所有",
         [f"DOMAIN,{h}" for h in sorted(hosts)],
     )
+
+
+# ---------------------------------------------------------------- 一手来源:厂商官方端点
+
+def fetch_json(url, timeout=90):
+    req = urllib.request.Request(url, headers={"User-Agent": "minerva-rulesets-builder"})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode("utf-8", errors="replace"))
+
+
+def build_microsoft365():
+    """
+    Microsoft 365 的服务域名,来自**微软自己发布的端点服务**(一手,不是谁的策展)。
+
+    通配符形态实测(2026-08-07:190 个模式):
+      `*.aadrm.com`        70 个 → `DOMAIN-SUFFIX,aadrm.com`(前导通配 = 后缀匹配)
+      `outlook.office.com` 118 个 → `DOMAIN,outlook.office.com`
+      🔴 `*cdn.onenote.net` / `autodiscover.*.onmicrosoft.com` 2 个 → **Surge 表达不了**
+
+    🔴 **表达不了的那几个要打印出来,不许静默丢。** 砍掉覆盖面却不吭声,
+    读起来就像「全覆盖」—— 本项目对「东西在但不起作用」这类静默失真是零容忍的。
+
+    v1 只做域名。那 93 个 IP 段留给以后(summary 里已写明这份是域名层),
+    混进同一份清单会让「这是什么」这个问题有两个答案。
+    """
+    groups = fetch_json(O365_URL)
+    suffixes, exacts, skipped = set(), set(), []
+    for g in groups:
+        for pattern in g.get("urls", []):
+            p = pattern.strip().lower()
+            if not p:
+                continue
+            if p.startswith("*.") and "*" not in p[2:]:
+                suffixes.add(p[2:])
+            elif "*" not in p:
+                exacts.add(p)
+            else:
+                skipped.append(p)
+
+    if skipped:
+        # 去重后打印:让「少了几个」这件事在日志里看得见。
+        for p in sorted(set(skipped)):
+            print(f"  ⚠️ microsoft-365: 跳过 {p!r} —— 通配符不在开头,Surge 表达不了",
+                  file=sys.stderr)
+
+    # 已被某个后缀覆盖的精确域名就不再单列 —— 同一件事写两遍是噪音,不是更安全。
+    exacts = {d for d in exacts
+              if not any(d == s or d.endswith("." + s) for s in suffixes)}
+    lines = ([f"DOMAIN-SUFFIX,{d}" for d in sorted(suffixes)]
+             + [f"DOMAIN,{d}" for d in sorted(exacts)])
+    return write_list(
+        "sets/microsoft/microsoft-365.list", "Microsoft 365 服务域名",
+        "Microsoft 365 官方端点服务 endpoints.office.com(厂商一手数据)", lines)
+
+
+def build_github():
+    """
+    GitHub 自家服务的 IP 段,来自 **GitHub 官方 `api.github.com/meta`**(一手)。
+
+    取哪几个键见 `GITHUB_META_KEYS` 的注释 —— **那是一次取舍,summary 里说清楚了**。
+    ⚠️ 这份**只有 IP 段没有域名**:GitHub 官方没发布域名清单,我们不替它编一个。
+    """
+    meta = fetch_json(GITHUB_META_URL)
+    v4, v6 = set(), set()
+    for key in GITHUB_META_KEYS:
+        for cidr in meta.get(key, []):
+            try:
+                net = ipaddress.ip_network(cidr, strict=False)
+            except ValueError:
+                print(f"  ⚠️ github: 读不懂的网段 {cidr!r},跳过", file=sys.stderr)
+                continue
+            (v4 if net.version == 4 else v6).add(net)
+
+    lines = ([f"IP-CIDR,{n},no-resolve"
+              for n in sorted(v4, key=lambda n: int(n.network_address))]
+             + [f"IP-CIDR6,{n},no-resolve"
+                for n in sorted(v6, key=lambda n: int(n.network_address))])
+    return write_list(
+        "sets/dev/github.list", "GitHub 服务 IP 段",
+        f"GitHub 官方 api.github.com/meta 的 {'/'.join(GITHUB_META_KEYS)} 段(厂商一手数据)",
+        lines)
 
 
 # ------------------------------------------------- 上一版 manifest(索引层新鲜度的对照)
@@ -515,9 +633,35 @@ def assert_unchanged_content_keeps_its_time(old_entries, entries):
     raise SystemExit(1)
 
 
+def assert_known_times_never_become_unknown(old_entries, entries):
+    """
+    🔴 机器判据:**已经知道的时间,不许退回「不知道」。**
+
+    「这份东西上次变化于 X」一旦知道了就永远知道 —— 内容再怎么变也只会让 X 前移,
+    不可能让我们**忘掉**它。所以这个方向的变化只能是 bug。
+
+    真事(2026-08-07 加这条判据的原因):自建层加进「本轮重写过就用 NOW」之后,
+    出现了这条路径 —— 文件在上一轮被重写(记了 NOW)、那一轮却没提交成,
+    下一轮就成了「没重写 + git 里查无此文件」⇒ **时间凭空消失,而内容一个字节没变**。
+    上面那条 `assert_unchanged_content_keeps_its_time` 抓不到它:那条只管有指纹的索引层。
+    """
+    lost = [(e["path"], old_entries[e["path"]]["updatedAt"])
+            for e in entries
+            if old_entries.get(e["path"], {}).get("updatedAt") and not e.get("updatedAt")]
+    if not lost:
+        return
+    print(
+        "::error::下列条目**丢了已知的更新时间**(退回「不知道」)—— 日期只会前移,不会被忘掉,"
+        "这个方向只能是 bug:\n  " + "\n  ".join(f"{p}: 原本 {t!r},现在没有了" for p, t in lost),
+        file=sys.stderr,
+    )
+    raise SystemExit(1)
+
+
 def build_manifest(generated_counts, indexed_entries, old, rewritten):
     print("[3/3] 生成 manifest.json…")
     times = git_last_commit_times()
+    old_entries = entries_by_path(old)
     entries = []
 
     sets_root = os.path.join(REPO, "sets")
@@ -553,7 +697,13 @@ def build_manifest(generated_counts, indexed_entries, old, rewritten):
             #    (实测:cn-asn.list 在 08-06 那轮被重写,那轮的 manifest 却记着 07-29)。
             #    方向虽然保守(只会说得更旧),但它就是不准。`write_list` 已经知道自己有没有
             #    重写,直接用它 —— 这不是「拿现在顶替」:我们**确切知道**内容这一刻变了。
-            stamp = NOW if rel in rewritten else times.get(rel)
+            #
+            # 🔴 第三档**沿用上一版**,少了它会真掉数据:文件在上一轮被重写(记了 NOW)、
+            #    但那一轮**没提交成**,下一轮就变成「没重写 + git 里查无此文件」⇒ 时间凭空消失。
+            #    **内容一个字节没变,已知的日期却退回「不知道」** —— 和索引层「这轮没拉到就沿用上次」
+            #    是同一条纪律。下面 `assert_known_times_never_become_unknown` 守着它。
+            stamp = (NOW if rel in rewritten
+                     else times.get(rel) or old_entries.get(rel, {}).get("updatedAt"))
             if stamp:
                 entry["updatedAt"] = stamp
             # 🔴 标了 mirrored 就必须说清内容是谁的 —— 只标层级不标出处等于没标。
@@ -576,7 +726,8 @@ def build_manifest(generated_counts, indexed_entries, old, rewritten):
         )
         raise SystemExit(1)
 
-    assert_unchanged_content_keeps_its_time(entries_by_path(old), entries)
+    assert_unchanged_content_keeps_its_time(old_entries, entries)
+    assert_known_times_never_become_unknown(old_entries, entries)
 
     manifest = {
         "schemaVersion": 1,

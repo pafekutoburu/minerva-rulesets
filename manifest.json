@@ -1,8 +1,50 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-08-07T07:06:42Z",
+ "generatedAt": "2026-08-07T08:22:26Z",
  "entries": [
+  {
+   "path": "sets/ai/anthropic.list",
+   "displayName": "Anthropic(Claude)服务域名与 IP 段",
+   "category": "ai",
+   "tags": [],
+   "ruleCount": 4,
+   "layer": "authored",
+   "summary": "Anthropic(Claude 网页版与 API)用到的服务域名与官方公布的固定 IP 段,照 Anthropic 官方文档整理。🔴 手工维护,不自动跟随上游变更。官方明确写了这些 IP「不会无通知变更」,但域名部分仍需人工对照,看「新鲜度」判断新旧。",
+   "directive": "RULE-SET"
+  },
+  {
+   "path": "sets/ai/openai.list",
+   "displayName": "OpenAI 服务域名",
+   "category": "ai",
+   "tags": [],
+   "ruleCount": 6,
+   "layer": "authored",
+   "summary": "OpenAI(ChatGPT 网页版与 API)用到的服务域名,照 OpenAI 官方网络文档整理。🔴 手工维护,不自动跟随上游变更 —— 官方那份是网页文档、机器读不了。看「新鲜度」就知道它多久没对照过了。",
+   "directive": "RULE-SET"
+  },
+  {
+   "path": "sets/dev/github.list",
+   "displayName": "GitHub 服务 IP 段",
+   "category": "dev",
+   "tags": [],
+   "ruleCount": 105,
+   "layer": "authored",
+   "summary": "GitHub 自家服务(网页、API、git 传输、Packages、Pages)的 IP 段,取自 GitHub 官方接口,每天自动跟随。⚠️ 只有 IP 段没有域名 —— 官方没发布域名清单,我们不替它编。⚠️ 不含 Actions/Codespaces/Copilot:那几项跑在 Azure 上,官方给的是 Azure 的地址段(七千多条),不是 GitHub 自己的服务端点。",
+   "directive": "RULE-SET",
+   "updatedAt": "2026-08-07T07:52:33Z"
+  },
+  {
+   "path": "sets/microsoft/microsoft-365.list",
+   "displayName": "Microsoft 365 服务域名",
+   "category": "microsoft",
+   "tags": [],
+   "ruleCount": 132,
+   "layer": "authored",
+   "summary": "Microsoft 365(Outlook、Teams、OneDrive、Office 网页版等)用到的服务域名,取自微软官方发布的端点清单,每天自动跟随。⚠️ 这份只有域名;微软同时公布的 IP 段暂未收录。另有两个域名模式(通配符在中间)Surge 表达不了,已排除。",
+   "directive": "RULE-SET",
+   "updatedAt": "2026-08-07T07:52:33Z"
+  },
   {
    "path": "sets/network/stun.list",
    "displayName": "公开 STUN 服务器域名",

@@ -1,0 +1,22 @@
+# Anthropic(Claude)服务域名与 IP 段
+# Source: ① Anthropic 官方 IP 文档 https://platform.claude.com/docs/en/api/ip-addresses
+#         ② Claude Code 官方仓的防火墙白名单
+#            https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh
+# Maintained: 手工维护 —— 不自动跟随上游
+# Checked: 2026-08-07 逐条对照上述两处
+# Rules: 4
+#
+# 🔴 覆盖边界,别当成「Claude 全都在这儿」:
+#   · IP 段是官方明写「不会无通知变更」的那两段,对应 API 与 Console。
+#   · claude.ai 网页版走 CDN,**不在这些 IP 段里**;域名规则能覆盖到它,IP 规则不能。
+#   · 官方那份白名单里的第三方(statsig.com · sentry.io · registry.npmjs.org ·
+#     marketplace.visualstudio.com · update.code.visualstudio.com · vscode.blob.core.windows.net)
+#     **不收** —— 那是 Claude Code 开发容器要用的东西,不是 Anthropic 的服务地址。
+#
+# 官方同时列出了一批**已退役**的 IP(34.162.46.92/32 等五个 /32),
+# 文档明说「如果你以前放行过,请移除」—— 本清单**没有收**它们。
+#
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN,claude.ai
+IP-CIDR,160.79.104.0/21,no-resolve
+IP-CIDR6,2607:6bc0::/48,no-resolve

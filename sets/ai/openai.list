@@ -1,0 +1,24 @@
+# OpenAI 服务域名
+# Source: OpenAI 官方帮助文「Network recommendations for ChatGPT errors on web and apps」
+#         https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# Maintained: 手工维护 —— 官方那份是网页文档,机器读不了,不会自动跟随
+# Checked: 2026-08-07 逐条对照官方页面(页面自称「Updated: 8 days ago」)
+# Rules: 6
+#
+# 官方那份清单里还有一批**第三方共用基础设施**,本清单**一律不收** ——
+# 它们是很多网站都在用的服务,不是 OpenAI 自己的地址,收进来会让一份叫
+# 「OpenAI 服务域名」的清单名不副实,也会波及跟 OpenAI 无关的流量:
+#   *.ct.sendgrid.net · *.intercom.io · *.intercomcdn.com · js.intercomcdn.com
+#   cdn.workos.com · forwarder.workos.com · setup.workos.com · images.workoscdn.com
+#   workos.imgix.net · challenges.cloudflare.com · js.stripe.com · humb.apple.com
+#   o33249.ingest.sentry.io · o207216.ingest.sentry.io · rum.browser-intake-datadoghq.com
+#
+# 官方另有 ChatGPT 语音的 IP 段(UDP 3478),发布在 https://openai.com/chatgpt-voice.json,
+# 是机器可读的。本清单只做域名,没有收它。
+#
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaistatsig.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,openai.com
+DOMAIN,cdn.openaimerge.com
