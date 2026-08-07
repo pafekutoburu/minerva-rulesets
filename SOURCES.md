@@ -17,10 +17,13 @@
 | `sets/region/cn-ipv4.list`<br>`sets/region/cn-ipv6.list`<br>`sets/region/cn-asn.list` | [APNIC `delegated-apnic-latest`](https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest) | 公开注册数据 | 由 `scripts/build.py` 从注册机构每日发布的分配记录直接推导。**不涉及任何人对「哪些值得收进来」的编辑判断**,因此也没有别人的策展可以侵犯。 |
 | `sets/microsoft/microsoft-365.list` | [Microsoft 365 官方端点服务](https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7)([微软文档](https://learn.microsoft.com/microsoft-365/enterprise/microsoft-365-endpoints)) | 厂商自己公布的服务数据 | 每天自动跟随。**只取域名**;微软同时公布的 IP 段暂未收录。⚠️ 有两个模式(`*cdn.onenote.net`、`autodiscover.*.onmicrosoft.com`)通配符在中间,**Surge 表达不了,已排除**——构建日志里看得见,不是悄悄丢的。 |
 | `sets/dev/github.list` | [GitHub 官方 `api.github.com/meta`](https://docs.github.com/rest/meta/meta) | 厂商自己公布的服务数据 | 每天自动跟随。**只有 IP 段没有域名**——官方没发布域名清单,我们不替它编。⚠️ **只取 `web`/`api`/`git`/`packages`/`pages`**;`actions` 一个键就 7000+ 条**且是 Azure 的地址段**(Codespaces/Copilot 同理),那是别人家的云,不是 GitHub 自己的服务端点。 |
+| `sets/network/stun.list` | **本仓 CI 自己的实测**;候选名单来自 [pradt2/always-online-stun](https://github.com/pradt2/always-online-stun) 的 `candidates.txt`(MIT,如实署名) | 实测结果;候选名单 MIT | CI 每天向每台候选与在册服务器发**真实 STUN Binding Request**(`scripts/stun_check.py`),只收 **7 天内有响应**的;连续 7 天无响应才移除。上游把还活着的服务器从候选池剔掉时,我们**不跟着剔**——成员退出的唯一途径是我们自己的实测。死掉的 STUN 服务器不会泄漏任何人的 IP,所以移除无安全代价;哪天它复活,次日就回清单。**2026-08-07 从 `mirrored` 升级**(升级前它只是候选池的机械变换)。 |
 
 > 🔴 **厂商官方端点算不算「一手」?算。** 判据和 APNIC 那三条一样:内容来自**权威本身**
 > (地址的分配者 / 服务的运营者),不是第三方对「哪些值得收」的编辑判断。
-> 对照 `sets/network/stun.list` 之所以只能标 `mirrored`,正是因为那份的取舍是 pradt2 做的。
+> `sets/network/stun.list` 的「一手」则是**本仓自己的实测**:候选线索来自 pradt2,
+> 但每一条能不能进清单,由我们每天发的真实 STUN 请求裁决 ——
+> 它曾因「取舍全是 pradt2 做的」只配标 `mirrored`(2026-07-29 至 2026-08-07),验活判据建成后才升级。
 
 > APNIC 的 delegated 文件记录的是「这段地址 / 这个 ASN 分配给了哪个经济体的组织」这一注册事实。
 > ⚠️ 文件第五列**三种类型三种含义**:`ipv4` 是地址**数量**(要自己切成 CIDR)、`ipv6` **直接是前缀长度**、
@@ -28,18 +31,13 @@
 
 ---
 
-## 镜像层(`sets/network/stun.list`)—— 内容在本仓,但**内容是别人的**
+## 镜像层 —— 现无条目
 
-| 清单 | 上游 | 许可证 | 我们做了什么 |
-|---|---|---|---|
-| `sets/network/stun.list`(621 条) | [pradt2/always-online-stun](https://github.com/pradt2/always-online-stun) 的 `candidates.txt` | MIT(明许再分发) | 只做了**机械变换**:剥掉端口、去掉裸 IP、去重排序,产出 `DOMAIN,` 规则行 |
-
-> 🔴 **它为什么不标 `authored`。** 内容 100% 来自上游,我们**没有加入任何属于自己的判断** ——
-> 收哪些、不收哪些,全是他们的工作。标成「我们写的」就是假背书。
-> 上游是 `host:port` 格式,Surge 的 `DOMAIN-SET` 消费不了,所以这一份只能托管、不能索引。
->
-> **它什么时候能升 `authored`:** 等本仓有了自己的收录判据 —— 自己验活、自己从厂商文档补充、
-> 自己剔除死条目。**标签跟着现实走,不跟着愿望走。**
+> 上一个也是唯一一个成员是 `sets/network/stun.list`(2026-07-29 收录):当时它的内容 100%
+> 照抄上游候选池,「收哪些、不收哪些」全是 pradt2 的工作,标 `authored` 就是假背书。
+> **2026-08-07 起它的收录判据自建**(CI 每日验活,见上面自建层表),这才升了级 ——
+> 当初写下的升级条件(「自己验活、自己剔除死条目」)如今兑现,**标签跟着现实走,不跟着愿望走**。
+> 层级本身保留:将来再有「内容是别人的、我们在许可范围内托管一份」的清单,仍走这一层、如实署名。
 
 ---
 

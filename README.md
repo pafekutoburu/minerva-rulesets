@@ -37,8 +37,9 @@ sets/Proxy/Netflix.list      ❌  它说的是「Netflix 该走代理」——�
 
 索引层**只记录地址,不复制任何内容**。这既是尊重上游的许可证,也意味着你拿到的永远是上游的最新版本。
 
-镜像层只有在**上游许可证明许再分发、而它的原始格式 Surge 又消费不了**时才会出现——目前只有一条
-(STUN 服务器域名)。它**不会**被伪装成自建:`manifest.json` 里 `layer` 与 `upstream` 两个字段
+镜像层只有在**上游许可证明许再分发、而它的原始格式 Surge 又消费不了**时才会出现——**目前没有条目**
+(此前唯一的一条是 STUN 服务器域名,2026-08-07 起收录判据自建、已升为自建层,见下)。
+镜像条目**不会**被伪装成自建:`manifest.json` 里 `layer` 与 `upstream` 两个字段
 都会如实说明。逐条署名见 [`SOURCES.md`](SOURCES.md)。
 
 ---
@@ -76,18 +77,19 @@ DOMAIN-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ic
 | `sets/region/cn-ipv4.list` | 分配给中国大陆的 IPv4 网段 | APNIC 每日发布的注册数据 |
 | `sets/region/cn-ipv6.list` | 分配给中国大陆的 IPv6 网段 | 同上 |
 | `sets/region/cn-asn.list` | 分配给中国大陆的自治系统号 | 同上 |
+| `sets/network/stun.list` | 公开 STUN 服务器域名(条数随验活结果浮动) | **本仓 CI 每日实测验活**;候选名单来自 [pradt2/always-online-stun](https://github.com/pradt2/always-online-stun)(MIT) |
 
-> **别把它们说大:** Surge 内建的 `GEOIP,CN` 已经覆盖了大部分「境内直连」的需求。
-> 这三份的价值在于**来源可查、可以只取 ASN 这一种粒度**,不是替代 `GEOIP,CN`。
+> **别把前三份说大:** Surge 内建的 `GEOIP,CN` 已经覆盖了大部分「境内直连」的需求。
+> 它们的价值在于**来源可查、可以只取 ASN 这一种粒度**,不是替代 `GEOIP,CN`。
+
+> **STUN 那份收的是「实测活着的」**:CI 每天向每台候选发真实 STUN 请求,只收 7 天内有响应的。
+> STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用到它;
+> 拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。
+> 死掉的服务器不会泄漏你的 IP——所以清单不留死条目,它们复活时自会回来。
 
 ### 镜像层
 
-| 清单 | 内容 | 出处 |
-|---|---|---|
-| `sets/network/stun.list` | 公开 STUN 服务器域名(621 条) | [pradt2/always-online-stun](https://github.com/pradt2/always-online-stun),MIT |
-
-> STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用到它。
-> 拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。
+目前没有条目(上一条 STUN 已于 2026-08-07 升为自建层,升级史见 `SOURCES.md`)。
 
 ### 索引层
 
@@ -101,9 +103,12 @@ DOMAIN-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ic
 `.github/workflows/daily-refresh.yml` 每日 **02:00 UTC** 重建自建清单与 `manifest.json`,
 也可以手动触发(`workflow_dispatch`)。
 
-**内容没有变化时不会产生提交**——这样 `manifest.json` 里的 `updatedAt`(取自 git 最后提交时间)
+**清单内容没有变化时,它的 `updatedAt` 不会动**——这样 `manifest.json` 里的时间
 才真正等于「这份内容上次变化的时间」,而不是「上次跑过任务的时间」。
 一份半年没动过的清单就该显示成半年没动过。
+⚠️ 唯一每天都会更新的是 `state/stun-liveness.json`(STUN 验活记忆,管线私有、
+使用者不需要读它):验活时间戳按构造每轮都变,所以**仓库每天会有一条提交**,
+但各份清单的 `updatedAt` 依旧只在内容真变时移动。
 
 ---
 

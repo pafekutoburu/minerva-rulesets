@@ -31,16 +31,16 @@ MAGIC_COOKIE = 0x2112A442
 STUN_CANDIDATES_URL = \
     "https://raw.githubusercontent.com/pradt2/always-online-stun/master/candidates.txt"
 
-# 仪器哨兵:大运营商 / 参考实现的 STUN 服务,拿来回答「**我的 UDP 出站坏没坏**」——
+# 仪器哨兵:大运营商的 STUN 服务,拿来回答「**我的 UDP 出站坏没坏**」——
 # 哨兵全灭时,该怀疑的是仪器不是世界(Cloudflare 都不理我 ⇒ 我这条网断了)。
-# 逐台注明选择理由与「在不在候选池里」(2026-08-07 实测):
+# 逐台注明选择理由与「在不在候选池里」(2026-08-07 实测,三台在 runner 上全部有响应)。
+# ⚠️ 曾考虑 stunserver2024.stunprotocol.org(RFC 参考实现的演示站),P0 实测它 DNS
+#    已解析不了 —— 候选池里有死条目本来就正常,但哨兵要求的恰恰是稳定,剔除。
 SENTINELS = (
     # 不在候选池 —— 纯仪器探针,和被测集合零重叠,读数最干净。
     ("stun.cloudflare.com", 3478),
     # 在候选池 —— 全球部署最广的 STUN;⚠️ 它只开 19302/19305,没有 3478。
     ("stun.l.google.com", 19302),
-    # 在候选池 —— stunprotocol.org 是 RFC 参考实现(stuntman)的官方演示站。
-    ("stunserver2024.stunprotocol.org", 3478),
     # 在候选池 —— Nextcloud 官方;⚠️ 池里唯一走 443 端口的。
     ("stun.nextcloud.com", 443),
 )

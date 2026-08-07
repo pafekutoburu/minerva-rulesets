@@ -29,9 +29,17 @@ on:
 permissions:
   contents: write
 
+# STUN 验活让任务从 ~20 秒变成 3-4 分钟,dispatch 与 cron 重叠的窗口跟着变大 ——
+# 两轮同时跑会在最后 push 那步互踩(non-fast-forward)。排队,别取消。
+concurrency:
+  group: daily-refresh
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 正常一轮 3-4 分钟(其中 STUN 验活 ~2 分钟)。没有护栏时吃 GitHub 默认 360 分钟。
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -42,12 +50,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      # ⏳ 临时探针(P0,判决后删除):runner 的 UDP 出站能不能收到 STUN 响应。
-      #    只在手动触发时跑,不影响每日 cron。
-      - name: (temporary) Probe runner UDP egress for STUN
-        if: github.event_name == 'workflow_dispatch'
-        run: python3 scripts/stun_check.py
 
       - name: Build sets/ and manifest.json
         run: python3 scripts/build.py
@@ -71,7 +73,9 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add sets/ manifest.json
+          # ⚠️ state/ 是 STUN 验活记忆 —— 漏掉它,记忆每轮都写、从不提交,7 天窗口
+          #    会静默失效(build.py 的 assert_stun_state_committed 有第二道兜底)。
+          git add sets/ manifest.json state/
           if git diff --staged --quiet; then
             echo "无变化,不提交。"
           else

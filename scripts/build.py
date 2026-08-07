@@ -32,21 +32,24 @@ minerva-rulesets 生成器。
 import hashlib
 import ipaddress
 import json
+import math
 import os
 import subprocess
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
+
+import stun_check
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MANIFEST = os.path.join(REPO, "manifest.json")
 INDEXED_SOURCES = os.path.join(REPO, "indexed", "sources.json")
+# STUN 验活记忆(管线私有,app 不消费)。为什么是独立文件而不是 manifest 字段,见 load_stun_state。
+STUN_STATE = os.path.join(REPO, "state", "stun-liveness.json")
 
 APNIC_URL = "https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest"
-STUN_CANDIDATES_URL = \
-    "https://raw.githubusercontent.com/pradt2/always-online-stun/master/candidates.txt"
 
 # 微软**官方文档化**的端点服务。`clientrequestid` 是微软要求的调用方标识,
 # 这里是一个**写死的常量 GUID** —— 不是本机生成、不携带任何本机信息。
@@ -70,19 +73,13 @@ BASE_URL = "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs
 # 那正是我们在老仓上要花力气避免的迁移债。**URL 稳定优先于目录自解释。**
 # 于是层级放在这张表里:不在表上的 `sets/` 文件都是 authored。
 #
-# `sets/network/stun.list` 为什么是 mirrored 而不是 authored:
-#   它的内容 100% 来自 pradt2/always-online-stun 的候选池(MIT,明许再分发),
-#   我们只做了「剥端口、去裸 IP、排序」这种机械变换 —— **没有任何属于我们的判断**。
-#   标成 authored 就是假背书,和本项目刚撤掉的那三条假蓝勾是同一个错误。
-#   等我们有了自己的收录判据(自己验活、自己从厂商文档补、自己剔死条目),它才配升 authored。
-MIRRORED_SETS = {
-    "sets/network/stun.list": {
-        "repository": "pradt2/always-online-stun",
-        "homepage": "https://github.com/pradt2/always-online-stun",
-        "license": "MIT",
-        "listURL": STUN_CANDIDATES_URL,
-    },
-}
+# 现状:**空表**(表与 build_manifest 的 mirrored 分支保留 —— 将来还会有镜像条目)。
+# 上一个也是唯一一个成员是 `sets/network/stun.list`(2026-07-29 至 2026-08-07):
+#   当时它的内容 100% 照抄 pradt2/always-online-stun 的候选池,「收哪些不收哪些」
+#   全是上游的判断,标 authored 就是假背书。2026-08-07 起收录判据自建
+#   (CI 每轮发真实 STUN Binding Request 验活,连续 7 天无响应才移除,见 build_stun),
+#   「收哪些」从此由我们的实测裁决 —— 标签跟着现实走,它这才配升 authored。
+MIRRORED_SETS = {}
 
 # 每份清单的**人话说明** —— 目录是给人读的,`cn-asn` 这种文件名不算说明。
 # 索引层的说明写在 `indexed/sources.json` 里,这张表只管 `sets/`。
@@ -98,7 +95,10 @@ SET_SUMMARIES = {
         "比按 IP 段判断更粗但更稳,来自 APNIC 每日发布的注册数据。",
     "sets/network/stun.list":
         "公开 STUN 服务器的域名。STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用它。"
-        "拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。",
+        "拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。"
+        "候选名单来自 pradt2/always-online-stun(MIT),但收录判据是 Minerva 自己的:"
+        "CI 每天向每台候选与在册服务器发真实 STUN 请求,只收 7 天内有响应的 —— "
+        "死掉的 STUN 服务器不会泄漏你的 IP,留着只是虚胖;哪天它复活了,次日就会回到清单里。",
     "sets/microsoft/microsoft-365.list":
         "Microsoft 365(Outlook、Teams、OneDrive、Office 网页版等)用到的服务域名,"
         "取自微软官方发布的端点清单,每天自动跟随。"
@@ -223,8 +223,9 @@ def write_list(rel_path, title, source_note, lines):
     return len(lines), True
 
 
-def build_sets():
-    """返回 `(每份清单的条数, 这一轮被重写过的清单)`。后者见 `write_list` 的注释。"""
+def build_sets(old_manifest):
+    """返回 `(每份清单的条数, 这一轮被重写过的清单)`。后者见 `write_list` 的注释。
+    `old_manifest` 只有 STUN 用 —— 它的状态判据要知道上一版里自己是不是已经 authored。"""
     print("[1/3] 从一手来源生成自建清单…")
     v4, v6, asn = parse_apnic(fetch_apnic())
     src = "APNIC delegated-apnic-latest(注册机构一手数据)"
@@ -247,7 +248,7 @@ def build_sets():
         "sets/region/cn-asn.list", "中国大陆自治系统号(ASN)", src,
         [f"IP-ASN,{a},no-resolve" for a in sorted(set(asn))],
     ))
-    record("sets/network/stun.list", build_stun())
+    record("sets/network/stun.list", build_stun(old_manifest))
     record("sets/microsoft/microsoft-365.list", build_microsoft365())
     record("sets/dev/github.list", build_github())
     # ⚠️ `sets/ai/` 下那两份是**手工维护**的,不在这里生成 —— 它们由人对着厂商官方文档整理,
@@ -255,35 +256,240 @@ def build_sets():
     return counts, rewritten
 
 
-def build_stun():
+# ------------------------------------------------- STUN:验活收录(authored 的判据所在)
+
+STUN_LIST = "sets/network/stun.list"
+# 记忆窗口:连续 7 天无响应才移除。窗口只为抑制 UDP 丢包抖动 —— 死掉的 STUN 服务器
+# 不会泄漏任何人的 IP(泄漏需要它真的响应),所以**多留几天没有安全代价**;
+# 而候选池每天全量重验,被移除的哪天复活了,次日就回清单。
+STUN_MEMORY_DAYS = 7
+# 候选条数下限(2026-08-07 实测 621 个域名)—— 只防「拉到半截文件」这种残缺穿透,
+# 上游整个拉不到时 urlopen 自己就抛(= CI 红,现有语义)。
+STUN_CANDIDATE_FLOOR = 400
+# 活数绝对下限 = 上游 valid_hosts 当时 86 条的一半(2026-08-07)。首轮没有自己的基数,拿它兜底。
+STUN_ALIVE_FLOOR = 40
+# 状态陈旧上限:上一轮状态比这还老,说明状态更新没被提交(workflow 忘了 add state/),
+# 或者 CI 停跑了很久 —— 两种都值得人看一眼,而且此时 7 天记忆已经不可信。
+STUN_STATE_MAX_AGE_DAYS = 10
+
+
+def load_stun_state():
     """
-    公开 STUN 服务器的主机名。**内容来自 pradt2/always-online-stun**(MIT),见 MIRRORED_SETS 注释。
+    STUN 验活记忆:`{host: {"lastAliveAt": …, "ports": […]}}` + 上一轮的探测规模。
+
+    🔴 **为什么是独立文件而不是 manifest 字段**(对照 build_indexed 里 contentHash 的注释):
+    那条成例的实质是「**同一个事实不许记两处**」—— contentHash 若另开文件,manifest 里
+    还有一份,两份真相迟早漂移。验活记忆是**全新的事实、只记这一处**,不违背成例的精神;
+    而塞进 manifest 的实害有两层:manifest 是 app 每轮下载的消费品,几百台主机的状态
+    全是它永不读的字节;更糟的是这份记忆**按构造每轮都变**(活主机的时间戳刷新),
+    会把 manifest 自己「没变不重写」的安静纪律当场顶穿。
+    读坏了就当没有(照 parse_stamp 的规矩,不猜)—— 后果只是记忆归零、清单退回「当轮活着的」,
+    判据本身不会说谎。
+    """
+    if not os.path.exists(STUN_STATE):
+        return {}
+    try:
+        with open(STUN_STATE, encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, OSError):
+        print(f"  ⚠️ {STUN_STATE}: 读不懂,当作没有(记忆归零,不猜)", file=sys.stderr)
+        return {}
+
+
+def save_stun_state(hosts, probed, alive):
+    """`sort_keys` + 固定缩进落盘 —— 字节确定性,diff 才只反映事实变化。"""
+    os.makedirs(os.path.dirname(STUN_STATE), exist_ok=True)
+    state = {
+        "note": "管线私有:STUN 验活记忆(scripts/build.py 读写),app 不消费此文件。",
+        "schemaVersion": 1,
+        "lastRun": {"at": NOW, "probed": probed, "alive": alive},
+        "hosts": hosts,
+    }
+    with open(STUN_STATE, "w", encoding="utf-8") as f:
+        json.dump(state, f, ensure_ascii=False, indent=1, sort_keys=True)
+        f.write("\n")
+
+
+def read_stun_members():
+    """上轮清单成员(从现 stun.list 的 `DOMAIN,` 行读)。文件不在就是空 —— 第一轮。"""
+    path = os.path.join(REPO, STUN_LIST)
+    if not os.path.exists(path):
+        return set()
+    with open(path, encoding="utf-8", errors="replace") as f:
+        return {s[len("DOMAIN,"):].strip().lower()
+                for s in (line.strip() for line in f)
+                if s.startswith("DOMAIN,")}
+
+
+def assert_stun_members_recently_alive(members, hosts_state, cutoff):
+    """🔴 机器判据:清单每一条都必须在记忆里有 7 天内的响应记录。
+    今天它按构造成立;它守的是**未来**——谁要是改了成员计算(比如退回照抄候选池)
+    而忘了验活判据,CI 立刻红。"""
+    stale = [h for h in members
+             if parse_stamp(hosts_state.get(h, {}).get("lastAliveAt")) is None
+             or parse_stamp(hosts_state[h]["lastAliveAt"]) < cutoff]
+    if not stale:
+        return
+    print(
+        f"::error::stun.list 里出现了 {STUN_MEMORY_DAYS} 天内没有响应记录的条目 —— "
+        "收录判据是「我们自己测到它活着」,不是「上游说它存在」:\n  "
+        + "\n  ".join(sorted(stale)), file=sys.stderr)
+    raise SystemExit(1)
+
+
+def assert_stun_membership_bounded(members, candidates, prev_members):
+    """🔴 机器判据:清单 ⊆ 候选池 ∪ 上轮成员。成员只能从这两处来 ——
+    冒出别的来源,说明有人绕过了收录判据。"""
+    orphans = members - set(candidates) - prev_members
+    if not orphans:
+        return
+    print(
+        "::error::stun.list 里出现了既不在候选池、也不是上轮成员的条目:\n  "
+        + "\n  ".join(sorted(orphans)), file=sys.stderr)
+    raise SystemExit(1)
+
+
+def assert_stun_state_committed(old_manifest, prev_state):
+    """
+    🔴 机器判据:验活记忆必须真的**在被提交**(抓「写了从不提交」)。
+
+    威胁模型:workflow 的 `git add` 路径漏了 `state/` ⇒ 每轮都写状态、从不提交 ⇒
+    CI 每轮 checkout 到的都是陈旧记忆 ⇒ 7 天窗口静默失效、清单退化成「当日活着的」——
+    **每一轮孤立看都自洽,别的判据全抓不到。**两道检查:
+      1. 状态文件必须被 git 跟踪(升级 commit 之后恒真);
+      2. 上一轮状态的 `lastRun.at` 不得老过 {STUN_STATE_MAX_AGE_DAYS} 天。
+
+    ⚠️ 门控在「上一版 manifest 里 STUN 已是 authored」:升级那一轮(上一版还是 mirrored)
+    状态文件尚不存在 —— 首份记忆只能由 CI 生成(维护者本机测不了 STUN,见 stun_check.py),
+    那一轮跳过检查是**设计**,不是漏网。
+    """
+    old_layer = entries_by_path(old_manifest).get(STUN_LIST, {}).get("layer")
+    if old_layer != "authored":
+        return
+    tracked = subprocess.run(
+        ["git", "-C", REPO, "ls-files", "--error-unmatch", os.path.relpath(STUN_STATE, REPO)],
+        capture_output=True)
+    if tracked.returncode != 0:
+        print("::error::STUN 已是 authored,但 state/stun-liveness.json 不在 git 里 —— "
+              "验活记忆从未被提交,7 天窗口是空话。", file=sys.stderr)
+        raise SystemExit(1)
+    last_at = parse_stamp((prev_state.get("lastRun") or {}).get("at"))
+    if last_at and parse_stamp(NOW) - last_at > timedelta(days=STUN_STATE_MAX_AGE_DAYS):
+        print(
+            f"::error::上一轮 STUN 验活记忆停在 {last_at.isoformat()},距今超过 "
+            f"{STUN_STATE_MAX_AGE_DAYS} 天 —— 要么 workflow 忘了提交 state/(记忆在静默失效),"
+            "要么 CI 停跑了很久(记忆已不可信)。两种都需要人看一眼。", file=sys.stderr)
+        raise SystemExit(1)
+
+
+def build_stun(old_manifest):
+    """
+    公开 STUN 服务器域名 —— **authored:收哪些、不收哪些由本仓自己的实测裁决**(2026-08-07 起)。
     返回值同 `write_list` —— `(条数, 这一轮有没有重写)`。
 
-    上游是 `host:port` 一行一条,Surge 的 `DOMAIN-SET` 吃不了带端口的行,
-    所以这里剥掉端口、去掉裸 IP(`DOMAIN,` 只认域名)、去重排序,产出 `RULE-SET` 格式。
+    候选名单来自 pradt2/always-online-stun 的 candidates.txt(MIT,如实署名),
+    但那只是**线索来源**;收录判据在这里:
+      清单 = (候选池 ∪ 上轮成员) 中 {STUN_MEMORY_DAYS} 天内对真实 STUN 请求有过响应的域名。
+
+    🔴 **∪ 上轮成员是拍板过的取舍**(2026-08-07):上游把一台**还活着**的服务器从候选池
+    清理掉时,我们不跟着放行 —— 别人的清单卫生不该变成使用者的泄漏回归;
+    成员退出的唯一途径是**我们自己**连续 {STUN_MEMORY_DAYS} 天没测到它活。
+
+    🔴 **仪器判决在一切写入之前**(哨兵全灭 / 活数腰斩 ⇒ CI 红、本轮什么都不改):
+    「这轮没测到」≠「服务器死了」—— 和索引层「这轮没拉到就什么都别动」同一条纪律,
+    只是这里测的是 UDP,坏得更常见。风险不对称也写在这儿:多拦一台死服务器代价为零,
+    错删一台活的 = 泄漏窗口重开,所以一切拿不准的偏向都往「多留 / 不动」倒。
+
+    P0 判决(2026-08-07,run 31168486861):GitHub runner 的 UDP 出站**可用** ——
+    哨兵 3/4 活(dns 失败那台是域名自己的事),候选池采样 40 台 16 台有合法响应。
+    维护者本机则**测不了**(自家 Surge 在拦 STUN,见 stun_check.py 头注释),
+    所以本地跑到这儿会在哨兵判决处红着退出 —— 那是保险在工作,不是 bug。
     """
     req = urllib.request.Request(
-        STUN_CANDIDATES_URL, headers={"User-Agent": "minerva-rulesets-builder"})
+        stun_check.STUN_CANDIDATES_URL, headers={"User-Agent": "minerva-rulesets-builder"})
     with urllib.request.urlopen(req, timeout=90) as resp:
         text = resp.read().decode("utf-8", errors="replace")
 
-    hosts = set()
-    for raw in text.splitlines():
-        s = raw.strip()
-        if not s or s.startswith("#"):
-            continue
-        host = s.rsplit(":", 1)[0].strip().strip("[]").lower()
-        # 裸 IP 进不了 `DOMAIN,` —— 那是域名规则。丢掉,不硬塞。
-        if not host or all(c in "0123456789." for c in host) or ":" in host:
-            continue
-        hosts.add(host)
+    candidates = stun_check.parse_candidates(text)
+    if len(candidates) < STUN_CANDIDATE_FLOOR:
+        print(
+            f"::error::候选池只解析出 {len(candidates)} 个域名(下限 {STUN_CANDIDATE_FLOOR},"
+            "2026-08-07 实测 621)—— 多半是拉到了半截文件,本轮不采信。", file=sys.stderr)
+        raise SystemExit(1)
 
-    return write_list(
-        "sets/network/stun.list", "公开 STUN 服务器域名",
-        "pradt2/always-online-stun candidates.txt(MIT)—— 剥端口去重,内容为上游所有",
-        [f"DOMAIN,{h}" for h in sorted(hosts)],
+    prev_state = load_stun_state()
+    prev_hosts = prev_state.get("hosts") or {}
+    prev_members = read_stun_members()
+    assert_stun_state_committed(old_manifest, prev_state)
+
+    # 全集 = 候选 ∪ 上轮成员。在册但已被上游剔掉的,端口用记忆里的(上游那份已经没有它了)。
+    targets = {h: set(ps) for h, ps in candidates.items()}
+    for h in prev_members:
+        if h not in targets:
+            known = (prev_hosts.get(h) or {}).get("ports") or [3478]
+            targets[h] = set(known)
+
+    # 仪器判决第一道:哨兵。全灭 ⇒ 坏的是我们的 UDP 出站,不是全世界的 STUN 服务器。
+    sentinel_verdicts = stun_check.check_liveness(
+        {h: {p} for h, p in stun_check.SENTINELS}, concurrency=len(stun_check.SENTINELS))
+    sentinel_alive = sum(v == "alive" for v in sentinel_verdicts.values())
+    print(f"  stun: 哨兵 {sentinel_alive}/{len(stun_check.SENTINELS)} 活")
+    if sentinel_alive == 0:
+        print(
+            "::error::STUN 哨兵全灭(Cloudflare/Google 都不响应)⇒ 判定仪器故障,"
+            "本轮验活不采信、清单与记忆一字不动。在维护者本机这是预期结果(Surge 在拦);"
+            "在 CI 上出现,说明 runner 的 UDP 出站坏了。", file=sys.stderr)
+        raise SystemExit(1)
+
+    verdicts = stun_check.check_liveness(targets)
+    counts = stun_check.tally(verdicts)
+    alive_now = counts["alive"]
+    print(f"  stun: 探测 {len(targets)} 域名 → {counts}")
+
+    # 仪器判决第二道:比例线。哨兵活着但活数对上轮腰斩,也当仪器/网络异常处理。
+    prev_alive = (prev_state.get("lastRun") or {}).get("alive")
+    floor = max(STUN_ALIVE_FLOOR,
+                math.ceil(prev_alive * 0.5) if isinstance(prev_alive, int) else 0)
+    if alive_now < floor:
+        print(
+            f"::error::本轮活数 {alive_now} 低于下限 {floor}"
+            f"(绝对下限 {STUN_ALIVE_FLOOR};上轮 {prev_alive})⇒ 大面积异常,"
+            "宁可判仪器故障也不批量剔除 —— 错删活服务器 = 泄漏窗口重开,本轮不采信。",
+            file=sys.stderr)
+        raise SystemExit(1)
+
+    # 记忆更新:活者记今天,其余沿用;从未活过的不记。GC 随构造完成(不在全集就不会被写)。
+    hosts_state = {}
+    for h in targets:
+        if verdicts.get(h) == "alive":
+            hosts_state[h] = {"lastAliveAt": NOW, "ports": sorted(targets[h])}
+        else:
+            prev = prev_hosts.get(h)
+            if prev and parse_stamp(prev.get("lastAliveAt")):
+                hosts_state[h] = {"lastAliveAt": prev["lastAliveAt"],
+                                  "ports": sorted(targets[h])}
+
+    cutoff = parse_stamp(NOW) - timedelta(days=STUN_MEMORY_DAYS)
+    members = {h for h, e in hosts_state.items()
+               if parse_stamp(e["lastAliveAt"]) >= cutoff}
+
+    assert_stun_members_recently_alive(members, hosts_state, cutoff)
+    assert_stun_membership_bounded(members, candidates, prev_members)
+
+    joined = sorted(members - prev_members)
+    left = sorted(prev_members - members)
+    if joined or left:
+        print(f"  stun: 新入 {len(joined)} · 移除 {len(left)}"
+              + (f" · 移除的是 {', '.join(left[:5])}{'…' if len(left) > 5 else ''}" if left else ""))
+
+    result = write_list(
+        STUN_LIST, "公开 STUN 服务器域名",
+        "候选名单:pradt2/always-online-stun(MIT);收录判据:本仓 CI 每日发真实 "
+        f"STUN Binding Request 验活,只收 {STUN_MEMORY_DAYS} 天内有响应的(scripts/stun_check.py)",
+        [f"DOMAIN,{h}" for h in sorted(members)],
     )
+    save_stun_state(hosts_state, probed=len(targets), alive=alive_now)
+    return result
 
 
 # ---------------------------------------------------------------- 一手来源:厂商官方端点
@@ -758,7 +964,7 @@ def main():
     # 🔴 **在任何写入之前**读一次上一版 manifest:索引层的新鲜度全靠它做「内容变没变」的对照,
     #    而 build_sets 会改 sets/ 下的文件。只读一次,两个地方共用。
     old = previous_manifest()
-    counts, rewritten = build_sets()
+    counts, rewritten = build_sets(old)
     indexed_entries = build_indexed(entries_by_path(old))
     build_manifest(counts, indexed_entries, old, rewritten)
     print("完成。")
