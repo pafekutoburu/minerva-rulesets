@@ -43,6 +43,12 @@ jobs:
         with:
           python-version: '3.12'
 
+      # ⏳ 临时探针(P0,判决后删除):runner 的 UDP 出站能不能收到 STUN 响应。
+      #    只在手动触发时跑,不影响每日 cron。
+      - name: (temporary) Probe runner UDP egress for STUN
+        if: github.event_name == 'workflow_dispatch'
+        run: python3 scripts/stun_check.py
+
       - name: Build sets/ and manifest.json
         run: python3 scripts/build.py
 
