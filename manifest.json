@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-08-07T10:16:31Z",
+ "generatedAt": "2026-08-08T03:15:29Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -52,11 +52,11 @@
    "displayName": "公开 STUN 服务器域名",
    "category": "network",
    "tags": [],
-   "ruleCount": 275,
+   "ruleCount": 278,
    "layer": "authored",
    "summary": "公开 STUN 服务器的域名。STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用它。拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。候选名单来自 pradt2/always-online-stun(MIT),但收录判据是 Minerva 自己的:CI 每天向每台候选与在册服务器发真实 STUN 请求,只收 7 天内有响应的 —— 死掉的 STUN 服务器不会泄漏你的 IP,留着只是虚胖;哪天它复活了,次日就会回到清单里。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-08-07T10:16:31Z"
+   "updatedAt": "2026-08-08T03:15:29Z"
   },
   {
    "path": "sets/region/cn-asn.list",
@@ -108,9 +108,9 @@
     "license": "MIT",
     "listURL": "https://anti-ad.net/surge.txt"
    },
-   "ruleCount": 102747,
-   "updatedAt": "2026-08-04T20:08:04Z",
-   "contentHash": "4b631df41cdcedfa1f6a433dbdf3d40a99176c10377d5bd549ccebba3f341060"
+   "ruleCount": 103261,
+   "updatedAt": "2026-08-07T19:27:34Z",
+   "contentHash": "097d2dca80e6f0deed17a51c5d55c6890c7c799430b45cb54885fb6c36ff2e6b"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -149,8 +149,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 172500,
-   "contentHash": "408d55c7ca85b344f06627f7555e8a954da255fce377fe69460085d7bf7d87a0"
+   "ruleCount": 172772,
+   "updatedAt": "2026-08-08T03:15:29Z",
+   "contentHash": "3e4cb927a0a02a2f05b99e8cd00b97b7d438de6112b5298531a2c38dad59b389"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -286,7 +287,8 @@
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt"
    },
    "ruleCount": 829,
-   "contentHash": "f6a1f6efd78794e60f8f81d4aa0758e1a05ffdc6e7a309712a1d7274de674664"
+   "updatedAt": "2026-08-08T03:15:29Z",
+   "contentHash": "23e50f81076f86ab3411d2aff3747a1d3699f57b0213ef1b9b09a5c626930729"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt",
