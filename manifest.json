@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-08-09T03:22:50Z",
+ "generatedAt": "2026-08-10T03:41:47Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -56,7 +56,7 @@
    "layer": "authored",
    "summary": "公开 STUN 服务器的域名。STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用它。拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。候选名单来自 pradt2/always-online-stun(MIT),但收录判据是 Minerva 自己的:CI 每天向每台候选与在册服务器发真实 STUN 请求,只收 7 天内有响应的 —— 死掉的 STUN 服务器不会泄漏你的 IP,留着只是虚胖;哪天它复活了,次日就会回到清单里。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-08-09T03:22:50Z"
+   "updatedAt": "2026-08-09T03:23:36Z"
   },
   {
    "path": "sets/region/cn-asn.list",
@@ -149,9 +149,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 173080,
-   "updatedAt": "2026-08-09T03:22:50Z",
-   "contentHash": "349085fd62976c1b508dd08e16385aeeabf66402ab7e3b703f3ef1555be41630"
+   "ruleCount": 173391,
+   "updatedAt": "2026-08-10T03:41:47Z",
+   "contentHash": "de8d2e06cf7cd6076209f553ba21d505ce514582edd5789542c1e4f3614c56ef"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -246,8 +246,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
    },
-   "ruleCount": 4368,
-   "contentHash": "0523b6b628a9f5c8baf473e522c7fc33b657d5bdaa52285ea4f3a35501e55474"
+   "ruleCount": 4372,
+   "updatedAt": "2026-08-10T03:41:47Z",
+   "contentHash": "3ededc3834a1065ab8f28e558183d7970cb2c36e1692c7a74daed3e121a7ea16"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
