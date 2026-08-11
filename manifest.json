@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-08-10T03:41:47Z",
+ "generatedAt": "2026-08-11T03:24:58Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -52,11 +52,11 @@
    "displayName": "公开 STUN 服务器域名",
    "category": "network",
    "tags": [],
-   "ruleCount": 279,
+   "ruleCount": 280,
    "layer": "authored",
    "summary": "公开 STUN 服务器的域名。STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用它。拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。候选名单来自 pradt2/always-online-stun(MIT),但收录判据是 Minerva 自己的:CI 每天向每台候选与在册服务器发真实 STUN 请求,只收 7 天内有响应的 —— 死掉的 STUN 服务器不会泄漏你的 IP,留着只是虚胖;哪天它复活了,次日就会回到清单里。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-08-09T03:23:36Z"
+   "updatedAt": "2026-08-11T03:24:58Z"
   },
   {
    "path": "sets/region/cn-asn.list",
@@ -74,11 +74,11 @@
    "displayName": "中国大陆 IPv4 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 8789,
+   "ruleCount": 8790,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv4 网段,来自 APNIC 每日发布的注册数据。⚠️ Surge 内建的 GEOIP,CN 已经覆盖了大部分同类需求,这份的价值在于来源可查。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-08-06T04:53:18Z"
+   "updatedAt": "2026-08-11T03:24:58Z"
   },
   {
    "path": "sets/region/cn-ipv6.list",
@@ -108,9 +108,9 @@
     "license": "MIT",
     "listURL": "https://anti-ad.net/surge.txt"
    },
-   "ruleCount": 103261,
-   "updatedAt": "2026-08-07T19:27:34Z",
-   "contentHash": "097d2dca80e6f0deed17a51c5d55c6890c7c799430b45cb54885fb6c36ff2e6b"
+   "ruleCount": 99660,
+   "updatedAt": "2026-08-10T19:29:25Z",
+   "contentHash": "39abc796ca4a6a9fc476d3bf41b50d6840c75455698b141882dfda0894db4e9b"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -149,9 +149,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 173391,
-   "updatedAt": "2026-08-10T03:41:47Z",
-   "contentHash": "de8d2e06cf7cd6076209f553ba21d505ce514582edd5789542c1e4f3614c56ef"
+   "ruleCount": 163515,
+   "updatedAt": "2026-08-11T03:24:58Z",
+   "contentHash": "493454bb522914b705003903254f5224998dad0b6e02209fe60ad21c15b5673c"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -246,9 +246,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
    },
-   "ruleCount": 4372,
-   "updatedAt": "2026-08-10T03:41:47Z",
-   "contentHash": "3ededc3834a1065ab8f28e558183d7970cb2c36e1692c7a74daed3e121a7ea16"
+   "ruleCount": 4373,
+   "updatedAt": "2026-08-11T03:24:58Z",
+   "contentHash": "9067b5c86bc1252d0531834e7cff5235457d16bb9bdc6ce69516c4ad1c941254"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
