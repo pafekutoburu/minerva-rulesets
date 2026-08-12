@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-08-11T03:24:58Z",
+ "generatedAt": "2026-08-12T03:53:36Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -56,7 +56,7 @@
    "layer": "authored",
    "summary": "公开 STUN 服务器的域名。STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用它。拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。候选名单来自 pradt2/always-online-stun(MIT),但收录判据是 Minerva 自己的:CI 每天向每台候选与在册服务器发真实 STUN 请求,只收 7 天内有响应的 —— 死掉的 STUN 服务器不会泄漏你的 IP,留着只是虚胖;哪天它复活了,次日就会回到清单里。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-08-11T03:24:58Z"
+   "updatedAt": "2026-08-11T03:25:45Z"
   },
   {
    "path": "sets/region/cn-asn.list",
@@ -78,7 +78,7 @@
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv4 网段,来自 APNIC 每日发布的注册数据。⚠️ Surge 内建的 GEOIP,CN 已经覆盖了大部分同类需求,这份的价值在于来源可查。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-08-11T03:24:58Z"
+   "updatedAt": "2026-08-11T03:25:45Z"
   },
   {
    "path": "sets/region/cn-ipv6.list",
@@ -149,9 +149,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 163515,
-   "updatedAt": "2026-08-11T03:24:58Z",
-   "contentHash": "493454bb522914b705003903254f5224998dad0b6e02209fe60ad21c15b5673c"
+   "ruleCount": 163897,
+   "updatedAt": "2026-08-12T03:53:36Z",
+   "contentHash": "905c1db8798a033928ae1645718a581d7370f323fbb9fe5e1540c962c3483f5c"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
