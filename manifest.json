@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-08-19T02:48:08Z",
+ "generatedAt": "2026-08-20T02:46:53Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -74,22 +74,22 @@
    "displayName": "中国大陆 IPv4 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 8790,
+   "ruleCount": 8791,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv4 网段,来自 APNIC 每日发布的注册数据。⚠️ Surge 内建的 GEOIP,CN 已经覆盖了大部分同类需求,这份的价值在于来源可查。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-08-11T03:25:45Z"
+   "updatedAt": "2026-08-20T02:46:53Z"
   },
   {
    "path": "sets/region/cn-ipv6.list",
    "displayName": "中国大陆 IPv6 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 2040,
+   "ruleCount": 2041,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv6 网段,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-07-29T10:07:48-07:00"
+   "updatedAt": "2026-08-20T02:46:53Z"
   },
   {
    "path": "https://anti-ad.net/surge.txt",
@@ -108,9 +108,9 @@
     "license": "MIT",
     "listURL": "https://anti-ad.net/surge.txt"
    },
-   "ruleCount": 101049,
-   "updatedAt": "2026-08-16T18:54:05Z",
-   "contentHash": "11b2d432272999f87bd1fa7d6d7f402469f8cbcb9ee5c000e67cef8dc40c41c0"
+   "ruleCount": 100389,
+   "updatedAt": "2026-08-19T19:02:22Z",
+   "contentHash": "49b22ecc2d98439c00f4f56b4349b3b5582a5d4f6c8158f23ca6e48dda6aa328"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -149,9 +149,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 186000,
-   "updatedAt": "2026-08-19T02:48:08Z",
-   "contentHash": "b76ffed0f1a393e7a2eb0beb49a6975fbf8483efddd2f01c481a859c8d0c8efe"
+   "ruleCount": 186308,
+   "updatedAt": "2026-08-20T02:46:53Z",
+   "contentHash": "82c049262a3a83590417507b35e436640ee20716c5c430c0ced6da457b0242ea"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -246,9 +246,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
    },
-   "ruleCount": 4376,
-   "updatedAt": "2026-08-19T02:48:08Z",
-   "contentHash": "7133b1c8930d4e3f7b7a32e32d4917c53fc61e9644dd28779808ebbb424d62e2"
+   "ruleCount": 4377,
+   "updatedAt": "2026-08-20T02:46:53Z",
+   "contentHash": "fd536243f5121bd2fe3179fcb1988da5aa96e0388e8f097ca22895eb7ef2c2b4"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
@@ -288,8 +288,8 @@
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt"
    },
    "ruleCount": 829,
-   "updatedAt": "2026-08-19T02:48:08Z",
-   "contentHash": "f6a1f6efd78794e60f8f81d4aa0758e1a05ffdc6e7a309712a1d7274de674664"
+   "updatedAt": "2026-08-20T02:46:53Z",
+   "contentHash": "23e50f81076f86ab3411d2aff3747a1d3699f57b0213ef1b9b09a5c626930729"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt",

@@ -1,235 +1,235 @@
 {
  "hosts": {
   "relay.webwormhole.io": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.1-voip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.12connect.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.12voip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.1cbit.ru": {
-   "lastAliveAt": "2026-08-18T02:46:02Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.1und1.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.5sn.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.aa.net.uk": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.aaisp.co.uk": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.acquageraci.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.acrobits.cz": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.acronis.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.actionvoip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.alberon.cz": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.alphacron.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.alpirsbacher.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.annatel.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.antisip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.arkh-edu.ru": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.atagverwarming.nl": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.autosystem.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.avoxi.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.axeos.nl": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.axialys.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.babelforce.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.bandyer.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.bcs2005.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.bernardoprovenzano.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.bethesda.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.bitburger.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.bridesbay.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.business-isp.nl": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.cablenet-as.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.callromania.ro": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.carlovizzini.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.cellmail.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.chatous.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.cheapvoip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.clickphone.ro": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
@@ -241,632 +241,632 @@
    ]
   },
   "stun.comrex.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.cope.es": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.counterpath.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.counterpath.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.crimeastar.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ctafauni.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.dcalling.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.diallog.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.dls.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.dukun.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.dunyatelekom.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.dus.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.easter-eggs.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.easybell.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.easyvoip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ekiga.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.engineeredarts.co.uk": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.eol.co.nz": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.epygi.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.f.haeder.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.fairytel.at": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.fathomvoice.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.fbsbx.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.files.fm": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.finsterwalder.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.fitauto.ru": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.fixup.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.flashdance.cx": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.fmo.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.framasoft.org": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.freecall.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.freeswitch.org": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.freevoipdeal.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.frozenmountain.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.futurasp.es": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.galeriemagnet.at": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.geesthacht.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.genymotion.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.gigaset.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.gmx.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.gmx.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.gntel.nl": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.godatenow.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.goldfish.ie": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.graftlab.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.grazertrinkwasseringefahr.at": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.halonet.pl": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.healthtap.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.hicare.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.hide.me": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.hitv.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.hoiio.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.hot-chilli.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.imafex.sk": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.infra.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.internetcalls.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.intervoip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ipfire.org": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ippi.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ippi.fr": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.irishvoip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.it1.hr": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.jabbim.cz": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.jowisoftware.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.jumblo.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.junet.se": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.justvoip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.kanojo.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.kaseya.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.komsa.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.kotter.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.l.google.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     19302,
     19305
    ]
   },
   "stun.labs.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ladridiricette.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.lebendigefluesse.at": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.leonde.org": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.leucotron.com.br": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.levigo.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.lineaencasa.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.linphone.org": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.linuxtrent.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.liveo.fr": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.lleida.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.localphone.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.logic.ky": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.lovense.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.lowratevoip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.m-online.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.marcelproust.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.meetwife.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.miwifi.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.mixvoip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.moonlight-stream.org": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.myhowto.org": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.myvoipapp.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.myvoiptraffic.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.mywatson.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.nanocosmos.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ncic.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.neomedia.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.netappel.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.netgsm.com.tr": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.nexphone.ch": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.next-gen.ro": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.nextcloud.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     443,
     3478
@@ -879,55 +879,55 @@
    ]
   },
   "stun.nfon.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.nonoh.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.officinabit.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.olimontel.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.oncloud7.ch": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.openvoip.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ozekiphone.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.palava.tv": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.peethultra.be": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
@@ -939,283 +939,283 @@
    ]
   },
   "stun.pjsip.org": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.planetarium.com.br": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.poetamatusel.org": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.poivy.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.powervoip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ppdi.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.pure-ip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.qcol.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.radiojar.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ringostat.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.rockenstein.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.rolmail.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.romaaeterna.nl": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.romancecompass.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ru-brides.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.rynga.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sacko.com.au": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.schlund.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.schulinformatik.at": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.shadrinsk.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sigmavoip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.signalwire.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.simlar.org": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sip.us": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sipdiscount.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sipglobalphone.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.siplogin.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sipnet.com": {
-   "lastAliveAt": "2026-08-18T02:46:02Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sipnet.net": {
-   "lastAliveAt": "2026-08-18T02:46:02Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sipnet.ru": {
-   "lastAliveAt": "2026-08-18T02:46:02Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sipthor.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.siptraffic.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.siptrunk.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sky.od.ua": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.skydrone.aero": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.smartvoip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.smsdiscount.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.smslisto.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.soho66.co.uk": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.solcon.nl": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.solnet.ch": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sonetel.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sonetel.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.sparvoip.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.splicecom.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.srce.hr": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.stadtwerke-eutin.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
@@ -1227,460 +1227,460 @@
    ]
   },
   "stun.stratusvideo.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.studio71.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.swrag.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.synergiejobs.be": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.syrex.co.za": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.t-online.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.talkho.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.taxsee.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.teamfon.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.technosens.fr": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.tel.lu": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.tel2.co.uk": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.telbo.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.teliax.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.telnyx.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.telviva.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.thebrassgroup.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.thinkrosystem.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.threema.ch": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.tichiamo.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.totalcom.info": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ttmath.org": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.tula.nu": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.twt.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.uabrides.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.ukh.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.uls.co.za": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.url.net.au": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.vadacom.co.nz": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.vavadating.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.verbo.be": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.vo.lu": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voicetech.se": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voicetrading.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voip.aebc.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voip.blackberry.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voip.eutelia.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipblast.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipbuster.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipbusterpro.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipcheap.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipconnect.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipdiscount.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipfibre.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipgain.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipgate.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipgrid.nl": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipia.net": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipinfocenter.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipplanet.nl": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voippro.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipraider.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipstunt.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipvoice.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipwise.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipxs.nl": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voipzoom.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.vomessen.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voys.nl": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.vozelia.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.voztele.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.waterpolopalermo.it": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.wcoil.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.webcalldirect.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.wemag.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.westtel.ky": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.wtfismyip.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.xten.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.yesdates.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.zadarma.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.zentauron.de": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun.zepter.ru": {
-   "lastAliveAt": "2026-08-18T02:46:02Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     3478
    ]
   },
   "stun1.l.google.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     19302,
     19305
    ]
   },
   "stun2.l.google.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     19302,
     19305
    ]
   },
   "stun3.l.google.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     19302,
     19305
    ]
   },
   "stun4.l.google.com": {
-   "lastAliveAt": "2026-08-19T02:48:08Z",
+   "lastAliveAt": "2026-08-20T02:46:53Z",
    "ports": [
     19302,
     19305
@@ -1688,8 +1688,8 @@
   }
  },
  "lastRun": {
-  "alive": 274,
-  "at": "2026-08-19T02:48:08Z",
+  "alive": 276,
+  "at": "2026-08-20T02:46:53Z",
   "probed": 621
  },
  "note": "管线私有:STUN 验活记忆(scripts/build.py 读写),app 不消费此文件。",
