@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-08-20T02:46:53Z",
+ "generatedAt": "2026-08-21T02:53:00Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -78,18 +78,18 @@
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv4 网段,来自 APNIC 每日发布的注册数据。⚠️ Surge 内建的 GEOIP,CN 已经覆盖了大部分同类需求,这份的价值在于来源可查。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-08-20T02:46:53Z"
+   "updatedAt": "2026-08-20T02:47:41Z"
   },
   {
    "path": "sets/region/cn-ipv6.list",
    "displayName": "中国大陆 IPv6 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 2041,
+   "ruleCount": 2042,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv6 网段,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-08-20T02:46:53Z"
+   "updatedAt": "2026-08-21T02:53:00Z"
   },
   {
    "path": "https://anti-ad.net/surge.txt",
@@ -129,8 +129,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
    },
-   "ruleCount": 903,
-   "contentHash": "632a406529c2528550a8bb19c959ee3b62ae6a604ef12b02b3a40fc11ed211fa"
+   "ruleCount": 902,
+   "updatedAt": "2026-08-21T02:53:00Z",
+   "contentHash": "8cdb71d9cb3ee2857e89834bc8b6f3fba00c330b302cf833afca3ed54ef19a39"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt",
@@ -149,9 +150,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 186308,
-   "updatedAt": "2026-08-20T02:46:53Z",
-   "contentHash": "82c049262a3a83590417507b35e436640ee20716c5c430c0ced6da457b0242ea"
+   "ruleCount": 186606,
+   "updatedAt": "2026-08-21T02:53:00Z",
+   "contentHash": "3adb63e9473f24eccfc14cb4d523140c1f4ad68e70fb8f7b9a76c9f1887d0294"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
