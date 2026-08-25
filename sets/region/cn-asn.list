@@ -1,7 +1,7 @@
 # 中国大陆自治系统号(ASN)
 # Source: APNIC delegated-apnic-latest(注册机构一手数据)
-# Generated: 2026-08-06T04:53:12Z
-# Rules: 6397
+# Generated: 2026-08-25T02:49:17Z
+# Rules: 6395
 #
 IP-ASN,3460,no-resolve
 IP-ASN,3717,no-resolve
@@ -6171,7 +6171,6 @@ IP-ASN,149511,no-resolve
 IP-ASN,149639,no-resolve
 IP-ASN,149763,no-resolve
 IP-ASN,149790,no-resolve
-IP-ASN,149793,no-resolve
 IP-ASN,149808,no-resolve
 IP-ASN,149837,no-resolve
 IP-ASN,149839,no-resolve
@@ -6360,7 +6359,6 @@ IP-ASN,152598,no-resolve
 IP-ASN,152631,no-resolve
 IP-ASN,152672,no-resolve
 IP-ASN,152697,no-resolve
-IP-ASN,152711,no-resolve
 IP-ASN,152892,no-resolve
 IP-ASN,152911,no-resolve
 IP-ASN,152920,no-resolve
