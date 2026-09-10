@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-09-09T06:50:58Z",
+ "generatedAt": "2026-09-10T06:46:13Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -129,9 +129,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
    },
-   "ruleCount": 948,
-   "updatedAt": "2026-09-09T06:50:58Z",
-   "contentHash": "52d9526d322c21e7eafb2ba2277048f4808a26bfe6315f622832d8b0ff7e771b"
+   "ruleCount": 952,
+   "updatedAt": "2026-09-10T06:46:13Z",
+   "contentHash": "05c5f63c58bbdf0fff062d907309e46ef43e23f85ca1ebea77aa35368869f099"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt",
@@ -150,9 +150,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 186402,
-   "updatedAt": "2026-09-09T06:50:58Z",
-   "contentHash": "58250039434b019270facd0eefacc83cb046d336129253ba1a418dadee273d97"
+   "ruleCount": 186777,
+   "updatedAt": "2026-09-10T06:46:13Z",
+   "contentHash": "fa41380847575443440e447ddd01578cdfe39d733f72ee85ecd8d7b5266e1e66"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
