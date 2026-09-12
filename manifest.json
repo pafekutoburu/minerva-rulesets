@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-09-11T06:45:29Z",
+ "generatedAt": "2026-09-12T06:38:19Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -30,11 +30,11 @@
    "displayName": "GitHub 服务 IP 段",
    "category": "dev",
    "tags": [],
-   "ruleCount": 105,
+   "ruleCount": 115,
    "layer": "authored",
    "summary": "GitHub 自家服务(网页、API、git 传输、Packages、Pages)的 IP 段,取自 GitHub 官方接口,每天自动跟随。⚠️ 只有 IP 段没有域名 —— 官方没发布域名清单,我们不替它编。⚠️ 不含 Actions/Codespaces/Copilot:那几项跑在 Azure 上,官方给的是 Azure 的地址段(七千多条),不是 GitHub 自己的服务端点。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-08-07T01:29:51-07:00"
+   "updatedAt": "2026-09-12T06:38:19Z"
   },
   {
    "path": "sets/microsoft/microsoft-365.list",
@@ -150,9 +150,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 187157,
-   "updatedAt": "2026-09-11T06:45:29Z",
-   "contentHash": "d31c1deeb835365859cf577033523e855f47cf02e9e09854c1ab81a812efd7c3"
+   "ruleCount": 187514,
+   "updatedAt": "2026-09-12T06:38:19Z",
+   "contentHash": "e7b50a434935e9eb74f4d7fde59ce002b1d9f87d33b549e84568dff9eb163e1c"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -248,9 +248,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
    },
-   "ruleCount": 4400,
-   "updatedAt": "2026-09-06T06:35:54Z",
-   "contentHash": "a681117290416bb84e75f87137e694a31a4ee0b37db316dbd089ccff63cf9155"
+   "ruleCount": 4384,
+   "updatedAt": "2026-09-12T06:38:19Z",
+   "contentHash": "853cdd96c949e1b59c4228e774471fc2815b333d90ee51069ccc918bfe2b383f"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
