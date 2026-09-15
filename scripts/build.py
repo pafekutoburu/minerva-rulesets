@@ -73,7 +73,8 @@ BASE_URL = "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs
 # 那正是我们在老仓上要花力气避免的迁移债。**URL 稳定优先于目录自解释。**
 # 于是层级放在这张表里:不在表上的 `sets/` 文件都是 authored。
 #
-# 现状:**空表**(表与 build_manifest 的 mirrored 分支保留 —— 将来还会有镜像条目)。
+# 现状(2026-09-15 起):成员由下面 `DLC_LISTS` **统一登记**(v2fly 社区域名清单的镜像),
+# 同一张表同时喂 `SET_SUMMARIES` —— 层级、出处、说明不许各记一处,记两处迟早漂移。
 # 上一个也是唯一一个成员是 `sets/network/stun.list`(2026-07-29 至 2026-08-07):
 #   当时它的内容 100% 照抄 pradt2/always-online-stun 的候选池,「收哪些不收哪些」
 #   全是上游的判断,标 authored 就是假背书。2026-08-07 起收录判据自建
@@ -118,6 +119,83 @@ SET_SUMMARIES = {
         "🔴 手工维护,不自动跟随上游变更。官方明确写了这些 IP「不会无通知变更」,"
         "但域名部分仍需人工对照,看「新鲜度」判断新旧。",
 }
+
+# ---------------------------------------------------------------- 镜像层:v2fly 社区域名清单
+#
+# v2fly/domain-list-community(MIT)是 Surge 生态里绝大多数「分类域名清单」的事实来源,
+# 但它自己的语法(`domain:` / `include:` / `@attr`)Surge 吃不了。2026-09-15 普查实测:
+# 生态里所有把它转成 Surge 格式的第三方转换器都在 `include:xxx @-attr`(排除式包含)上漏条
+# (category-bank-cn 官方 135 条 → 转换器 55 条,工行主域名就是这么没的),而且维护者已离场。
+# 所以**不经任何转换器,直接读官方发布物**:每次 release 附带的 `dlc.dat_plain.yml`
+# 是官方生成器自己展开好的明文(include 已递归、`@-attr` 已按官方语义过滤),
+# 我们只做「一行换一种写法」,不做任何策展 ⇒ 内容是别人的,标 `mirrored`、如实署名。
+#
+# 🔴 地址固定用 `releases/latest/download/`:GitHub 会 302 到最新一次 release 的附件,
+#    不用查 API、不受速率限制。上游不是每天发布(实测一周 3–4 次),没发布就是内容没变。
+DLC_PLAIN_URL = "https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat_plain.yml"
+DLC_UPSTREAM = {
+    "repository": "v2fly/domain-list-community",
+    "homepage": "https://github.com/v2fly/domain-list-community",
+    "license": "MIT",
+    "listURL": DLC_PLAIN_URL,
+}
+# 发布物实测 3.6 MB(2026-09-15)。低于这个数 = 拉到半截 / 上游改了形状,红,不写。
+DLC_PLAIN_MIN_BYTES = 1_000_000
+# 腰斩保险:某份清单比上一版少一半以上 ⇒ 红,在一切写入之前(与 STUN 同一条纪律:
+# 上游一次误删、发布物残缺、解析器漂移,三种都值得人看一眼,而不是静默把清单缩成一小截)。
+DLC_SHRINK_FLOOR = 0.5
+DLC_TYPE_TO_SURGE = {"domain": "DOMAIN-SUFFIX", "full": "DOMAIN", "keyword": "DOMAIN-KEYWORD"}
+
+# 🔴 **一张表定三件事**:路径(= 使用者配置里的永久 URL,起好名就别再改)、
+#    上游清单代号、人话标题与说明。层级(MIRRORED_SETS)与说明(SET_SUMMARIES)都从这里派生。
+# ⚠️ 标题与说明只答「这些是什么」,不答「该走哪」(README 第一原则)。
+# ⚠️ 取的是**整份**清单:上游用 `@cn` / `@ads` 等属性给条目打的标签一律去掉,不做子集 ——
+#    做子集就是我们在替上游做取舍,那就不配叫镜像。
+DLC_LISTS = {
+    "sets/game/games-non-cn.list": (
+        "category-games-!cn", "游戏平台与厂商域名(中国大陆以外)",
+        "中国大陆以外的游戏平台与厂商:Steam、Epic、任天堂、PlayStation、Xbox、暴雪、Riot、EA、育碧、Rockstar 等,"
+        "含它们的登录、商店与对战服务域名。内容来自 v2fly 社区维护的域名库(MIT),"
+        "由社区按公开信息整理,Minerva 只把官方发布物换成 Surge 的写法,一条不增、一条不删。"),
+    "sets/game/games-cn.list": (
+        "category-games-cn", "游戏平台与厂商域名(中国大陆)",
+        "中国大陆的游戏平台与厂商:腾讯游戏、米哈游国服、库洛、心动、西山居、4399、B 站游戏、阿里游戏等。"
+        "内容来自 v2fly 社区维护的域名库(MIT),Minerva 只换写法、不改内容。"),
+    "sets/finance/banks-cn.list": (
+        "category-bank-cn", "银行域名(中国大陆)",
+        "中国大陆几家大型银行的域名:工商银行、建设银行、中国银行、招商银行、中信银行、汇丰中国,以及银联。"
+        "⚠️ 只覆盖 v2fly 社区整理过的这几家,不是全部银行。Minerva 只换写法、不改内容。"),
+    "sets/finance/securities-cn.list": (
+        "category-securities-cn", "证券公司域名(中国大陆)",
+        "中国大陆证券公司与行情、交易服务的域名,一百多家,来自 v2fly 社区维护的域名库(MIT)。"
+        "Minerva 只换写法、不改内容。"),
+    "sets/finance/finance-global.list": (
+        "category-finance", "券商、金融科技与部分海外银行域名",
+        "⚠️ 这是一份混装清单,照 v2fly 社区库的 category-finance 原样收录:全球券商与金融科技"
+        "(盈透 IBKR、嘉信 Schwab、富途、老虎、长桥、Wise、N26、Stripe 等)加上伊朗、日本、缅甸、俄罗斯的银行。"
+        "不含中国大陆的银行与券商,那两份单独列。Minerva 只换写法、不改内容。"),
+    "sets/crypto/cryptocurrency.list": (
+        "category-cryptocurrency", "加密货币交易所与钱包域名",
+        "加密货币交易所、钱包与相关服务的域名:币安、OKX、Bybit、Kraken、KuCoin、Gate、火币、Trust Wallet 等二十多家,"
+        "来自 v2fly 社区维护的域名库(MIT)。Minerva 只换写法、不改内容。"),
+    "sets/shopping/ecommerce-global.list": (
+        "category-ecommerce", "电商与零售品牌域名(中国大陆以外)",
+        "中国大陆以外的电商与零售品牌:eBay、Shopee、Shopify、乐天、沃尔玛、Target、宜家、Nike、Adidas、"
+        "Booking、Airbnb 等,来自 v2fly 社区维护的域名库(MIT)。京东、拼多多、阿里系在旁边单独列。"
+        "Minerva 只换写法、不改内容。"),
+    "sets/shopping/jd.list": (
+        "jd", "京东域名",
+        "京东及其物流、金融、云等子业务的域名,来自 v2fly 社区维护的域名库(MIT)。Minerva 只换写法、不改内容。"),
+    "sets/shopping/pinduoduo.list": (
+        "pinduoduo", "拼多多域名",
+        "拼多多的域名,只有几条,来自 v2fly 社区维护的域名库(MIT)。Minerva 只换写法、不改内容。"),
+    "sets/shopping/alibaba.list": (
+        "alibaba", "阿里巴巴系域名",
+        "阿里巴巴系的域名:淘宝、天猫、阿里云、高德、菜鸟、钉钉、饿了么、优酷、UC 等,"
+        "来自 v2fly 社区维护的域名库(MIT)。Minerva 只换写法、不改内容。"),
+}
+MIRRORED_SETS.update({rel: DLC_UPSTREAM for rel in DLC_LISTS})
+SET_SUMMARIES.update({rel: summary for rel, (_, _, summary) in DLC_LISTS.items()})
 
 NOW = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
@@ -251,6 +329,9 @@ def build_sets(old_manifest):
     record("sets/network/stun.list", build_stun(old_manifest))
     record("sets/microsoft/microsoft-365.list", build_microsoft365())
     record("sets/dev/github.list", build_github())
+    # 镜像层(v2fly 社区域名清单):十份一起生成,任一份保险红了整轮退出。
+    for rel, result in build_dlc(old_manifest).items():
+        record(rel, result)
     # ⚠️ `sets/ai/` 下那两份是**手工维护**的,不在这里生成 —— 它们由人对着厂商官方文档整理,
     #    管线只负责在 manifest 里如实记录它们的条数与最后改动时间。见 SET_SUMMARIES。
     return counts, rewritten
@@ -574,6 +655,107 @@ def build_github():
 
 
 # ------------------------------------------------- 上一版 manifest(索引层新鲜度的对照)
+
+# ---------------------------------------------------------------- 镜像层:生成
+
+def fetch_text(url, timeout=120):
+    req = urllib.request.Request(url, headers={"User-Agent": "minerva-rulesets-builder"})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return resp.read().decode("utf-8", errors="replace")
+
+
+def _yaml_unquote(s):
+    """只处理官方发布物里出现的双引号标量:去引号、还原 `\\` 与 `\"`。不是通用 YAML 解析。"""
+    s = s.strip()
+    if len(s) >= 2 and s[0] == '"' and s[-1] == '"':
+        s = s[1:-1]
+    return s.replace('\\"', '"').replace("\\\\", "\\")
+
+
+def parse_dlc_plain(text):
+    """
+    解析官方 `dlc.dat_plain.yml`。它的形状极规整(顶层 `lists:`;每项 `name` / `length` / `rules`;
+    规则写成 `"type:value"`,属性接在后面 `:@attr`),所以用几十行标准库代码手解,
+    不引 PyYAML(模块头注释硬约束 3:CI 上不 pip install)。
+    ⚠️ 只认这一种形状 —— 缩进、引号、字段名任何一样变了都解析不出。**这正是想要的**:
+       格式漂移必须让 CI 变红(下面 `length` 自检会抓),而不是静默解出一堆空清单。
+    返回 `{code: {"length": 上游自称条数, "rules": [(type, value, attrs)]}}`。
+    """
+    lists, cur = {}, None
+    for raw in text.splitlines():
+        line = raw.rstrip()
+        if line.startswith('  - name: '):
+            cur = {"length": None, "rules": []}
+            lists[_yaml_unquote(line[len('  - name: '):])] = cur
+        elif line.startswith('    length: ') and cur is not None:
+            cur["length"] = int(line[len('    length: '):].strip())
+        elif line.startswith('      - ') and cur is not None:
+            rule = _yaml_unquote(line[len('      - '):])
+            typ, _, rest = rule.partition(":")
+            parts = rest.split(":@")
+            cur["rules"].append((typ, parts[0], tuple(parts[1:])))
+    return lists
+
+
+def dlc_rules_to_surge(rules):
+    """
+    一行换一种写法:`domain:` → `DOMAIN-SUFFIX`(含子域)· `full:` → `DOMAIN`(精确)· `keyword:` → `DOMAIN-KEYWORD`。
+    `regexp:` 是 Go 语法正则,Surge 的规则里没有对应物 ⇒ **略去但数出来**,写进表头,不静默。
+    属性一律丢弃(取整份清单,见 DLC_LISTS 的注释)。去重 + 排序 ⇒ 字节确定性,
+    上游只是换了行序时 `write_list` 才能判出「内容未变」。
+    返回 `(规则行列表, 略去的 regexp 条数)`。
+    """
+    lines, skipped = set(), 0
+    for typ, value, _attrs in rules:
+        prefix = DLC_TYPE_TO_SURGE.get(typ)
+        if prefix is None:
+            skipped += 1
+            continue
+        value = value.strip().lower()
+        if value:
+            lines.add(f"{prefix},{value}")
+    return sorted(lines), skipped
+
+
+def assert_dlc_list_sane(code, item, lines, prev_count):
+    """🔴 四道保险,全在写入之前;任何一道红了整轮就退出,`sets/` 一个字节不动。"""
+    if item is None:
+        print(f"::error::上游发布物里找不到清单「{code}」—— 改名或下架了。不猜,人来看。", file=sys.stderr)
+        raise SystemExit(1)
+    if item["length"] is None or item["length"] != len(item["rules"]):
+        print(f"::error::「{code}」上游自称 {item['length']} 条,解析出 {len(item['rules'])} 条 —— "
+              "发布物形状漂移,解析器不可信,不写。", file=sys.stderr)
+        raise SystemExit(1)
+    if not lines:
+        print(f"::error::「{code}」转出来 0 条规则 —— 不写。", file=sys.stderr)
+        raise SystemExit(1)
+    if prev_count and len(lines) < prev_count * DLC_SHRINK_FLOOR:
+        print(f"::error::「{code}」从上一版的 {prev_count} 条掉到 {len(lines)} 条(不到一半)—— "
+              "上游误删、发布物残缺或解析漂移,三种都该人看一眼。不写。", file=sys.stderr)
+        raise SystemExit(1)
+
+
+def build_dlc(old_manifest):
+    """镜像层:从 v2fly 官方发布物生成 DLC_LISTS 里的每一份。返回 `{rel: (条数, 这一轮有没有重写)}`。"""
+    print("  v2fly 社区域名清单(镜像层)…")
+    text = fetch_text(DLC_PLAIN_URL)
+    if len(text.encode("utf-8")) < DLC_PLAIN_MIN_BYTES or not text.startswith("lists:"):
+        print(f"::error::dlc.dat_plain.yml 只有 {len(text.encode('utf-8'))} 字节或形状不对 —— "
+              "拉到半截或上游改了发布物,不写。", file=sys.stderr)
+        raise SystemExit(1)
+    lists = parse_dlc_plain(text)
+    prev = entries_by_path(old_manifest) if old_manifest else {}
+    results = {}
+    for rel, (code, title, _summary) in DLC_LISTS.items():
+        item = lists.get(code)
+        lines, skipped = dlc_rules_to_surge(item["rules"]) if item else ([], 0)
+        assert_dlc_list_sane(code, item, lines, (prev.get(rel) or {}).get("ruleCount"))
+        note = (f"v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「{code}」(MIT);"
+                "@属性已去除、取整份清单"
+                + (f";{skipped} 条 regexp Surge 表达不了、已略去" if skipped else ""))
+        results[rel] = write_list(rel, title, note, lines)
+    return results
+
 
 def previous_manifest():
     """

@@ -161,6 +161,20 @@
     "homepage": "https://github.com/Loyalsoldier/surge-rules",
     "license": "GPL-3.0"
    }
+  },
+  {
+   "id": "sukka-game-download",
+   "displayName": "游戏平台下载 CDN 域名(Sukka)",
+   "category": "game",
+   "directive": "DOMAIN-SET",
+   "tags": ["basis:community", "scope:global"],
+   "summary": "Steam、Epic、Blizzard、GOG、Ubisoft、EA、Xbox、PlayStation、Riot、Bethesda 等游戏平台用来分发游戏本体与更新的 CDN 域名,Sukka 手工维护、几十条。只管「下载」这一件事,不含游戏登录与对战服务器,也不含中国大陆的 CDN。",
+   "listURL": "https://ruleset.skk.moe/List/domainset/game-download.conf",
+   "upstream": {
+    "repository": "SukkaW/Surge",
+    "homepage": "https://ruleset.skk.moe",
+    "license": "AGPL-3.0"
+   }
   }
  ]
 }

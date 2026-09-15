@@ -1,0 +1,12 @@
+# 拼多多域名
+# Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「pinduoduo」(MIT);@属性已去除、取整份清单
+# Generated: 2026-09-15T22:16:39Z
+# Rules: 7
+#
+DOMAIN-SUFFIX,pddcdn.com
+DOMAIN-SUFFIX,pddim.com
+DOMAIN-SUFFIX,pddpic.com
+DOMAIN-SUFFIX,pddugc.com
+DOMAIN-SUFFIX,pinduoduo.com
+DOMAIN-SUFFIX,pinduoduo.net
+DOMAIN-SUFFIX,yangkeduo.com

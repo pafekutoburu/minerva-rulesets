@@ -37,8 +37,9 @@ sets/Proxy/Netflix.list      ❌  它说的是「Netflix 该走代理」——�
 
 索引层**只记录地址,不复制任何内容**。这既是尊重上游的许可证,也意味着你拿到的永远是上游的最新版本。
 
-镜像层只有在**上游许可证明许再分发、而它的原始格式 Surge 又消费不了**时才会出现——**目前没有条目**
-(此前唯一的一条是 STUN 服务器域名,2026-08-07 起收录判据自建、已升为自建层,见下)。
+镜像层只有在**上游许可证明许再分发、而它的原始格式 Surge 又消费不了**时才会出现——
+目前是 v2fly 社区域名清单里的十份(游戏 / 银行与证券 / 加密货币 / 电商,MIT),
+从官方发布物直接换写法、一条不增一条不删(此前唯一的一条 STUN 已于 2026-08-07 升为自建层,见下)。
 镜像条目**不会**被伪装成自建:`manifest.json` 里 `layer` 与 `upstream` 两个字段
 都会如实说明。逐条署名见 [`SOURCES.md`](SOURCES.md)。
 
@@ -89,7 +90,10 @@ DOMAIN-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ic
 
 ### 镜像层
 
-目前没有条目(上一条 STUN 已于 2026-08-07 升为自建层,升级史见 `SOURCES.md`)。
+十份来自 [v2fly/domain-list-community](https://github.com/v2fly/domain-list-community)(MIT)的分类域名清单:
+游戏平台与厂商(中国大陆 / 以外各一份)、银行与证券公司(中国大陆)、券商与金融科技、加密货币、
+电商与零售品牌、京东、拼多多、阿里巴巴系。内容全是社区的判断,我们只把官方发布物换成 Surge 的写法;
+`manifest.json` 里 `layer: mirrored` + `upstream` 如实标注,逐条说明见 `SOURCES.md`。
 
 ### 索引层
 
