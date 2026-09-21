@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-09-20T07:12:23Z",
+ "generatedAt": "2026-09-21T07:21:37Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -232,11 +232,11 @@
    "displayName": "京东域名",
    "category": "shopping",
    "tags": [],
-   "ruleCount": 243,
+   "ruleCount": 255,
    "layer": "mirrored",
    "summary": "京东及其物流、金融、云等子业务的域名,来自 v2fly 社区维护的域名库(MIT)。Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-09-15T15:27:12-07:00",
+   "updatedAt": "2026-09-21T07:21:37Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -279,8 +279,8 @@
     "listURL": "https://anti-ad.net/surge.txt"
    },
    "ruleCount": 100732,
-   "updatedAt": "2026-09-19T20:53:56Z",
-   "contentHash": "551c7822a1a7047d3d412f4b1298b0d27fe9012750ca8d9367933676ba51bb43"
+   "updatedAt": "2026-09-20T10:06:55Z",
+   "contentHash": "86a341bac785a9287f511242389d0fa387d0de876a1416f157a305df085c60c3"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -299,9 +299,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
    },
-   "ruleCount": 952,
-   "updatedAt": "2026-09-10T06:46:13Z",
-   "contentHash": "05c5f63c58bbdf0fff062d907309e46ef43e23f85ca1ebea77aa35368869f099"
+   "ruleCount": 963,
+   "updatedAt": "2026-09-21T07:21:37Z",
+   "contentHash": "3b6a2163bfdad7359f6c651230cad0a0b5e39aeb9bf042519ecb31042ffdc862"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 190037,
-   "updatedAt": "2026-09-20T07:12:23Z",
-   "contentHash": "50e602dc2d4e99f0f23f7b9b6db524c87f575d218ef1f4feafed2ba38867e2fd"
+   "ruleCount": 190384,
+   "updatedAt": "2026-09-21T07:21:37Z",
+   "contentHash": "28709abdd5f1e8f3ac3360d7d798606cd457cef110544fbeed3dcbd4d134d8db"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
