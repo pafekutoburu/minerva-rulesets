@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-09-21T07:21:37Z",
+ "generatedAt": "2026-09-22T06:58:26Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -236,7 +236,7 @@
    "layer": "mirrored",
    "summary": "京东及其物流、金融、云等子业务的域名,来自 v2fly 社区维护的域名库(MIT)。Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-09-21T07:21:37Z",
+   "updatedAt": "2026-09-21T07:22:26Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -299,9 +299,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
    },
-   "ruleCount": 963,
-   "updatedAt": "2026-09-21T07:21:37Z",
-   "contentHash": "3b6a2163bfdad7359f6c651230cad0a0b5e39aeb9bf042519ecb31042ffdc862"
+   "ruleCount": 965,
+   "updatedAt": "2026-09-22T06:58:26Z",
+   "contentHash": "3aa8cec471f436156921bd33516bc14ea7535e796bba421aee8e37cac40a8387"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 190384,
-   "updatedAt": "2026-09-21T07:21:37Z",
-   "contentHash": "28709abdd5f1e8f3ac3360d7d798606cd457cef110544fbeed3dcbd4d134d8db"
+   "ruleCount": 190748,
+   "updatedAt": "2026-09-22T06:58:26Z",
+   "contentHash": "4da276c28e3791faff083bc3c413092c3cea2cbe30a7f3bbf4d8c14ba0882caa"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -418,9 +418,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
    },
-   "ruleCount": 4384,
-   "updatedAt": "2026-09-12T06:38:19Z",
-   "contentHash": "853cdd96c949e1b59c4228e774471fc2815b333d90ee51069ccc918bfe2b383f"
+   "ruleCount": 4386,
+   "updatedAt": "2026-09-22T06:58:26Z",
+   "contentHash": "0eed3f2c98ce589f10e8c062f9854f8015448c3f48435ff63d0a296290b0f0ea"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
