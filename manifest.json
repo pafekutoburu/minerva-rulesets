@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-09-22T06:58:26Z",
+ "generatedAt": "2026-09-23T06:52:10Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -176,22 +176,22 @@
    "displayName": "中国大陆 IPv4 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 8792,
+   "ruleCount": 8791,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv4 网段,来自 APNIC 每日发布的注册数据。⚠️ Surge 内建的 GEOIP,CN 已经覆盖了大部分同类需求,这份的价值在于来源可查。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-09-04T06:40:12Z"
+   "updatedAt": "2026-09-23T06:52:10Z"
   },
   {
    "path": "sets/region/cn-ipv6.list",
    "displayName": "中国大陆 IPv6 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 2043,
+   "ruleCount": 2042,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv6 网段,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-09-04T06:40:12Z"
+   "updatedAt": "2026-09-23T06:52:10Z"
   },
   {
    "path": "sets/shopping/alibaba.list",
@@ -278,9 +278,9 @@
     "license": "MIT",
     "listURL": "https://anti-ad.net/surge.txt"
    },
-   "ruleCount": 100732,
-   "updatedAt": "2026-09-20T10:06:55Z",
-   "contentHash": "86a341bac785a9287f511242389d0fa387d0de876a1416f157a305df085c60c3"
+   "ruleCount": 101453,
+   "updatedAt": "2026-09-22T21:33:03Z",
+   "contentHash": "029f5d56ff36422767cf97d083d47156f8c7b2683e481c5334d559b0ec8e70c0"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 190748,
-   "updatedAt": "2026-09-22T06:58:26Z",
-   "contentHash": "4da276c28e3791faff083bc3c413092c3cea2cbe30a7f3bbf4d8c14ba0882caa"
+   "ruleCount": 191080,
+   "updatedAt": "2026-09-23T06:52:10Z",
+   "contentHash": "2702a69191918fe4b65d7090b02b92fd9e25da44f3d3254e435b56f5c7e40c62"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
