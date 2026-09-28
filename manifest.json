@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-09-27T07:15:48Z",
+ "generatedAt": "2026-09-28T07:51:00Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -165,11 +165,11 @@
    "displayName": "中国大陆自治系统号(ASN)",
    "category": "region",
    "tags": [],
-   "ruleCount": 6394,
+   "ruleCount": 6395,
    "layer": "authored",
    "summary": "分配给中国大陆组织的自治系统号(ASN)。ASN 是「一整家网络运营商」的编号,比按 IP 段判断更粗但更稳,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-09-04T06:40:12Z"
+   "updatedAt": "2026-09-28T07:51:00Z"
   },
   {
    "path": "sets/region/cn-ipv4.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 192363,
-   "updatedAt": "2026-09-27T07:15:48Z",
-   "contentHash": "11394feac52021e68401051f648d5b4f6bd47a57813463b533138a5e4200e713"
+   "ruleCount": 192682,
+   "updatedAt": "2026-09-28T07:51:00Z",
+   "contentHash": "3527e577d0645ba452cd3d4e6871282c314e060609de5f67b13b3fa3abeb7191"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
