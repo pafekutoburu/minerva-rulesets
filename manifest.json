@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-09-28T07:51:00Z",
+ "generatedAt": "2026-09-29T07:36:58Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -169,7 +169,7 @@
    "layer": "authored",
    "summary": "分配给中国大陆组织的自治系统号(ASN)。ASN 是「一整家网络运营商」的编号,比按 IP 段判断更粗但更稳,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-09-28T07:51:00Z"
+   "updatedAt": "2026-09-28T07:51:50Z"
   },
   {
    "path": "sets/region/cn-ipv4.list",
@@ -278,9 +278,9 @@
     "license": "MIT",
     "listURL": "https://anti-ad.net/surge.txt"
    },
-   "ruleCount": 102114,
-   "updatedAt": "2026-09-25T21:45:03Z",
-   "contentHash": "7ba76d8b4f455194c69e29cc80495a40b5bd92ab84446c36ba0751eb5da22165"
+   "ruleCount": 99385,
+   "updatedAt": "2026-09-28T23:25:44Z",
+   "contentHash": "7847fe9e864b9348b0df7283a36bac53a8004291fcdff0eac821b151da4c148f"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 192682,
-   "updatedAt": "2026-09-28T07:51:00Z",
-   "contentHash": "3527e577d0645ba452cd3d4e6871282c314e060609de5f67b13b3fa3abeb7191"
+   "ruleCount": 185455,
+   "updatedAt": "2026-09-29T07:36:58Z",
+   "contentHash": "eaad0618b815d5a139e7e6c3aab5d1626689c1f33ea3410b430f9eaf56aeabe8"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
