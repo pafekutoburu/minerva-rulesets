@@ -1,7 +1,7 @@
 # 公开 STUN 服务器域名
 # Source: 候选名单:pradt2/always-online-stun(MIT);收录判据:本仓 CI 每日发真实 STUN Binding Request 验活,只收 7 天内有响应的(scripts/stun_check.py)
-# Generated: 2026-09-24T06:52:30Z
-# Rules: 281
+# Generated: 2026-10-02T07:40:09Z
+# Rules: 271
 #
 DOMAIN,relay.webwormhole.io
 DOMAIN,stun.1-voip.com
@@ -9,14 +9,12 @@ DOMAIN,stun.12connect.com
 DOMAIN,stun.12voip.com
 DOMAIN,stun.1cbit.ru
 DOMAIN,stun.1und1.de
-DOMAIN,stun.5sn.com
 DOMAIN,stun.aa.net.uk
 DOMAIN,stun.aaisp.co.uk
 DOMAIN,stun.acquageraci.it
 DOMAIN,stun.acrobits.cz
 DOMAIN,stun.acronis.com
 DOMAIN,stun.actionvoip.com
-DOMAIN,stun.alberon.cz
 DOMAIN,stun.alphacron.de
 DOMAIN,stun.alpirsbacher.de
 DOMAIN,stun.annatel.net
@@ -24,7 +22,6 @@ DOMAIN,stun.antisip.com
 DOMAIN,stun.arkh-edu.ru
 DOMAIN,stun.atagverwarming.nl
 DOMAIN,stun.autosystem.com
-DOMAIN,stun.avoxi.com
 DOMAIN,stun.axeos.nl
 DOMAIN,stun.axialys.net
 DOMAIN,stun.babelforce.com
@@ -44,8 +41,6 @@ DOMAIN,stun.clickphone.ro
 DOMAIN,stun.commpeak.com
 DOMAIN,stun.comrex.com
 DOMAIN,stun.cope.es
-DOMAIN,stun.counterpath.com
-DOMAIN,stun.counterpath.net
 DOMAIN,stun.crimeastar.net
 DOMAIN,stun.ctafauni.it
 DOMAIN,stun.dcalling.de
@@ -57,7 +52,6 @@ DOMAIN,stun.dus.net
 DOMAIN,stun.easter-eggs.com
 DOMAIN,stun.easybell.de
 DOMAIN,stun.easyvoip.com
-DOMAIN,stun.ekiga.net
 DOMAIN,stun.engineeredarts.co.uk
 DOMAIN,stun.eol.co.nz
 DOMAIN,stun.epygi.com
@@ -68,7 +62,6 @@ DOMAIN,stun.fbsbx.com
 DOMAIN,stun.files.fm
 DOMAIN,stun.finsterwalder.com
 DOMAIN,stun.fitauto.ru
-DOMAIN,stun.fixup.net
 DOMAIN,stun.flashdance.cx
 DOMAIN,stun.fmo.de
 DOMAIN,stun.framasoft.org
@@ -154,7 +147,6 @@ DOMAIN,stun.officinabit.com
 DOMAIN,stun.olimontel.it
 DOMAIN,stun.oncloud7.ch
 DOMAIN,stun.openvoip.it
-DOMAIN,stun.ozekiphone.com
 DOMAIN,stun.palava.tv
 DOMAIN,stun.peethultra.be
 DOMAIN,stun.phone.com
@@ -178,7 +170,6 @@ DOMAIN,stun.sacko.com.au
 DOMAIN,stun.schlund.de
 DOMAIN,stun.schulinformatik.at
 DOMAIN,stun.shadrinsk.net
-DOMAIN,stun.sigmavoip.com
 DOMAIN,stun.signalwire.com
 DOMAIN,stun.simlar.org
 DOMAIN,stun.sip.us
@@ -275,7 +266,6 @@ DOMAIN,stun.webfreak.org
 DOMAIN,stun.wemag.com
 DOMAIN,stun.westtel.ky
 DOMAIN,stun.wtfismyip.com
-DOMAIN,stun.xten.com
 DOMAIN,stun.yesdates.com
 DOMAIN,stun.zadarma.com
 DOMAIN,stun.zentauron.de
