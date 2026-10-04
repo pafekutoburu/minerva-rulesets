@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-10-03T07:12:22Z",
+ "generatedAt": "2026-10-04T07:31:36Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 186771,
-   "updatedAt": "2026-10-03T07:12:22Z",
-   "contentHash": "12eb51fdad94c3297a22072c373cd42f6391433d5aaa2e349fa152ad799425cd"
+   "ruleCount": 187102,
+   "updatedAt": "2026-10-04T07:31:36Z",
+   "contentHash": "6b6a2df061710ab5782c6ab30da4ba4b91d001cc7000d3e2367277732d7c77ed"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
