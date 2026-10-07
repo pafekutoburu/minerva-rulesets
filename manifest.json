@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-10-06T08:15:16Z",
+ "generatedAt": "2026-10-07T07:50:28Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 187715,
-   "updatedAt": "2026-10-06T08:15:16Z",
-   "contentHash": "adec636ad62dea2886c6fc73b10fd11945c43680d5763892fd406343e6b737db"
+   "ruleCount": 188023,
+   "updatedAt": "2026-10-07T07:50:28Z",
+   "contentHash": "a614a0d6c94981daa4f4a1d325e9960bdd30458661443b24fd89faedac751c87"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -418,9 +418,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
    },
-   "ruleCount": 4393,
-   "updatedAt": "2026-10-03T07:12:22Z",
-   "contentHash": "f5e497440e4f441d75dc4a630fb8c031b56af31a79d1c5740fe00a4c9250de03"
+   "ruleCount": 4429,
+   "updatedAt": "2026-10-07T07:50:28Z",
+   "contentHash": "d867a5977a4f4f475755460ea614ac78efd65e22cf26111370963445aa298ba4"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
