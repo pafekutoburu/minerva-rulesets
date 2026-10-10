@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-10-09T08:06:18Z",
+ "generatedAt": "2026-10-10T07:50:51Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -75,11 +75,11 @@
    "displayName": "券商、金融科技与部分海外银行域名",
    "category": "finance",
    "tags": [],
-   "ruleCount": 613,
+   "ruleCount": 656,
    "layer": "mirrored",
    "summary": "⚠️ 这是一份混装清单,照 v2fly 社区库的 category-finance 原样收录:全球券商与金融科技(盈透 IBKR、嘉信 Schwab、富途、老虎、长桥、Wise、N26、Stripe 等)加上伊朗、日本、缅甸、俄罗斯的银行。不含中国大陆的银行与券商,那两份单独列。Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-09-15T15:27:12-07:00",
+   "updatedAt": "2026-10-10T07:50:51Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -158,18 +158,18 @@
    "layer": "authored",
    "summary": "公开 STUN 服务器的域名。STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用它。拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。候选名单来自 pradt2/always-online-stun(MIT),但收录判据是 Minerva 自己的:CI 每天向每台候选与在册服务器发真实 STUN 请求,只收 7 天内有响应的 —— 死掉的 STUN 服务器不会泄漏你的 IP,留着只是虚胖;哪天它复活了,次日就会回到清单里。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-10-09T08:06:18Z"
+   "updatedAt": "2026-10-09T08:07:11Z"
   },
   {
    "path": "sets/region/cn-asn.list",
    "displayName": "中国大陆自治系统号(ASN)",
    "category": "region",
    "tags": [],
-   "ruleCount": 6395,
+   "ruleCount": 6397,
    "layer": "authored",
    "summary": "分配给中国大陆组织的自治系统号(ASN)。ASN 是「一整家网络运营商」的编号,比按 IP 段判断更粗但更稳,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-09-28T07:51:50Z"
+   "updatedAt": "2026-10-10T07:50:51Z"
   },
   {
    "path": "sets/region/cn-ipv4.list",
@@ -187,11 +187,11 @@
    "displayName": "中国大陆 IPv6 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 2043,
+   "ruleCount": 2044,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv6 网段,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-09-25T06:47:56Z"
+   "updatedAt": "2026-10-10T07:50:51Z"
   },
   {
    "path": "sets/shopping/alibaba.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 188639,
-   "updatedAt": "2026-10-09T08:06:18Z",
-   "contentHash": "f238748af1a393a0218297f4e5d4b5b0f6fc4da4864231b07836598c479b1c7c"
+   "ruleCount": 190677,
+   "updatedAt": "2026-10-10T07:50:51Z",
+   "contentHash": "414b4e15791e10d07e151572630f2a38b550fc42a430bf48fd804aaf053d8c33"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
