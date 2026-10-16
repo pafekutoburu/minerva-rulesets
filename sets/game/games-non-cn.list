@@ -1,7 +1,7 @@
 # 游戏平台与厂商域名(中国大陆以外)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-games-!cn」(MIT);@属性已去除、取整份清单;3 条 regexp Surge 表达不了、已略去
-# Generated: 2026-09-15T22:16:39Z
-# Rules: 857
+# Generated: 2026-10-16T06:31:22Z
+# Rules: 858
 #
 DOMAIN,a.ppy.sh
 DOMAIN,a4e8s8k3.map2.ssl.hwcdn.net
@@ -545,6 +545,7 @@ DOMAIN-SUFFIX,playparagon.com
 DOMAIN-SUFFIX,playstation
 DOMAIN-SUFFIX,playstation.com
 DOMAIN-SUFFIX,playstation.net
+DOMAIN-SUFFIX,playstationnetwork.com
 DOMAIN-SUFFIX,playvalorant.com
 DOMAIN-SUFFIX,playwarcraft3.com
 DOMAIN-SUFFIX,pogo.com
