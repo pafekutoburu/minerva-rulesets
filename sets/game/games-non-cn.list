@@ -1,7 +1,7 @@
 # 游戏平台与厂商域名(中国大陆以外)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-games-!cn」(MIT);@属性已去除、取整份清单;3 条 regexp Surge 表达不了、已略去
-# Generated: 2026-10-16T06:31:22Z
-# Rules: 858
+# Generated: 2026-10-18T06:44:37Z
+# Rules: 861
 #
 DOMAIN,a.ppy.sh
 DOMAIN,a4e8s8k3.map2.ssl.hwcdn.net
@@ -21,9 +21,12 @@ DOMAIN,c.ppy.sh
 DOMAIN,cdngarenanow-a.akamaihd.net
 DOMAIN,cloudsync-prod.s3.amazonaws.com
 DOMAIN,d1unuk07s6td74.cloudfront.net
+DOMAIN,d348twzf7a8p5.cloudfront.net
 DOMAIN,datarouter.apps.netherrealm.com
+DOMAIN,devforum-uploads.s3.dualstack.us-east-2.amazonaws.com
 DOMAIN,dlgarenanow-a.akamaihd.net
 DOMAIN,dlmobilegarena-a.akamaihd.net
+DOMAIN,doy2mn9upadnk.cloudfront.net
 DOMAIN,ea.tt.omtrdc.net
 DOMAIN,eaassets-a.akamaihd.net
 DOMAIN,f3b7q2p3.ssl.hwcdn.net

@@ -1,7 +1,7 @@
 # 券商、金融科技与部分海外银行域名
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-finance」(MIT);@属性已去除、取整份清单
-# Generated: 2026-10-10T07:50:51Z
-# Rules: 656
+# Generated: 2026-10-18T06:44:37Z
+# Rules: 657
 #
 DOMAIN,standchartbank.sc.omtrdc.net
 DOMAIN,standchartbank.tt.omtrdc.net
@@ -485,6 +485,7 @@ DOMAIN-SUFFIX,schwab.com
 DOMAIN-SUFFIX,schwab.com.hk
 DOMAIN-SUFFIX,schwab.com.sg
 DOMAIN-SUFFIX,schwabassetmanagement.com
+DOMAIN-SUFFIX,schwabcdn.com
 DOMAIN-SUFFIX,schwabplan.com
 DOMAIN-SUFFIX,sdm.ru
 DOMAIN-SUFFIX,seb.ru
