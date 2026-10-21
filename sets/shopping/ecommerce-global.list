@@ -1,7 +1,7 @@
 # 电商与零售品牌域名(中国大陆以外)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-ecommerce」(MIT);@属性已去除、取整份清单
-# Generated: 2026-09-15T22:16:39Z
-# Rules: 1317
+# Generated: 2026-10-21T06:42:17Z
+# Rules: 1319
 #
 DOMAIN,ad.ozone.ru
 DOMAIN,ads-gate.wildberries.ru
@@ -222,8 +222,10 @@ DOMAIN-SUFFIX,asebay.com
 DOMAIN-SUFFIX,auto.ru
 DOMAIN-SUFFIX,automobile.fr
 DOMAIN-SUFFIX,autoru.me
+DOMAIN-SUFFIX,avito.com
 DOMAIN-SUFFIX,avito.ru
 DOMAIN-SUFFIX,avito.st
+DOMAIN-SUFFIX,avito.tech
 DOMAIN-SUFFIX,avto.ru
 DOMAIN-SUFFIX,axbdoll.com.tw
 DOMAIN-SUFFIX,baazee.com
