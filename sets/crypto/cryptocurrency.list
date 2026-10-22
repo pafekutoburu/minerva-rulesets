@@ -1,7 +1,7 @@
 # 加密货币交易所与钱包域名
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-cryptocurrency」(MIT);@属性已去除、取整份清单
-# Generated: 2026-09-15T22:16:39Z
-# Rules: 235
+# Generated: 2026-10-22T06:46:11Z
+# Rules: 240
 #
 DOMAIN,bybit-exchange.github.io
 DOMAIN,bybit.ada.support
@@ -66,6 +66,8 @@ DOMAIN-SUFFIX,bitstamp.net
 DOMAIN-SUFFIX,bittrex.com
 DOMAIN-SUFFIX,blast.io
 DOMAIN-SUFFIX,blockchain.com
+DOMAIN-SUFFIX,blockchair.com
+DOMAIN-SUFFIX,blockchair.net
 DOMAIN-SUFFIX,blockfrost.io
 DOMAIN-SUFFIX,bmwweb.solutions
 DOMAIN-SUFFIX,bnappweb.black
@@ -107,10 +109,12 @@ DOMAIN-SUFFIX,coinonecorp.com
 DOMAIN-SUFFIX,coredao.org
 DOMAIN-SUFFIX,crypto.com
 DOMAIN-SUFFIX,cryptocompare.com
+DOMAIN-SUFFIX,cryptoid.info
 DOMAIN-SUFFIX,cryptomus.com
 DOMAIN-SUFFIX,curve.fi
 DOMAIN-SUFFIX,cyberx.com
 DOMAIN-SUFFIX,debank.com
+DOMAIN-SUFFIX,delets.cash
 DOMAIN-SUFFIX,delets.online
 DOMAIN-SUFFIX,deribit.com
 DOMAIN-SUFFIX,devcon.org
@@ -155,6 +159,7 @@ DOMAIN-SUFFIX,kraken.com
 DOMAIN-SUFFIX,kraken.onl
 DOMAIN-SUFFIX,kucoin.com
 DOMAIN-SUFFIX,kucoin.plus
+DOMAIN-SUFFIX,kurs.expert
 DOMAIN-SUFFIX,lighter.exchange
 DOMAIN-SUFFIX,lighter.xyz
 DOMAIN-SUFFIX,litecoin.org
