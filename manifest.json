@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-10-24T06:36:52Z",
+ "generatedAt": "2026-10-25T07:03:29Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -58,11 +58,11 @@
    "displayName": "银行域名(中国大陆)",
    "category": "finance",
    "tags": [],
-   "ruleCount": 135,
+   "ruleCount": 139,
    "layer": "mirrored",
    "summary": "中国大陆几家大型银行的域名:工商银行、建设银行、中国银行、招商银行、中信银行、汇丰中国,以及银联。⚠️ 只覆盖 v2fly 社区整理过的这几家,不是全部银行。Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-09-15T15:27:12-07:00",
+   "updatedAt": "2026-10-25T07:03:29Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -109,11 +109,11 @@
    "displayName": "游戏平台与厂商域名(中国大陆)",
    "category": "game",
    "tags": [],
-   "ruleCount": 283,
+   "ruleCount": 282,
    "layer": "mirrored",
    "summary": "中国大陆的游戏平台与厂商:腾讯游戏、米哈游国服、库洛、心动、西山居、4399、B 站游戏、阿里游戏等。内容来自 v2fly 社区维护的域名库(MIT),Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-09-15T15:27:12-07:00",
+   "updatedAt": "2026-10-25T07:03:29Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -126,11 +126,11 @@
    "displayName": "游戏平台与厂商域名(中国大陆以外)",
    "category": "game",
    "tags": [],
-   "ruleCount": 865,
+   "ruleCount": 872,
    "layer": "mirrored",
    "summary": "中国大陆以外的游戏平台与厂商:Steam、Epic、任天堂、PlayStation、Xbox、暴雪、Riot、EA、育碧、Rockstar 等,含它们的登录、商店与对战服务域名。内容来自 v2fly 社区维护的域名库(MIT),由社区按公开信息整理,Minerva 只把官方发布物换成 Surge 的写法,一条不增、一条不删。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-10-22T06:46:58Z",
+   "updatedAt": "2026-10-25T07:03:29Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -278,9 +278,9 @@
     "license": "MIT",
     "listURL": "https://anti-ad.net/surge.txt"
    },
-   "ruleCount": 104448,
-   "updatedAt": "2026-10-22T21:50:03Z",
-   "contentHash": "d097ff642f24b6b61beaa64ed698bf896bf2a0d279f7fb0f2f5934636bf325d3"
+   "ruleCount": 104447,
+   "updatedAt": "2026-10-24T13:35:50Z",
+   "contentHash": "c7cac6529fc843b17711a1c54f8a0d2cd850b6a33fc290a3eb30f2ef8a2fb5db"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 200290,
-   "updatedAt": "2026-10-24T06:36:52Z",
-   "contentHash": "cfb5de99502c7f4dcbeda938cbc22f38235d96006f283982a418d5e729871476"
+   "ruleCount": 200546,
+   "updatedAt": "2026-10-25T07:03:29Z",
+   "contentHash": "7818b9f6de6eb67d3f66e9d82c0427a76ea0be0578d5f7f43b7198781e9d0bfd"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -360,8 +360,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/icloud.txt"
    },
-   "ruleCount": 53,
-   "contentHash": "5269dec21f9685f7e556af8492bcbe95910ee56d1af8c60f9d7e2c62ae9b0000"
+   "ruleCount": 52,
+   "updatedAt": "2026-10-25T07:03:29Z",
+   "contentHash": "0e10be191f78dd3520b1395811ebc00d6b4b8a6cbd2d5f60b24784d9c9562654"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/google.txt",
@@ -418,9 +419,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
    },
-   "ruleCount": 4434,
-   "updatedAt": "2026-10-24T06:36:52Z",
-   "contentHash": "7ae2f9fc4ed70e6b74e5db9569309c5ebc892bfcad79a48e866214a030c27d39"
+   "ruleCount": 4443,
+   "updatedAt": "2026-10-25T07:03:29Z",
+   "contentHash": "5e1d1295d13df42abf8759c8eb4d223977510feb8385d1139dec6003956074fb"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
@@ -461,8 +462,8 @@
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt"
    },
    "ruleCount": 829,
-   "updatedAt": "2026-10-22T06:46:11Z",
-   "contentHash": "23e50f81076f86ab3411d2aff3747a1d3699f57b0213ef1b9b09a5c626930729"
+   "updatedAt": "2026-10-25T07:03:29Z",
+   "contentHash": "f6a1f6efd78794e60f8f81d4aa0758e1a05ffdc6e7a309712a1d7274de674664"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt",

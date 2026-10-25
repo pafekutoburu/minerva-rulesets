@@ -1,7 +1,7 @@
 # 银行域名(中国大陆)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-bank-cn」(MIT);@属性已去除、取整份清单
-# Generated: 2026-09-15T22:16:39Z
-# Rules: 135
+# Generated: 2026-10-25T07:03:29Z
+# Rules: 139
 #
 DOMAIN-SUFFIX,8008205555.cn
 DOMAIN-SUFFIX,8008205555.com
@@ -20,6 +20,7 @@ DOMAIN-SUFFIX,bocamchina.com
 DOMAIN-SUFFIX,bocaviation.com
 DOMAIN-SUFFIX,boccfc.cc
 DOMAIN-SUFFIX,boccfc.cn
+DOMAIN-SUFFIX,bocd.com.cn
 DOMAIN-SUFFIX,bocfullertonbank.com
 DOMAIN-SUFFIX,bocgi.com
 DOMAIN-SUFFIX,bocgins.com
@@ -48,6 +49,8 @@ DOMAIN-SUFFIX,ccbleasing.com
 DOMAIN-SUFFIX,ccblife-test.com.cn
 DOMAIN-SUFFIX,ccbtrust.com.cn
 DOMAIN-SUFFIX,ccbxt.com
+DOMAIN-SUFFIX,cdrcb.com
+DOMAIN-SUFFIX,cdrcbank.com
 DOMAIN-SUFFIX,cebbank.com
 DOMAIN-SUFFIX,cfc108.com
 DOMAIN-SUFFIX,cgbchina.com.cn
@@ -96,6 +99,7 @@ DOMAIN-SUFFIX,hsbc.com.cn
 DOMAIN-SUFFIX,hsbcinsurance.com.cn
 DOMAIN-SUFFIX,hsbcqh.com.cn
 DOMAIN-SUFFIX,hxb.com.cn
+DOMAIN-SUFFIX,ibangbank.com
 DOMAIN-SUFFIX,icbc
 DOMAIN-SUFFIX,icbc.com.cn
 DOMAIN-SUFFIX,icbccs.com.cn

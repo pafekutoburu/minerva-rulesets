@@ -1,7 +1,7 @@
 # 游戏平台与厂商域名(中国大陆)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-games-cn」(MIT);@属性已去除、取整份清单;1 条 regexp Surge 表达不了、已略去
-# Generated: 2026-09-15T22:16:39Z
-# Rules: 283
+# Generated: 2026-10-25T07:03:29Z
+# Rules: 282
 #
 DOMAIN,end-api.shallow.ink
 DOMAIN,end.shallow.ink
@@ -102,7 +102,6 @@ DOMAIN-SUFFIX,gcloudcstestonly.com
 DOMAIN-SUFFIX,gclouddolphin.com
 DOMAIN-SUFFIX,gcloudsdk.com
 DOMAIN-SUFFIX,gcloudsvcs.com
-DOMAIN-SUFFIX,gdtimg.com
 DOMAIN-SUFFIX,goto-game.com
 DOMAIN-SUFFIX,goto-game.mobi
 DOMAIN-SUFFIX,goto-game.net.cn
