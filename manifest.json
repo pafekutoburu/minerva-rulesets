@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-10-25T07:03:29Z",
+ "generatedAt": "2026-10-26T07:10:27Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -62,7 +62,7 @@
    "layer": "mirrored",
    "summary": "中国大陆几家大型银行的域名:工商银行、建设银行、中国银行、招商银行、中信银行、汇丰中国,以及银联。⚠️ 只覆盖 v2fly 社区整理过的这几家,不是全部银行。Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-10-25T07:03:29Z",
+   "updatedAt": "2026-10-25T07:04:20Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -113,7 +113,7 @@
    "layer": "mirrored",
    "summary": "中国大陆的游戏平台与厂商:腾讯游戏、米哈游国服、库洛、心动、西山居、4399、B 站游戏、阿里游戏等。内容来自 v2fly 社区维护的域名库(MIT),Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-10-25T07:03:29Z",
+   "updatedAt": "2026-10-25T07:04:20Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -130,7 +130,7 @@
    "layer": "mirrored",
    "summary": "中国大陆以外的游戏平台与厂商:Steam、Epic、任天堂、PlayStation、Xbox、暴雪、Riot、EA、育碧、Rockstar 等,含它们的登录、商店与对战服务域名。内容来自 v2fly 社区维护的域名库(MIT),由社区按公开信息整理,Minerva 只把官方发布物换成 Surge 的写法,一条不增、一条不删。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-10-25T07:03:29Z",
+   "updatedAt": "2026-10-25T07:04:20Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -278,9 +278,9 @@
     "license": "MIT",
     "listURL": "https://anti-ad.net/surge.txt"
    },
-   "ruleCount": 104447,
-   "updatedAt": "2026-10-24T13:35:50Z",
-   "contentHash": "c7cac6529fc843b17711a1c54f8a0d2cd850b6a33fc290a3eb30f2ef8a2fb5db"
+   "ruleCount": 105192,
+   "updatedAt": "2026-10-25T21:02:29Z",
+   "contentHash": "2d5379215b0e32151a00d6af4effed14359aaa8eb0ee11acf6eff53cf6b50668"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -462,8 +462,8 @@
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt"
    },
    "ruleCount": 829,
-   "updatedAt": "2026-10-25T07:03:29Z",
-   "contentHash": "f6a1f6efd78794e60f8f81d4aa0758e1a05ffdc6e7a309712a1d7274de674664"
+   "updatedAt": "2026-10-26T07:10:27Z",
+   "contentHash": "23e50f81076f86ab3411d2aff3747a1d3699f57b0213ef1b9b09a5c626930729"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt",
