@@ -1,7 +1,7 @@
 # 券商、金融科技与部分海外银行域名
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-finance」(MIT);@属性已去除、取整份清单
-# Generated: 2026-10-18T06:44:37Z
-# Rules: 657
+# Generated: 2026-10-27T06:57:17Z
+# Rules: 659
 #
 DOMAIN,standchartbank.sc.omtrdc.net
 DOMAIN,standchartbank.tt.omtrdc.net
@@ -149,6 +149,7 @@ DOMAIN-SUFFIX,finambank.ru
 DOMAIN-SUFFIX,finance.ozon.ru
 DOMAIN-SUFFIX,finstarbank.ru
 DOMAIN-SUFFIX,firstprivatebank.com.mm
+DOMAIN-SUFFIX,firstrade.com
 DOMAIN-SUFFIX,forabank.ru
 DOMAIN-SUFFIX,forshtadt.ru
 DOMAIN-SUFFIX,fsmone.com
@@ -575,6 +576,7 @@ DOMAIN-SUFFIX,tdev.by
 DOMAIN-SUFFIX,tech26.de
 DOMAIN-SUFFIX,tejaratbank.ir
 DOMAIN-SUFFIX,thbank.ru
+DOMAIN-SUFFIX,thinkorswim.com
 DOMAIN-SUFFIX,tigerbbs.cn
 DOMAIN-SUFFIX,tigerbbs.com
 DOMAIN-SUFFIX,time-messenger.ru

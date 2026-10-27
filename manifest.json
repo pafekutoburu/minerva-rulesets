@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-10-26T07:10:27Z",
+ "generatedAt": "2026-10-27T06:57:17Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -75,11 +75,11 @@
    "displayName": "券商、金融科技与部分海外银行域名",
    "category": "finance",
    "tags": [],
-   "ruleCount": 657,
+   "ruleCount": 659,
    "layer": "mirrored",
    "summary": "⚠️ 这是一份混装清单,照 v2fly 社区库的 category-finance 原样收录:全球券商与金融科技(盈透 IBKR、嘉信 Schwab、富途、老虎、长桥、Wise、N26、Stripe 等)加上伊朗、日本、缅甸、俄罗斯的银行。不含中国大陆的银行与券商,那两份单独列。Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-10-18T06:45:27Z",
+   "updatedAt": "2026-10-27T06:57:17Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -176,22 +176,22 @@
    "displayName": "中国大陆 IPv4 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 8797,
+   "ruleCount": 8795,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv4 网段,来自 APNIC 每日发布的注册数据。⚠️ Surge 内建的 GEOIP,CN 已经覆盖了大部分同类需求,这份的价值在于来源可查。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-10-21T06:43:13Z"
+   "updatedAt": "2026-10-27T06:57:17Z"
   },
   {
    "path": "sets/region/cn-ipv6.list",
    "displayName": "中国大陆 IPv6 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 2046,
+   "ruleCount": 2045,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv6 网段,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-10-16T06:32:14Z"
+   "updatedAt": "2026-10-27T06:57:17Z"
   },
   {
    "path": "sets/shopping/alibaba.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 200546,
-   "updatedAt": "2026-10-25T07:03:29Z",
-   "contentHash": "7818b9f6de6eb67d3f66e9d82c0427a76ea0be0578d5f7f43b7198781e9d0bfd"
+   "ruleCount": 193211,
+   "updatedAt": "2026-10-27T06:57:17Z",
+   "contentHash": "b1a902fa7917b2fc691897e465d89a1689e59449a5fc5247c86ebb722eda38be"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
