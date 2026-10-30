@@ -1,7 +1,7 @@
 # Microsoft 365 服务域名
 # Source: Microsoft 365 官方端点服务 endpoints.office.com(厂商一手数据)
-# Generated: 2026-08-07T07:52:33Z
-# Rules: 132
+# Generated: 2026-10-30T07:50:47Z
+# Rules: 126
 #
 DOMAIN-SUFFIX,aadrm.com
 DOMAIN-SUFFIX,acompli.net
@@ -34,7 +34,6 @@ DOMAIN-SUFFIX,msecnd.net
 DOMAIN-SUFFIX,msftauth.net
 DOMAIN-SUFFIX,msftauthimages.net
 DOMAIN-SUFFIX,msftidentity.com
-DOMAIN-SUFFIX,msidentity.com
 DOMAIN-SUFFIX,msocdn.com
 DOMAIN-SUFFIX,mx.microsoft
 DOMAIN-SUFFIX,o365weve.com
@@ -82,7 +81,6 @@ DOMAIN,ajax.aspnetcdn.com
 DOMAIN,aka.ms
 DOMAIN,amp.azure.net
 DOMAIN,apis.live.net
-DOMAIN,assets.onestore.ms
 DOMAIN,auth.gfx.ms
 DOMAIN,autologon.microsoftazuread-sso.com
 DOMAIN,c.bing.com
@@ -103,17 +101,13 @@ DOMAIN,eus-www.sway-extensions.com
 DOMAIN,g.live.com
 DOMAIN,graph.windows.net
 DOMAIN,informationprotection.hosting.portal.azure.net
-DOMAIN,isrg.trustid.ocsp.identrust.com
-DOMAIN,join.secure.skypeassets.com
 DOMAIN,login.live.com
 DOMAIN,login.windows-ppe.net
 DOMAIN,login.windows.net
 DOMAIN,mem.gfx.ms
-DOMAIN,mlccdnprod.azureedge.net
 DOMAIN,ocos-office365-s2s.msedge.net
 DOMAIN,ocsp.digicert.com
 DOMAIN,ocsp.globalsign.com
-DOMAIN,ocsp.msocsp.com
 DOMAIN,ocsp2.globalsign.com
 DOMAIN,ocspx.digicert.com
 DOMAIN,office.live.com

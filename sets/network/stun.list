@@ -1,7 +1,7 @@
 # 公开 STUN 服务器域名
 # Source: 候选名单:pradt2/always-online-stun(MIT);收录判据:本仓 CI 每日发真实 STUN Binding Request 验活,只收 7 天内有响应的(scripts/stun_check.py)
-# Generated: 2026-10-29T07:44:44Z
-# Rules: 268
+# Generated: 2026-10-30T07:50:47Z
+# Rules: 264
 #
 DOMAIN,relay.webwormhole.io
 DOMAIN,stun.1-voip.com
@@ -67,7 +67,6 @@ DOMAIN,stun.freeswitch.org
 DOMAIN,stun.freevoipdeal.com
 DOMAIN,stun.frozenmountain.com
 DOMAIN,stun.futurasp.es
-DOMAIN,stun.galeriemagnet.at
 DOMAIN,stun.geesthacht.de
 DOMAIN,stun.genymotion.com
 DOMAIN,stun.gigaset.net
@@ -77,7 +76,6 @@ DOMAIN,stun.gntel.nl
 DOMAIN,stun.godatenow.com
 DOMAIN,stun.goldfish.ie
 DOMAIN,stun.graftlab.com
-DOMAIN,stun.grazertrinkwasseringefahr.at
 DOMAIN,stun.halonet.pl
 DOMAIN,stun.healthtap.com
 DOMAIN,stun.hicare.net
@@ -106,7 +104,6 @@ DOMAIN,stun.kotter.net
 DOMAIN,stun.l.google.com
 DOMAIN,stun.labs.net
 DOMAIN,stun.ladridiricette.it
-DOMAIN,stun.lebendigefluesse.at
 DOMAIN,stun.leonde.org
 DOMAIN,stun.leucotron.com.br
 DOMAIN,stun.levigo.de
@@ -165,7 +162,6 @@ DOMAIN,stun.ru-brides.com
 DOMAIN,stun.rynga.com
 DOMAIN,stun.sacko.com.au
 DOMAIN,stun.schlund.de
-DOMAIN,stun.schulinformatik.at
 DOMAIN,stun.shadrinsk.net
 DOMAIN,stun.signalwire.com
 DOMAIN,stun.simlar.org
