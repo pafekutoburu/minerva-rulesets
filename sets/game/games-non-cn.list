@@ -1,7 +1,7 @@
 # 游戏平台与厂商域名(中国大陆以外)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-games-!cn」(MIT);@属性已去除、取整份清单;3 条 regexp Surge 表达不了、已略去
-# Generated: 2026-10-25T07:03:29Z
-# Rules: 872
+# Generated: 2026-10-31T07:39:24Z
+# Rules: 873
 #
 DOMAIN,a.ppy.sh
 DOMAIN,a4e8s8k3.map2.ssl.hwcdn.net
@@ -113,6 +113,7 @@ DOMAIN-SUFFIX,activematter.game
 DOMAIN-SUFFIX,activision.com
 DOMAIN-SUFFIX,activisionblizzard.com
 DOMAIN-SUFFIX,activisionblizzardmedia.com
+DOMAIN-SUFFIX,amdgaming.com
 DOMAIN-SUFFIX,amiibo.com
 DOMAIN-SUFFIX,anthemgame.com
 DOMAIN-SUFFIX,anthemthegame.com
