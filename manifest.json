@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-11-01T08:18:03Z",
+ "generatedAt": "2026-11-02T08:32:22Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -130,7 +130,7 @@
    "layer": "mirrored",
    "summary": "中国大陆以外的游戏平台与厂商:Steam、Epic、任天堂、PlayStation、Xbox、暴雪、Riot、EA、育碧、Rockstar 等,含它们的登录、商店与对战服务域名。内容来自 v2fly 社区维护的域名库(MIT),由社区按公开信息整理,Minerva 只把官方发布物换成 Surge 的写法,一条不增、一条不删。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-01T08:18:03Z",
+   "updatedAt": "2026-11-01T08:18:53Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -202,7 +202,7 @@
    "layer": "mirrored",
    "summary": "阿里巴巴系的域名:淘宝、天猫、阿里云、高德、菜鸟、钉钉、饿了么、优酷、UC 等,来自 v2fly 社区维护的域名库(MIT)。Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-01T08:18:03Z",
+   "updatedAt": "2026-11-01T08:18:53Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -278,9 +278,9 @@
     "license": "MIT",
     "listURL": "https://anti-ad.net/surge.txt"
    },
-   "ruleCount": 101518,
-   "updatedAt": "2026-10-31T21:47:19Z",
-   "contentHash": "967ccf2c02254de6e4efa639bbae3c6def10ae953112ab7cb3b6bd7ad7584879"
+   "ruleCount": 101785,
+   "updatedAt": "2026-11-01T22:15:10Z",
+   "contentHash": "76b96fd8cae1bc9601876440e91e0c8e42db777f09a56103c0131fe359cef88a"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 195040,
-   "updatedAt": "2026-11-01T08:18:03Z",
-   "contentHash": "764340ba049c9a40e3993b0a225a87584613c038c8d36d9429ab85e7fe65608c"
+   "ruleCount": 195404,
+   "updatedAt": "2026-11-02T08:32:22Z",
+   "contentHash": "d63141c01f7fca0327cebdce9df294b5ae44efaa3d92aa3736b4922d089c2a62"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
