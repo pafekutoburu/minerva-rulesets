@@ -1,7 +1,7 @@
 # 游戏平台与厂商域名(中国大陆以外)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-games-!cn」(MIT);@属性已去除、取整份清单;3 条 regexp Surge 表达不了、已略去
-# Generated: 2026-11-01T08:18:03Z
-# Rules: 874
+# Generated: 2026-11-05T08:39:56Z
+# Rules: 879
 #
 DOMAIN,a.ppy.sh
 DOMAIN,a4e8s8k3.map2.ssl.hwcdn.net
@@ -394,6 +394,9 @@ DOMAIN-SUFFIX,leaguoflegends.com
 DOMAIN-SUFFIX,learnwithleague.com
 DOMAIN-SUFFIX,legendofzelda.cn
 DOMAIN-SUFFIX,legendofzelda.com.cn
+DOMAIN-SUFFIX,limbuscompany.global
+DOMAIN-SUFFIX,limbuscompanyapi.com
+DOMAIN-SUFFIX,limbuscompanycdn.org
 DOMAIN-SUFFIX,log-upload-os.hoyoverse.com
 DOMAIN-SUFFIX,lol-europe.com
 DOMAIN-SUFFIX,lolclub.org
@@ -585,6 +588,7 @@ DOMAIN-SUFFIX,popcap.com
 DOMAIN-SUFFIX,priconne-redive.jp
 DOMAIN-SUFFIX,prismlauncher.org
 DOMAIN-SUFFIX,projectapex.com
+DOMAIN-SUFFIX,projectmoon.studio
 DOMAIN-SUFFIX,protondb.com
 DOMAIN-SUFFIX,pubg.com
 DOMAIN-SUFFIX,pvp.net
@@ -679,6 +683,7 @@ DOMAIN-SUFFIX,simcity-buildit.com
 DOMAIN-SUFFIX,simcity.com
 DOMAIN-SUFFIX,skate2.com
 DOMAIN-SUFFIX,sketchfab.com
+DOMAIN-SUFFIX,skinswap.com
 DOMAIN-SUFFIX,skylanders.com
 DOMAIN-SUFFIX,sledgehammergames.com
 DOMAIN-SUFFIX,snk-corp.co.jp
