@@ -1,10 +1,11 @@
 # 银行域名(中国大陆)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-bank-cn」(MIT);@属性已去除、取整份清单
-# Generated: 2026-10-25T07:03:29Z
-# Rules: 139
+# Generated: 2026-11-07T07:55:24Z
+# Rules: 140
 #
 DOMAIN-SUFFIX,8008205555.cn
 DOMAIN-SUFFIX,8008205555.com
+DOMAIN-SUFFIX,95508.com
 DOMAIN-SUFFIX,95516.com
 DOMAIN-SUFFIX,95516.net
 DOMAIN-SUFFIX,95588.com
