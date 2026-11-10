@@ -1,9 +1,11 @@
 # GitHub 服务 IP 段
 # Source: GitHub 官方 api.github.com/meta 的 web/api/git/packages/pages 段(厂商一手数据)
-# Generated: 2026-11-07T07:55:24Z
-# Rules: 147
+# Generated: 2026-11-10T08:54:33Z
+# Rules: 152
 #
 IP-CIDR,4.149.173.80/28,no-resolve
+IP-CIDR,4.159.108.160/28,no-resolve
+IP-CIDR,4.159.197.192/28,no-resolve
 IP-CIDR,4.186.157.192/28,no-resolve
 IP-CIDR,4.187.247.160/28,no-resolve
 IP-CIDR,4.195.217.80/28,no-resolve
@@ -25,6 +27,7 @@ IP-CIDR,4.228.31.145/32,no-resolve
 IP-CIDR,4.228.31.149/32,no-resolve
 IP-CIDR,4.228.31.150/32,no-resolve
 IP-CIDR,4.228.31.152/32,no-resolve
+IP-CIDR,4.234.31.32/28,no-resolve
 IP-CIDR,4.236.95.112/28,no-resolve
 IP-CIDR,4.237.22.32/32,no-resolve
 IP-CIDR,4.237.22.34/32,no-resolve
@@ -35,6 +38,8 @@ IP-CIDR,4.249.131.163/32,no-resolve
 IP-CIDR,4.249.131.164/32,no-resolve
 IP-CIDR,4.249.131.166/32,no-resolve
 IP-CIDR,4.249.131.167/32,no-resolve
+IP-CIDR,20.26.58.32/28,no-resolve
+IP-CIDR,20.26.68.64/28,no-resolve
 IP-CIDR,20.26.156.210/32,no-resolve
 IP-CIDR,20.26.156.211/32,no-resolve
 IP-CIDR,20.26.156.213/32,no-resolve
