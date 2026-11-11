@@ -1,7 +1,7 @@
 # GitHub 服务 IP 段
 # Source: GitHub 官方 api.github.com/meta 的 web/api/git/packages/pages 段(厂商一手数据)
-# Generated: 2026-11-10T08:54:33Z
-# Rules: 152
+# Generated: 2026-11-11T08:33:16Z
+# Rules: 148
 #
 IP-CIDR,4.149.173.80/28,no-resolve
 IP-CIDR,4.159.108.160/28,no-resolve
@@ -76,10 +76,6 @@ IP-CIDR,20.200.245.244/32,no-resolve
 IP-CIDR,20.200.245.245/32,no-resolve
 IP-CIDR,20.200.245.247/32,no-resolve
 IP-CIDR,20.200.245.248/32,no-resolve
-IP-CIDR,20.201.28.144/32,no-resolve
-IP-CIDR,20.201.28.148/32,no-resolve
-IP-CIDR,20.201.28.151/32,no-resolve
-IP-CIDR,20.201.28.152/32,no-resolve
 IP-CIDR,20.205.243.160/32,no-resolve
 IP-CIDR,20.205.243.161/32,no-resolve
 IP-CIDR,20.205.243.164/32,no-resolve
