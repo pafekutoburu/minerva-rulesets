@@ -1,7 +1,7 @@
 # 公开 STUN 服务器域名
 # Source: 候选名单:pradt2/always-online-stun(MIT);收录判据:本仓 CI 每日发真实 STUN Binding Request 验活,只收 7 天内有响应的(scripts/stun_check.py)
-# Generated: 2026-11-13T08:51:36Z
-# Rules: 263
+# Generated: 2026-11-14T08:14:35Z
+# Rules: 265
 #
 DOMAIN,relay.webwormhole.io
 DOMAIN,stun.1-voip.com
@@ -175,6 +175,7 @@ DOMAIN,stun.sipnet.ru
 DOMAIN,stun.sipthor.net
 DOMAIN,stun.siptraffic.com
 DOMAIN,stun.siptrunk.com
+DOMAIN,stun.sipy.cz
 DOMAIN,stun.sky.od.ua
 DOMAIN,stun.skydrone.aero
 DOMAIN,stun.smartvoip.com
@@ -257,6 +258,7 @@ DOMAIN,stun.webcalldirect.com
 DOMAIN,stun.webfreak.org
 DOMAIN,stun.wemag.com
 DOMAIN,stun.westtel.ky
+DOMAIN,stun.wia.cz
 DOMAIN,stun.wtfismyip.com
 DOMAIN,stun.yesdates.com
 DOMAIN,stun.zadarma.com

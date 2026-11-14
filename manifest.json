@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-11-13T08:51:36Z",
+ "generatedAt": "2026-11-14T08:14:35Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -51,7 +51,7 @@
    "layer": "authored",
    "summary": "GitHub 自家服务(网页、API、git 传输、Packages、Pages)的 IP 段,取自 GitHub 官方接口,每天自动跟随。⚠️ 只有 IP 段没有域名 —— 官方没发布域名清单,我们不替它编。⚠️ 不含 Actions/Codespaces/Copilot:那几项跑在 Azure 上,官方给的是 Azure 的地址段(七千多条),不是 GitHub 自己的服务端点。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-13T08:51:36Z"
+   "updatedAt": "2026-11-13T08:52:25Z"
   },
   {
    "path": "sets/finance/banks-cn.list",
@@ -154,11 +154,11 @@
    "displayName": "公开 STUN 服务器域名",
    "category": "network",
    "tags": [],
-   "ruleCount": 263,
+   "ruleCount": 265,
    "layer": "authored",
    "summary": "公开 STUN 服务器的域名。STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用它。拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。候选名单来自 pradt2/always-online-stun(MIT),但收录判据是 Minerva 自己的:CI 每天向每台候选与在册服务器发真实 STUN 请求,只收 7 天内有响应的 —— 死掉的 STUN 服务器不会泄漏你的 IP,留着只是虚胖;哪天它复活了,次日就会回到清单里。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-13T08:51:36Z"
+   "updatedAt": "2026-11-14T08:14:35Z"
   },
   {
    "path": "sets/region/cn-asn.list",
@@ -169,7 +169,7 @@
    "layer": "authored",
    "summary": "分配给中国大陆组织的自治系统号(ASN)。ASN 是「一整家网络运营商」的编号,比按 IP 段判断更粗但更稳,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-13T08:51:36Z"
+   "updatedAt": "2026-11-13T08:52:25Z"
   },
   {
    "path": "sets/region/cn-ipv4.list",
@@ -180,7 +180,7 @@
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv4 网段,来自 APNIC 每日发布的注册数据。⚠️ Surge 内建的 GEOIP,CN 已经覆盖了大部分同类需求,这份的价值在于来源可查。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-13T08:51:36Z"
+   "updatedAt": "2026-11-13T08:52:25Z"
   },
   {
    "path": "sets/region/cn-ipv6.list",
@@ -191,7 +191,7 @@
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv6 网段,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-13T08:51:36Z"
+   "updatedAt": "2026-11-13T08:52:25Z"
   },
   {
    "path": "sets/shopping/alibaba.list",
@@ -278,9 +278,9 @@
     "license": "MIT",
     "listURL": "https://anti-ad.net/surge.txt"
    },
-   "ruleCount": 101636,
-   "updatedAt": "2026-11-10T23:37:52Z",
-   "contentHash": "ba0efcff7ef0af9d06ad9266f2a8110756d3e0a0d771076430fe602b64ce7bb6"
+   "ruleCount": 102656,
+   "updatedAt": "2026-11-13T23:46:21Z",
+   "contentHash": "99d64e90e39c851b6de89177be6e8ddd5eedd182aa158279757b6c06d2f663a4"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 199928,
-   "updatedAt": "2026-11-13T08:51:36Z",
-   "contentHash": "69c48af6cc804eae697c3c9adc0226303d4f9e0e19728bd6426e07518152a039"
+   "ruleCount": 200344,
+   "updatedAt": "2026-11-14T08:14:35Z",
+   "contentHash": "4d869e97638ce182c41939de4a6ba701344fc287787a748a0a9f36d53855fd9c"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -419,9 +419,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
    },
-   "ruleCount": 4452,
-   "updatedAt": "2026-11-06T08:40:38Z",
-   "contentHash": "010d4889f58a130a2d4078ef40206e3c7a230739401f31212b8076af99c52e82"
+   "ruleCount": 4453,
+   "updatedAt": "2026-11-14T08:14:35Z",
+   "contentHash": "81e0417dd19fa284bcce95d26203cf4ea31bd16a5519a12a4c9d14f5b50f762f"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
@@ -440,9 +440,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt"
    },
-   "ruleCount": 11,
-   "updatedAt": "2026-10-05T07:49:48Z",
-   "contentHash": "a8456f6be0a8a0454f8e7595a1fad6f01900495e55b71bf602c8dc65e3fa8e3c"
+   "ruleCount": 12,
+   "updatedAt": "2026-11-14T08:14:35Z",
+   "contentHash": "38b38b8f571cd61093c2cfeaee4ab64fb96e55940c2bf4a537046dada041baf3"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt",
