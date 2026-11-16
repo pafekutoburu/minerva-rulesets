@@ -1,7 +1,7 @@
 # 券商、金融科技与部分海外银行域名
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-finance」(MIT);@属性已去除、取整份清单
-# Generated: 2026-10-27T06:57:17Z
-# Rules: 659
+# Generated: 2026-11-16T08:43:28Z
+# Rules: 661
 #
 DOMAIN,standchartbank.sc.omtrdc.net
 DOMAIN,standchartbank.tt.omtrdc.net
@@ -653,6 +653,8 @@ DOMAIN-SUFFIX,xn--h1ao.site
 DOMAIN-SUFFIX,yamagatabank.co.jp
 DOMAIN-SUFFIX,yamaguchibank.co.jp
 DOMAIN-SUFFIX,yamanashibank.co.jp
+DOMAIN-SUFFIX,yandex-bank.net
+DOMAIN-SUFFIX,yb-payment.ru
 DOMAIN-SUFFIX,yokohamabank.co.jp
 DOMAIN-SUFFIX,yomabank.com
 DOMAIN-SUFFIX,yoobusiness.ru

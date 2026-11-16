@@ -1,7 +1,7 @@
 # 游戏平台与厂商域名(中国大陆)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-games-cn」(MIT);@属性已去除、取整份清单;1 条 regexp Surge 表达不了、已略去
-# Generated: 2026-11-06T08:40:38Z
-# Rules: 281
+# Generated: 2026-11-16T08:43:28Z
+# Rules: 293
 #
 DOMAIN,end-api.shallow.ink
 DOMAIN,end.shallow.ink
@@ -59,6 +59,8 @@ DOMAIN-SUFFIX,aligames.com
 DOMAIN-SUFFIX,anticheatexpert.com
 DOMAIN-SUFFIX,appeeres.com
 DOMAIN-SUFFIX,arcaea.cn
+DOMAIN-SUFFIX,arknights.com
+DOMAIN-SUFFIX,arknights.com.cn
 DOMAIN-SUFFIX,astral-vector.com
 DOMAIN-SUFFIX,battlecare.net
 DOMAIN-SUFFIX,bcfmglobal.com
@@ -119,7 +121,14 @@ DOMAIN-SUFFIX,heavenlywind.cc
 DOMAIN-SUFFIX,hero.com
 DOMAIN-SUFFIX,heroesports.com
 DOMAIN-SUFFIX,herogame.com
+DOMAIN-SUFFIX,hgto.cc
 DOMAIN-SUFFIX,hkgcloudcs.com
+DOMAIN-SUFFIX,hycdn.cn
+DOMAIN-SUFFIX,hycdn.com
+DOMAIN-SUFFIX,hypergryph.cn
+DOMAIN-SUFFIX,hypergryph.com
+DOMAIN-SUFFIX,hypergryph.com.cn
+DOMAIN-SUFFIX,hypergryph.net
 DOMAIN-SUFFIX,i3839.com
 DOMAIN-SUFFIX,ihappystudio.cn
 DOMAIN-SUFFIX,ihappystudio.com
@@ -174,6 +183,7 @@ DOMAIN-SUFFIX,nextworkshop.net
 DOMAIN-SUFFIX,nikkigames.cn
 DOMAIN-SUFFIX,nikkigames.com.cn
 DOMAIN-SUFFIX,nzsiteres.com
+DOMAIN-SUFFIX,octavedge.com
 DOMAIN-SUFFIX,papegames.cn
 DOMAIN-SUFFIX,papegames.com
 DOMAIN-SUFFIX,phira.cn
@@ -204,6 +214,8 @@ DOMAIN-SUFFIX,seasungames.com
 DOMAIN-SUFFIX,seasunwbl.com
 DOMAIN-SUFFIX,shengqugames.com
 DOMAIN-SUFFIX,shyxhy.com
+DOMAIN-SUFFIX,skland.com
+DOMAIN-SUFFIX,skland.net
 DOMAIN-SUFFIX,skydweller.cn
 DOMAIN-SUFFIX,sl916.com
 DOMAIN-SUFFIX,supercellcommunity.cn

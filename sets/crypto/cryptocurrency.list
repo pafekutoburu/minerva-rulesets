@@ -1,7 +1,7 @@
 # 加密货币交易所与钱包域名
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-cryptocurrency」(MIT);@属性已去除、取整份清单
-# Generated: 2026-10-22T06:46:11Z
-# Rules: 240
+# Generated: 2026-11-16T08:43:28Z
+# Rules: 241
 #
 DOMAIN,bybit-exchange.github.io
 DOMAIN,bybit.ada.support
@@ -114,6 +114,7 @@ DOMAIN-SUFFIX,cryptomus.com
 DOMAIN-SUFFIX,curve.fi
 DOMAIN-SUFFIX,cyberx.com
 DOMAIN-SUFFIX,debank.com
+DOMAIN-SUFFIX,debot.ai
 DOMAIN-SUFFIX,delets.cash
 DOMAIN-SUFFIX,delets.online
 DOMAIN-SUFFIX,deribit.com

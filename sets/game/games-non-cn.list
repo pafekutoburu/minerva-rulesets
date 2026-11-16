@@ -1,7 +1,7 @@
 # 游戏平台与厂商域名(中国大陆以外)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-games-!cn」(MIT);@属性已去除、取整份清单;3 条 regexp Surge 表达不了、已略去
-# Generated: 2026-11-05T08:39:56Z
-# Rules: 879
+# Generated: 2026-11-16T08:43:28Z
+# Rules: 880
 #
 DOMAIN,a.ppy.sh
 DOMAIN,a4e8s8k3.map2.ssl.hwcdn.net
@@ -201,6 +201,7 @@ DOMAIN-SUFFIX,cubicodyssey.game
 DOMAIN-SUFFIX,curseforge.com
 DOMAIN-SUFFIX,cyberpunk.net
 DOMAIN-SUFFIX,cygames.co.jp
+DOMAIN-SUFFIX,cygames.com
 DOMAIN-SUFFIX,cygames.jp
 DOMAIN-SUFFIX,daoc.net
 DOMAIN-SUFFIX,darkageofcamelot.com
