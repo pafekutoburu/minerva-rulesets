@@ -1,7 +1,7 @@
 # 公开 STUN 服务器域名
 # Source: 候选名单:pradt2/always-online-stun(MIT);收录判据:本仓 CI 每日发真实 STUN Binding Request 验活,只收 7 天内有响应的(scripts/stun_check.py)
-# Generated: 2026-11-16T08:43:28Z
-# Rules: 266
+# Generated: 2026-11-18T09:23:49Z
+# Rules: 265
 #
 DOMAIN,relay.webwormhole.io
 DOMAIN,stun.1-voip.com
@@ -156,7 +156,6 @@ DOMAIN,stun.radiojar.com
 DOMAIN,stun.ringostat.com
 DOMAIN,stun.rockenstein.de
 DOMAIN,stun.rolmail.net
-DOMAIN,stun.romaaeterna.nl
 DOMAIN,stun.romancecompass.com
 DOMAIN,stun.ru-brides.com
 DOMAIN,stun.rynga.com
