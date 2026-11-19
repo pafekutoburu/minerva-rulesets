@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-11-18T09:23:49Z",
+ "generatedAt": "2026-11-19T09:36:42Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -109,11 +109,11 @@
    "displayName": "游戏平台与厂商域名(中国大陆)",
    "category": "game",
    "tags": [],
-   "ruleCount": 293,
+   "ruleCount": 295,
    "layer": "mirrored",
    "summary": "中国大陆的游戏平台与厂商:腾讯游戏、米哈游国服、库洛、心动、西山居、4399、B 站游戏、阿里游戏等。内容来自 v2fly 社区维护的域名库(MIT),Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-16T08:44:08Z",
+   "updatedAt": "2026-11-19T09:36:42Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -158,7 +158,7 @@
    "layer": "authored",
    "summary": "公开 STUN 服务器的域名。STUN 是设备用来发现自己公网 IP 的协议,浏览器里的 WebRTC 会用它。拦掉这些域名可以减少一类 IP 泄漏,代价是某些语音/视频通话可能受影响。候选名单来自 pradt2/always-online-stun(MIT),但收录判据是 Minerva 自己的:CI 每天向每台候选与在册服务器发真实 STUN 请求,只收 7 天内有响应的 —— 死掉的 STUN 服务器不会泄漏你的 IP,留着只是虚胖;哪天它复活了,次日就会回到清单里。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-18T09:23:49Z"
+   "updatedAt": "2026-11-18T09:24:41Z"
   },
   {
    "path": "sets/region/cn-asn.list",
@@ -198,11 +198,11 @@
    "displayName": "阿里巴巴系域名",
    "category": "shopping",
    "tags": [],
-   "ruleCount": 465,
+   "ruleCount": 466,
    "layer": "mirrored",
    "summary": "阿里巴巴系的域名:淘宝、天猫、阿里云、高德、菜鸟、钉钉、饿了么、优酷、UC 等,来自 v2fly 社区维护的域名库(MIT)。Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-01T08:18:53Z",
+   "updatedAt": "2026-11-19T09:36:42Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 199996,
-   "updatedAt": "2026-11-18T09:23:49Z",
-   "contentHash": "59c9a371fd11b365ebf8c97615d16a5241e65790570169991cb4e02840160ac2"
+   "ruleCount": 200374,
+   "updatedAt": "2026-11-19T09:36:42Z",
+   "contentHash": "87cad179b775eeb9e1cd056a73b1a767b336ac99faf2c78243f550de24363f60"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -462,8 +462,8 @@
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt"
    },
    "ruleCount": 829,
-   "updatedAt": "2026-11-09T08:48:20Z",
-   "contentHash": "23e50f81076f86ab3411d2aff3747a1d3699f57b0213ef1b9b09a5c626930729"
+   "updatedAt": "2026-11-19T09:36:42Z",
+   "contentHash": "f6a1f6efd78794e60f8f81d4aa0758e1a05ffdc6e7a309712a1d7274de674664"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt",

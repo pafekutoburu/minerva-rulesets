@@ -1,7 +1,7 @@
 # 阿里巴巴系域名
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「alibaba」(MIT);@属性已去除、取整份清单
-# Generated: 2026-11-01T08:18:03Z
-# Rules: 465
+# Generated: 2026-11-19T09:36:42Z
+# Rules: 466
 #
 DOMAIN,account-cn.alibabacloud.com
 DOMAIN,api.alibabacloud.com
@@ -356,6 +356,7 @@ DOMAIN-SUFFIX,oss-cn-shanghai.aliyuncs.com
 DOMAIN-SUFFIX,oss-cn-shenzhen.aliyuncs.com
 DOMAIN-SUFFIX,oss-cn-wulanchabu.aliyuncs.com
 DOMAIN-SUFFIX,oss-cn-zhangjiakou.aliyuncs.com
+DOMAIN-SUFFIX,oss-enet.aliyuncs.com
 DOMAIN-SUFFIX,oss-eu-central-1.aliyuncs.com
 DOMAIN-SUFFIX,oss-eu-west-1.aliyuncs.com
 DOMAIN-SUFFIX,oss-me-east-1.aliyuncs.com
