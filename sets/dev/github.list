@@ -1,7 +1,7 @@
 # GitHub 服务 IP 段
 # Source: GitHub 官方 api.github.com/meta 的 web/api/git/packages/pages 段(厂商一手数据)
-# Generated: 2026-11-13T08:51:36Z
-# Rules: 165
+# Generated: 2026-11-20T09:19:05Z
+# Rules: 169
 #
 IP-CIDR,4.149.173.80/28,no-resolve
 IP-CIDR,4.158.254.48/28,no-resolve
@@ -64,6 +64,7 @@ IP-CIDR,20.29.134.18/32,no-resolve
 IP-CIDR,20.29.134.19/32,no-resolve
 IP-CIDR,20.29.134.22/32,no-resolve
 IP-CIDR,20.29.134.23/32,no-resolve
+IP-CIDR,20.64.190.224/28,no-resolve
 IP-CIDR,20.87.245.0/32,no-resolve
 IP-CIDR,20.87.245.1/32,no-resolve
 IP-CIDR,20.87.245.2/32,no-resolve
@@ -109,6 +110,7 @@ IP-CIDR,20.250.119.67/32,no-resolve
 IP-CIDR,20.250.119.68/32,no-resolve
 IP-CIDR,20.250.119.72/32,no-resolve
 IP-CIDR,20.250.119.73/32,no-resolve
+IP-CIDR,20.254.76.112/28,no-resolve
 IP-CIDR,40.121.125.32/28,no-resolve
 IP-CIDR,40.121.125.128/28,no-resolve
 IP-CIDR,40.121.125.144/28,no-resolve
@@ -129,6 +131,7 @@ IP-CIDR,48.204.201.6/32,no-resolve
 IP-CIDR,48.204.201.9/32,no-resolve
 IP-CIDR,57.155.223.240/28,no-resolve
 IP-CIDR,57.166.80.144/28,no-resolve
+IP-CIDR,74.158.248.0/28,no-resolve
 IP-CIDR,74.161.79.192/28,no-resolve
 IP-CIDR,135.235.149.144/28,no-resolve
 IP-CIDR,140.82.112.0/20,no-resolve
@@ -143,6 +146,7 @@ IP-CIDR,140.82.121.34/32,no-resolve
 IP-CIDR,143.55.64.0/20,no-resolve
 IP-CIDR,172.130.18.192/28,no-resolve
 IP-CIDR,172.130.45.112/28,no-resolve
+IP-CIDR,172.130.99.48/28,no-resolve
 IP-CIDR,172.130.153.16/28,no-resolve
 IP-CIDR,172.130.201.80/28,no-resolve
 IP-CIDR,172.139.64.112/28,no-resolve

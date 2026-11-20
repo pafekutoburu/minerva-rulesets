@@ -1,7 +1,7 @@
 # 中国大陆 IPv6 地址段
 # Source: APNIC delegated-apnic-latest(注册机构一手数据)
-# Generated: 2026-11-13T08:51:36Z
-# Rules: 2048
+# Generated: 2026-11-20T09:19:05Z
+# Rules: 2047
 #
 IP-CIDR6,2001:250::/35,no-resolve
 IP-CIDR6,2001:250:2000::/35,no-resolve
@@ -1801,7 +1801,6 @@ IP-CIDR6,2406:bb80::/32,no-resolve
 IP-CIDR6,2406:bc80::/32,no-resolve
 IP-CIDR6,2406:bd40::/32,no-resolve
 IP-CIDR6,2406:bd80::/32,no-resolve
-IP-CIDR6,2406:bdc0::/32,no-resolve
 IP-CIDR6,2406:be80::/32,no-resolve
 IP-CIDR6,2406:bf80::/32,no-resolve
 IP-CIDR6,2406:c080::/32,no-resolve
