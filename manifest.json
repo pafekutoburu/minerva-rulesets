@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-11-20T09:19:05Z",
+ "generatedAt": "2026-11-21T08:55:24Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -51,7 +51,7 @@
    "layer": "authored",
    "summary": "GitHub 自家服务(网页、API、git 传输、Packages、Pages)的 IP 段,取自 GitHub 官方接口,每天自动跟随。⚠️ 只有 IP 段没有域名 —— 官方没发布域名清单,我们不替它编。⚠️ 不含 Actions/Codespaces/Copilot:那几项跑在 Azure 上,官方给的是 Azure 的地址段(七千多条),不是 GitHub 自己的服务端点。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-20T09:19:05Z"
+   "updatedAt": "2026-11-20T09:19:55Z"
   },
   {
    "path": "sets/finance/banks-cn.list",
@@ -191,7 +191,7 @@
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv6 网段,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-20T09:19:05Z"
+   "updatedAt": "2026-11-20T09:19:55Z"
   },
   {
    "path": "sets/shopping/alibaba.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 200748,
-   "updatedAt": "2026-11-20T09:19:05Z",
-   "contentHash": "b7c28225a9461ea406ae4ee1c6505c9c6473606fc18a2e45388988fe7475880e"
+   "ruleCount": 201108,
+   "updatedAt": "2026-11-21T08:55:24Z",
+   "contentHash": "dcb1c823deed5ee0ec85fcd3eaf90f6849e63541f0a647f3e5c39d42bfba6199"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
@@ -419,9 +419,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
    },
-   "ruleCount": 4453,
-   "updatedAt": "2026-11-14T08:14:35Z",
-   "contentHash": "81e0417dd19fa284bcce95d26203cf4ea31bd16a5519a12a4c9d14f5b50f762f"
+   "ruleCount": 4481,
+   "updatedAt": "2026-11-21T08:55:24Z",
+   "contentHash": "4647019b85d7871b8aaf0d569f1f930850dde90b4cf9b8e751a69ef6c3870ee5"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
@@ -462,8 +462,8 @@
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt"
    },
    "ruleCount": 829,
-   "updatedAt": "2026-11-19T09:36:42Z",
-   "contentHash": "f6a1f6efd78794e60f8f81d4aa0758e1a05ffdc6e7a309712a1d7274de674664"
+   "updatedAt": "2026-11-21T08:55:24Z",
+   "contentHash": "23e50f81076f86ab3411d2aff3747a1d3699f57b0213ef1b9b09a5c626930729"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt",
