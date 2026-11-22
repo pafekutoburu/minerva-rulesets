@@ -1,7 +1,7 @@
 # 电商与零售品牌域名(中国大陆以外)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-ecommerce」(MIT);@属性已去除、取整份清单
-# Generated: 2026-10-22T06:46:11Z
-# Rules: 1328
+# Generated: 2026-11-22T08:57:34Z
+# Rules: 1329
 #
 DOMAIN,ad.ozone.ru
 DOMAIN,ads-gate.wildberries.ru
@@ -573,6 +573,7 @@ DOMAIN-SUFFIX,eu-consumer-empowerment.com
 DOMAIN-SUFFIX,ewisdom.us.kg
 DOMAIN-SUFFIX,expertmaker.com
 DOMAIN-SUFFIX,fairmarket.com
+DOMAIN-SUFFIX,fanza.jp
 DOMAIN-SUFFIX,farfetch-apps.com
 DOMAIN-SUFFIX,farfetch-contents.com
 DOMAIN-SUFFIX,farfetch.cn
