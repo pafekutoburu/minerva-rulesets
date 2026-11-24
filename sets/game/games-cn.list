@@ -1,7 +1,7 @@
 # 游戏平台与厂商域名(中国大陆)
 # Source: v2fly/domain-list-community 官方发布物 dlc.dat_plain.yml 的「category-games-cn」(MIT);@属性已去除、取整份清单;1 条 regexp Surge 表达不了、已略去
-# Generated: 2026-11-19T09:36:42Z
-# Rules: 295
+# Generated: 2026-11-24T11:44:04Z
+# Rules: 299
 #
 DOMAIN,end-api.shallow.ink
 DOMAIN,end.shallow.ink
@@ -82,6 +82,7 @@ DOMAIN-SUFFIX,cbjq.com
 DOMAIN-SUFFIX,cdncl.net
 DOMAIN-SUFFIX,cgyouxi.com
 DOMAIN-SUFFIX,changyou.com
+DOMAIN-SUFFIX,chunithm.wahlap.com
 DOMAIN-SUFFIX,codm.com
 DOMAIN-SUFFIX,cowlevel.net
 DOMAIN-SUFFIX,cy.com
@@ -159,6 +160,7 @@ DOMAIN-SUFFIX,mahjongcup.cn
 DOMAIN-SUFFIX,mahjongcup.com
 DOMAIN-SUFFIX,mahjongcup.net
 DOMAIN-SUFFIX,mail4399.com
+DOMAIN-SUFFIX,maimai.wahlap.com
 DOMAIN-SUFFIX,maindown4399.com
 DOMAIN-SUFFIX,me4399.com
 DOMAIN-SUFFIX,metalrevolution.com
@@ -237,6 +239,7 @@ DOMAIN-SUFFIX,testplus.cn
 DOMAIN-SUFFIX,texasholdemcup.cn
 DOMAIN-SUFFIX,texasholdemcup.com
 DOMAIN-SUFFIX,texasholdemcup.net
+DOMAIN-SUFFIX,tgk-wcaime.wahlap.com
 DOMAIN-SUFFIX,tgpro.top
 DOMAIN-SUFFIX,tgprocs.net
 DOMAIN-SUFFIX,themisweeps.com
@@ -252,6 +255,7 @@ DOMAIN-SUFFIX,vrzwk.cn
 DOMAIN-SUFFIX,vrzwk.com
 DOMAIN-SUFFIX,vrzwk.net
 DOMAIN-SUFFIX,vrzwk.top
+DOMAIN-SUFFIX,wahlap.net
 DOMAIN-SUFFIX,wanmei.com
 DOMAIN-SUFFIX,wanwan4399.com
 DOMAIN-SUFFIX,wcbygame.com

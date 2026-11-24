@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-11-22T08:57:34Z",
+ "generatedAt": "2026-11-24T11:44:04Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -109,11 +109,11 @@
    "displayName": "游戏平台与厂商域名(中国大陆)",
    "category": "game",
    "tags": [],
-   "ruleCount": 295,
+   "ruleCount": 299,
    "layer": "mirrored",
    "summary": "中国大陆的游戏平台与厂商:腾讯游戏、米哈游国服、库洛、心动、西山居、4399、B 站游戏、阿里游戏等。内容来自 v2fly 社区维护的域名库(MIT),Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-19T09:37:55Z",
+   "updatedAt": "2026-11-24T11:44:04Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -165,11 +165,11 @@
    "displayName": "中国大陆自治系统号(ASN)",
    "category": "region",
    "tags": [],
-   "ruleCount": 6399,
+   "ruleCount": 6400,
    "layer": "authored",
    "summary": "分配给中国大陆组织的自治系统号(ASN)。ASN 是「一整家网络运营商」的编号,比按 IP 段判断更粗但更稳,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-13T08:52:25Z"
+   "updatedAt": "2026-11-24T11:44:04Z"
   },
   {
    "path": "sets/region/cn-ipv4.list",
@@ -187,11 +187,11 @@
    "displayName": "中国大陆 IPv6 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 2047,
+   "ruleCount": 2048,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv6 网段,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-20T09:19:55Z"
+   "updatedAt": "2026-11-24T11:44:04Z"
   },
   {
    "path": "sets/shopping/alibaba.list",
@@ -219,7 +219,7 @@
    "layer": "mirrored",
    "summary": "中国大陆以外的电商与零售品牌:eBay、Shopee、Shopify、乐天、沃尔玛、Target、宜家、Nike、Adidas、Booking、Airbnb 等,来自 v2fly 社区维护的域名库(MIT)。京东、拼多多、阿里系在旁边单独列。Minerva 只换写法、不改内容。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-22T08:57:34Z",
+   "updatedAt": "2026-11-22T08:58:27Z",
    "upstream": {
     "repository": "v2fly/domain-list-community",
     "homepage": "https://github.com/v2fly/domain-list-community",
@@ -278,9 +278,9 @@
     "license": "MIT",
     "listURL": "https://anti-ad.net/surge.txt"
    },
-   "ruleCount": 102741,
-   "updatedAt": "2026-11-20T00:45:28Z",
-   "contentHash": "e955dc1f918bbeb6aea82a6ee0017bcfb585ce416fdb296eb8d428de7b1d13d6"
+   "ruleCount": 103309,
+   "updatedAt": "2026-11-22T23:43:35Z",
+   "contentHash": "ca861f460fca2f01bdaddb0fd193445996af505ea6cda020b8c5d3644d947e21"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -300,8 +300,8 @@
     "listURL": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
    },
    "ruleCount": 998,
-   "updatedAt": "2026-11-17T09:50:56Z",
-   "contentHash": "ec13264d2a9c72f84606236dd5022426b547630f6efbc4463137b768a0752b98"
+   "updatedAt": "2026-11-24T11:44:04Z",
+   "contentHash": "6e9acccf61067f2e5b83854779b9d3c257c30ea92958946c3943d02c7e1b62ec"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 201160,
-   "updatedAt": "2026-11-22T08:57:34Z",
-   "contentHash": "d1a8d64269a5b549e3c7eb11f13c120ff56232b90115dfdc4bb6d635a4ba3d53"
+   "ruleCount": 203233,
+   "updatedAt": "2026-11-24T11:44:04Z",
+   "contentHash": "dfe7892dc6022659d5ea9a1bc4dde72b62f138add30307d20c58935ee71251a3"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
