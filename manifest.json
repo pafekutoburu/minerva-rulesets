@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-11-25T10:38:11Z",
+ "generatedAt": "2026-11-26T10:08:31Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -169,18 +169,18 @@
    "layer": "authored",
    "summary": "分配给中国大陆组织的自治系统号(ASN)。ASN 是「一整家网络运营商」的编号,比按 IP 段判断更粗但更稳,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-25T10:38:11Z"
+   "updatedAt": "2026-11-25T10:39:00Z"
   },
   {
    "path": "sets/region/cn-ipv4.list",
    "displayName": "中国大陆 IPv4 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 8797,
+   "ruleCount": 8798,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv4 网段,来自 APNIC 每日发布的注册数据。⚠️ Surge 内建的 GEOIP,CN 已经覆盖了大部分同类需求,这份的价值在于来源可查。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-25T10:38:11Z"
+   "updatedAt": "2026-11-26T10:08:31Z"
   },
   {
    "path": "sets/region/cn-ipv6.list",
@@ -191,7 +191,7 @@
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv6 网段,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-25T10:38:11Z"
+   "updatedAt": "2026-11-25T10:39:00Z"
   },
   {
    "path": "sets/shopping/alibaba.list",
@@ -278,9 +278,9 @@
     "license": "MIT",
     "listURL": "https://anti-ad.net/surge.txt"
    },
-   "ruleCount": 103309,
-   "updatedAt": "2026-11-22T23:43:35Z",
-   "contentHash": "ca861f460fca2f01bdaddb0fd193445996af505ea6cda020b8c5d3644d947e21"
+   "ruleCount": 102599,
+   "updatedAt": "2026-11-26T01:53:58Z",
+   "contentHash": "5d725e7aaba378e6c3849508f4b61206c546e54bb2e1abe11c88eaf1ec30a938"
   },
   {
    "path": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 203624,
-   "updatedAt": "2026-11-25T10:38:11Z",
-   "contentHash": "d1ed827f49d6da6cd9238b1dd475516887823f469e4171df851693c6cffad30b"
+   "ruleCount": 203998,
+   "updatedAt": "2026-11-26T10:08:31Z",
+   "contentHash": "37625b1e6940d08f59eedbac3e69af9c3970838bce2f0641752a75d499bf960b"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
