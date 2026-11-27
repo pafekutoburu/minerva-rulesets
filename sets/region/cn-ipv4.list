@@ -1,7 +1,7 @@
 # 中国大陆 IPv4 地址段
 # Source: APNIC delegated-apnic-latest(注册机构一手数据)
-# Generated: 2026-11-26T10:08:31Z
-# Rules: 8798
+# Generated: 2026-11-27T10:14:31Z
+# Rules: 8797
 #
 IP-CIDR,1.0.1.0/24,no-resolve
 IP-CIDR,1.0.2.0/23,no-resolve
@@ -3984,7 +3984,6 @@ IP-CIDR,103.158.0.0/23,no-resolve
 IP-CIDR,103.158.8.0/23,no-resolve
 IP-CIDR,103.158.16.0/23,no-resolve
 IP-CIDR,103.158.74.0/23,no-resolve
-IP-CIDR,103.158.190.0/23,no-resolve
 IP-CIDR,103.158.200.0/23,no-resolve
 IP-CIDR,103.158.224.0/23,no-resolve
 IP-CIDR,103.159.122.0/23,no-resolve

@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "baseURL": "https://raw.githubusercontent.com/pafekutoburu/minerva-rulesets/refs/heads/main/",
- "generatedAt": "2026-11-26T10:08:31Z",
+ "generatedAt": "2026-11-27T10:14:31Z",
  "entries": [
   {
    "path": "sets/ai/anthropic.list",
@@ -176,22 +176,22 @@
    "displayName": "中国大陆 IPv4 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 8798,
+   "ruleCount": 8797,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv4 网段,来自 APNIC 每日发布的注册数据。⚠️ Surge 内建的 GEOIP,CN 已经覆盖了大部分同类需求,这份的价值在于来源可查。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-26T10:08:31Z"
+   "updatedAt": "2026-11-27T10:14:31Z"
   },
   {
    "path": "sets/region/cn-ipv6.list",
    "displayName": "中国大陆 IPv6 地址段",
    "category": "region",
    "tags": [],
-   "ruleCount": 2047,
+   "ruleCount": 2046,
    "layer": "authored",
    "summary": "分配给中国大陆组织的 IPv6 网段,来自 APNIC 每日发布的注册数据。",
    "directive": "RULE-SET",
-   "updatedAt": "2026-11-25T10:39:00Z"
+   "updatedAt": "2026-11-27T10:14:31Z"
   },
   {
    "path": "sets/shopping/alibaba.list",
@@ -320,9 +320,9 @@
     "license": "GPL-3.0",
     "listURL": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt"
    },
-   "ruleCount": 203998,
-   "updatedAt": "2026-11-26T10:08:31Z",
-   "contentHash": "37625b1e6940d08f59eedbac3e69af9c3970838bce2f0641752a75d499bf960b"
+   "ruleCount": 204388,
+   "updatedAt": "2026-11-27T10:14:31Z",
+   "contentHash": "d8c089e45636632ac3062e6a4e7f9c089fe369bbd1dbefcb024adb8825192165"
   },
   {
    "path": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
